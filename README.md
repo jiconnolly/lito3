@@ -51,12 +51,34 @@ HTML sueltos: el script los sobreescribe.
 | --- | --- |
 | Tabla de posiciones | `data/tabla.json` |
 | Próximos partidos y resultados | `data/partidos.json` |
+| Fuente de ambos | <https://footystats.org/es/clubs/centro-atletico-lito-1017611> |
 | Plantel y cuerpo técnico | `data/plantel.json` — los jugadores sin `nombre` se muestran como "a confirmar" |
 | Noticias | `data/noticias.json` |
 | Galería | `data/fotos.json` — ver más abajo |
 
 Los archivos con `"ejemplo": true` muestran un aviso visible en el sitio
 ("datos de ejemplo"). Al cargar la información real hay que sacar esa clave.
+
+## De dónde salen los resultados
+
+La planilla del campeonato está en
+<https://footystats.org/es/clubs/centro-atletico-lito-1017611>: ahí se ven el
+fixture, los resultados y la tabla. De ahí se copian a mano a `data/partidos.json`
+y `data/tabla.json` después de cada fecha.
+
+Dos cosas a tener en cuenta al copiar la tabla:
+
+- La planilla no publica ganados, empatados ni perdidos. Se deducen de los
+  puntos y del porcentaje de victorias (`Pts = 3·G + E`, con `G = % · PJ`), y
+  conviene verificar que el cálculo cierre en todas las filas: `G + E + P` tiene
+  que dar `PJ` y ninguno puede quedar negativo.
+- Varios nombres de club llegan cortados ("Club Deportivo", "Club Social y").
+  Están cargados tal cual y hay que completarlos cuando se sepan.
+
+Para que la actualización deje de ser manual está `worker/api.js`, un Worker de
+Cloudflare todavía sin publicar: se despliega, lee la fuente y el sitio lo
+consume poniendo su dirección en `ORIGEN_VIVO`, arriba de `assets/js/main.js`.
+Sin eso, el sitio lee los JSON del repo.
 
 ## Los huecos: fotos que todavía no existen
 

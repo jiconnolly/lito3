@@ -1,54 +1,88 @@
 {
-  "_nota": "Resultados reales cargados a mano. Los próximos partidos siguen pendientes: cuando se conozcan, agregarlos a 'proximos'.",
+  "_nota": "Resultados reales cargados a mano desde la planilla del campeonato. El próximo partido sale de 'proximos'; al jugarse, pasa a 'resultados' y el más reciente de ahí se copia en 'ultimo'.",
   "ejemplo": false,
-  "actualizado": "2026-08-23",
+  "actualizado": "2026-09-09",
   "competencia": "Primera Divisional C",
   "ultimo": {
-    "fecha": "2026-08-23",
-    "competencia": "Divisional C · Zona de grupos",
-    "local": "Mar de Fondo",
-    "visitante": "Lito",
+    "fecha": "2026-09-06",
+    "competencia": "Primera Divisional C",
+    "local": "Lito",
+    "visitante": "Deportivo Colonia",
     "golesLocal": 0,
-    "golesVisitante": 0,
+    "golesVisitante": 1,
     "cancha": ""
   },
-  "proximos": [],
+  "proximos": [
+    {
+      "fecha": "2026-09-13",
+      "competencia": "Primera Divisional C",
+      "local": "Lito",
+      "visitante": "Salus FC",
+      "condicion": "local",
+      "hora": "",
+      "cancha": ""
+    }
+  ],
   "resultados": [
     {
-      "fecha": "2026-08-23",
-      "competencia": "Divisional C · Zona de grupos",
-      "local": "Mar de Fondo",
+      "fecha": "2026-09-06",
+      "competencia": "Primera Divisional C",
+      "local": "Lito",
+      "visitante": "Deportivo Colonia",
+      "golesLocal": 0,
+      "golesVisitante": 1
+    },
+    {
+      "fecha": "2026-08-29",
+      "competencia": "Primera Divisional C",
+      "local": "Salto FC",
       "visitante": "Lito",
+      "golesLocal": 1,
+      "golesVisitante": 0
+    },
+    {
+      "fecha": "2026-08-23",
+      "competencia": "Primera Divisional C",
+      "local": "Lito",
+      "visitante": "CA Mar de Fondo",
       "golesLocal": 0,
       "golesVisitante": 0
     },
     {
       "fecha": "2026-08-17",
-      "competencia": "Divisional C · Zona de grupos",
-      "local": "Lito",
-      "visitante": "Sportivo Bella Italia",
+      "competencia": "Primera Divisional C",
+      "local": "Sportivo Bella Italia",
+      "visitante": "Lito",
       "golesLocal": 3,
       "golesVisitante": 0
     },
     {
+      "fecha": "2026-08-09",
+      "competencia": "Primera Divisional C",
+      "local": "Lito",
+      "visitante": "Institución Atlética Sud América",
+      "golesLocal": 0,
+      "golesVisitante": 0
+    },
+    {
       "fecha": "2026-08-02",
-      "competencia": "Torneo Final · Fecha 2",
-      "local": "Deportivo LSM",
+      "competencia": "Primera Divisional C",
+      "local": "LSM",
       "visitante": "Lito",
       "golesLocal": 1,
       "golesVisitante": 0
     },
     {
       "fecha": "2026-07-25",
-      "competencia": "Segunda Liga Uruguaya",
+      "competencia": "Primera Divisional C",
       "local": "Lito",
-      "visitante": "CA Terremoto",
+      "visitante": "Club Atlético Terremoto",
       "golesLocal": 1,
       "golesVisitante": 1
     },
     {
       "fecha": "2026-07-04",
-      "competencia": "Torneo Inicial · Semifinal",
+      "competencia": "Primera Divisional C",
       "local": "Deportivo Colonia",
       "visitante": "Lito",
       "golesLocal": 2,
@@ -56,27 +90,75 @@
     },
     {
       "fecha": "2026-06-28",
-      "competencia": "Fase regular",
+      "competencia": "Primera Divisional C",
       "local": "Lito",
-      "visitante": "Deportivo LSM",
+      "visitante": "LSM",
       "golesLocal": 1,
       "golesVisitante": 1
     },
     {
+      "fecha": "2026-06-20",
+      "competencia": "Primera Divisional C",
+      "local": "CD Parque del Plata",
+      "visitante": "Lito",
+      "golesLocal": 2,
+      "golesVisitante": 1
+    },
+    {
       "fecha": "2026-06-14",
-      "competencia": "Fase regular",
+      "competencia": "Primera Divisional C",
       "local": "Lito",
-      "visitante": "Durazno Capital",
+      "visitante": "Durazno FC",
       "golesLocal": 1,
       "golesVisitante": 0
     },
     {
+      "fecha": "2026-06-06",
+      "competencia": "Primera Divisional C",
+      "local": "Canadian SC",
+      "visitante": "Lito",
+      "golesLocal": 1,
+      "golesVisitante": 6
+    },
+    {
+      "fecha": "2026-05-30",
+      "competencia": "Primera Divisional C",
+      "local": "Salus FC",
+      "visitante": "Lito",
+      "golesLocal": 1,
+      "golesVisitante": 1
+    },
+    {
       "fecha": "2026-05-26",
-      "competencia": "Fase regular",
+      "competencia": "Primera Divisional C",
       "local": "Lito",
-      "visitante": "Artigas",
+      "visitante": "Club Atlético Artigas",
       "golesLocal": 0,
       "golesVisitante": 0
+    },
+    {
+      "fecha": "2026-05-16",
+      "competencia": "Primera Divisional C",
+      "local": "IA Potencia",
+      "visitante": "Lito",
+      "golesLocal": 1,
+      "golesVisitante": 3
+    },
+    {
+      "fecha": "2026-05-09",
+      "competencia": "Primera Divisional C",
+      "local": "Lito",
+      "visitante": "Club Atlético Basáñez",
+      "golesLocal": 3,
+      "golesVisitante": 0
+    },
+    {
+      "fecha": "2026-05-03",
+      "competencia": "Primera Divisional C",
+      "local": "Lito",
+      "visitante": "CA Platense Reserve",
+      "golesLocal": 3,
+      "golesVisitante": 1
     }
   ]
 }
