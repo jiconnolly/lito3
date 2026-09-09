@@ -1,5 +1,5 @@
 {
-  "_nota": "Tabla del Clausura cargada a mano. La planilla de origen no publica ganados, empatados ni perdidos: se deducen de los puntos y del porcentaje de victorias, y el cálculo cierra en las dieciocho filas. Varios nombres llegan cortados en la fuente y hay que completarlos: filas 3, 6, 8, 9, 10, 12, 14, 15 y 18.",
+  "_nota": "Tabla del Clausura cargada a mano. La planilla de origen no publica ganados, empatados ni perdidos: se deducen de los puntos y del porcentaje de victorias, y el cálculo cierra en las dieciocho filas. Quedan tres nombres cortados por completar: filas 9, 12 y 14.",
   "ejemplo": false,
   "torneo": "Primera Divisional C · Clausura 2026",
   "fecha_jugada": 7,
@@ -36,7 +36,7 @@
     },
     {
       "pos": 3,
-      "equipo": "Club Atlético Bella",
+      "equipo": "Club Atlético Bella Vista",
       "pj": 7,
       "g": 4,
       "e": 3,
@@ -78,7 +78,7 @@
     },
     {
       "pos": 6,
-      "equipo": "Club Deportivo",
+      "equipo": "Club Deportivo Colonia",
       "pj": 7,
       "g": 4,
       "e": 1,
@@ -106,7 +106,7 @@
     },
     {
       "pos": 8,
-      "equipo": "Institución Atlética",
+      "equipo": "Institución Atlética Sud América",
       "pj": 7,
       "g": 2,
       "e": 5,
@@ -134,7 +134,7 @@
     },
     {
       "pos": 10,
-      "equipo": "Club Atlético",
+      "equipo": "Club Atlético Terremoto",
       "pj": 7,
       "g": 1,
       "e": 4,
@@ -204,7 +204,7 @@
     },
     {
       "pos": 15,
-      "equipo": "Club Social y",
+      "equipo": "Club Social y Deportivo Huracán Buceo",
       "pj": 7,
       "g": 1,
       "e": 3,
@@ -252,7 +252,7 @@
     },
     {
       "pos": 18,
-      "equipo": "Club Social y",
+      "equipo": "Club Social y Deportivo Los Halcones",
       "pj": 7,
       "g": 0,
       "e": 0,

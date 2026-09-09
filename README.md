@@ -72,8 +72,8 @@ Dos cosas a tener en cuenta al copiar la tabla:
   puntos y del porcentaje de victorias (`Pts = 3·G + E`, con `G = % · PJ`), y
   conviene verificar que el cálculo cierre en todas las filas: `G + E + P` tiene
   que dar `PJ` y ninguno puede quedar negativo.
-- Varios nombres de club llegan cortados ("Club Deportivo", "Club Social y").
-  Están cargados tal cual y hay que completarlos cuando se sepan.
+- Varios nombres de club llegan cortados. Los que faltan completar están
+  anotados en el `_nota` de `data/tabla.json`.
 
 Para que la actualización deje de ser manual está `worker/api.js`, un Worker de
 Cloudflare todavía sin publicar: se despliega, lee la fuente y el sitio lo
