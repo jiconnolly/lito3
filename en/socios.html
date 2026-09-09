@@ -61,7 +61,7 @@
   <div class="marco">
     <p class="romano-grande">Chapter VII</p>
     <h1>Become a Member</h1>
-    <p class="plomo">Membership fees pay for the ground, the travel and the youth sides. Being a Lito member means getting into the ground and having a voice at the assembly.</p>
+    <p class="plomo">Being from Lito means carrying the neighbourhood with you. Being a member means helping this story go on.</p>
     <div class="filete-cap"></div>
   </div>
 </section>
@@ -73,9 +73,9 @@
     </figure>
     <div class="estandarte-texto">
       <p class="cintilla">The crest</p>
-      <p class="estandarte-lema">Garra y Corazón</p>
-      <p class="prosa">The crest is not inherited: it is held up. Membership fees pay for the ground, the travel and the youth sides, which is what gets that shirt onto the pitch every Sunday.</p>
-      <p><a class="boton boton--oro" href="#cuotas">See the fees</a></p>
+      <h2 class="estandarte-lema">The crest is not inherited.<br>It is held up.</h2>
+      <p class="prosa">Membership fees pay for the ground, the travel and the youth sides, which is what gets that shirt onto the pitch every Sunday.</p>
+      <p><a class="boton boton--oro" href="#cuotas">I want to be part of it</a></p>
     </div>
   </div>
 </section>
@@ -83,24 +83,17 @@
 <section class="seccion" id="cuotas">
   <div class="marco">
     <p class="cintilla">Categories</p>
-    <h2>Fees</h2>
-    <p class="aviso-formulario" style="margin:0 0 24px">Indicative amounts. Confirm the current figures with the treasurer before publishing.</p>
-    <div class="rejilla rejilla--3">
-      <article class="tarjeta cuota">
-        <h3>Supporter</h3>
-        <p class="precio">$ 350<small>per month · Uruguayan pesos</small></p>
-        <ul><li>Membership card</li><li>Entry to home matches</li><li>News by email</li></ul>
-      </article>
-      <article class="tarjeta cuota cuota--destacada">
-        <h3>Full member</h3>
-        <p class="precio">$ 600<small>per month · Uruguayan pesos</small></p>
-        <ul><li>Everything in Supporter</li><li>Voice and vote at the assembly</li><li>Discount on kit</li></ul>
-      </article>
-      <article class="tarjeta cuota">
-        <h3>Life member</h3>
-        <p class="precio">$ 1.200<small>per month · Uruguayan pesos</small></p>
-        <ul><li>Everything in Full member</li><li>Invitation to official events</li><li>Recognition at the clubhouse</li></ul>
-      </article>
+    <h2>Your place in the club.</h2>
+    <p class="prosa">Every member helps sustain the shirt, the football and the meeting place in the neighbourhood.</p>
+    <div class="rejilla rejilla--3 pertenencia">
+      <article class="tarjeta"><p class="cintilla">01 · Identity</p><h3>Wearing the colours</h3><p>Being part of a story that began in 1917.</p></article>
+      <article class="tarjeta"><p class="cintilla">02 · Community</p><h3>Sustaining the club</h3><p>Standing with the people who make every matchday possible.</p></article>
+      <article class="tarjeta"><p class="cintilla">03 · Future</p><h3>Writing what comes next</h3><p>Helping to build Lito's next chapter.</p></article>
+    </div>
+    <div class="consulta-cuotas">
+      <h3>Categories, benefits and fees</h3>
+      <p>Write to us for membership options and current amounts.</p>
+      <a class="boton" href="mailto:socios@calito.uy?subject=Quiero%20ser%20socio%20de%20Lito">Ask the club ↗</a>
     </div>
   </div>
 </section>
@@ -111,33 +104,28 @@
       <div>
         <p class="cintilla">Sign up</p>
         <h2>Join us</h2>
-        <p class="prosa">Fill in the form and the club will get in touch to complete the sign-up and arrange payment.</p>
-        <form class="formulario" data-sin-backend="marca@calito.uy">
-          <div class="campo-doble">
-            <div class="campo"><label for="nombre">Full name</label><input id="nombre" name="nombre" type="text" autocomplete="name" required></div>
-            <div class="campo"><label for="documento">ID number</label><input id="documento" name="documento" type="text" inputmode="numeric" required></div>
-          </div>
+        <p class="prosa">Leave your enquiry by email. The club will guide you on the category, the fee and the steps to join.</p>
+        <form class="formulario" data-sin-backend="socios@calito.uy">
+          <div class="campo"><label for="nombre">Full name</label><input id="nombre" name="nombre" type="text" autocomplete="name" required></div>
           <div class="campo-doble">
             <div class="campo"><label for="correo">Email</label><input id="correo" name="correo" type="email" autocomplete="email" required></div>
             <div class="campo"><label for="telefono">Phone</label><input id="telefono" name="telefono" type="tel" autocomplete="tel"></div>
           </div>
           <div class="campo">
             <label for="categoria">Division</label>
-            <select id="categoria" name="categoria"><option>Supporter</option><option>Full member</option><option>Life member</option></select>
+            <select id="categoria" name="categoria"><option>I would like to know the categories</option></select>
           </div>
           <div class="campo"><label for="mensaje">Comment</label><textarea id="mensaje" name="mensaje"></textarea></div>
-          <button class="boton" type="submit">Send request</button>
-          <p class="aviso-formulario" data-respuesta hidden></p>
-          <p class="aviso-formulario">Your details are used only to process your membership.</p>
+          <button class="boton" type="submit">Prepare email</button>
+          <p class="aviso-formulario">Your email app will open so you can check the message and send it.</p>
+          <p class="aviso-formulario" data-respuesta role="status" hidden></p>
+          <p class="aviso-formulario">Do not include identity documents or payment details in your enquiry.</p>
         </form>
       </div>
       <div>
         <figure class="foto-album" style="margin:0">
-          <img src="../assets/img/fotos/hinchada.jpg" alt="Centro Atlético Lito supporters" width="1200" height="800" loading="lazy">
+          <img src="../assets/img/galeria/partido-4.jpg" alt="Lito players celebrating a goal" width="1200" height="1500" loading="lazy">
         </figure>
-        <div class="nota" style="margin-top:20px">
-          The form is not connected to a backend yet. See the README to publish the Cloudflare Worker.
-        </div>
       </div>
     </div>
   </div>

@@ -509,6 +509,7 @@ def cierre():
     <p class="cierre-frase">La historia ya está escrita.<br><em>El próximo capítulo, no.</em></p>
     <img class="cierre-escudo" src="assets/img/escudo.png" alt="" width="720" height="879" loading="lazy">
     <p class="cierre-firma">Centro Atlético Lito<span>1917 — Montevideo</span></p>
+    <p class="cierre-accion"><a class="boton" href="socios.html">Sé parte del próximo capítulo</a></p>
   </div>
 </section>
 """
@@ -545,14 +546,32 @@ def cap_club():
     <a href="#proximo"><b>2026</b><span>El próximo capítulo</span></a>
   </div>
 </nav>
+<section class="seccion historia-rapida" aria-label="La historia en siete hitos">
+  <div class="marco">
+    <p class="cintilla">Más de un siglo, de un vistazo</p>
+    <h2>Hay historias que no se apagan.</h2>
+    <ol class="timeline-visual">
+      <li><b>1917</b><h3>Nace Lito</h3><p>24 de julio. Un café de Arroyo Seco se convierte en club.</p></li>
+      <li><b>1920</b><h3>Campeón de Intermedia</h3><p>El segundo ascenso al hilo abre la puerta a Primera.</p></li>
+      <li><b>1921</b><h3>Entre los grandes</h3><p>Lito llega al Campeonato Uruguayo de Primera División.</p></li>
+      <li><b>1922–23</b><h3>Campañas históricas</h3><p>Quinto puesto en ambas temporadas.</p></li>
+      <li><b>1947</b><h3>El silencio</h3><p>Se interrumpe la participación oficial. El vínculo con el barrio permanece.</p></li>
+      <li><b>2022</b><h3>El regreso a AUF</h3><p>La azulgrana vuelve a competir en la Divisional D.</p></li>
+      <li><b>2023</b><h3>Campeón otra vez</h3><p>Título de la Divisional D y ascenso.</p></li>
+    </ol>
+  </div>
+</section>
 """ + momento("1917", "Nacimos", "En un café de Arroyo Seco, con el nombre del hombre del mostrador.", "nacimos") + """
 <section class="seccion">
   <div class="marco">
     <div class="rejilla rejilla--2">
       <div class="prosa">
         <p class="capitular">El nombre salió del mostrador. Manuel Semino era «Lito» para todo el barrio, y su café, en Agraciada y Santa Fe, era el punto de encuentro de Arroyo Seco. Cuando el 24 de julio de 1917 los que paraban ahí decidieron fundar el club, le pusieron el nombre del café.</p>
-        <p>La primera camiseta fue azul eléctrico con vivos rojos y pantalón blanco, con el escudo sobre el pecho izquierdo. De ahí viene el apodo: la azulgrana de Arroyo Seco. La de hoy sigue esa línea: azul francia, cuello rojo y vivo rojo en las mangas.</p>
-        <p>Un club nace de un barrio antes que de un acta. Lito no se mudó nunca: la misma cuadrícula de calles que llevaba al café lleva hoy a la cancha.</p>
+        <details class="lectura-archivo">
+          <summary>Seguí leyendo: los primeros colores</summary>
+          <p>La primera camiseta fue azul eléctrico con vivos rojos y pantalón blanco, con el escudo sobre el pecho izquierdo. De ahí viene el apodo: la azulgrana de Arroyo Seco. La de hoy sigue esa línea: azul francia, cuello rojo y vivo rojo en las mangas.</p>
+          <p>Un club nace de un barrio antes que de un acta. Lito no se mudó nunca: la misma cuadrícula de calles que llevaba al café lleva hoy a la cancha.</p>
+        </details>
       </div>
       <div>
         <figure class="foto-album" style="margin:0">
@@ -581,8 +600,13 @@ def cap_club():
 <section class="seccion barrio">
   <div class="marco">
     <p class="cintilla">El barrio</p>
-    <h2>Lito es de Arroyo Seco</h2>
+    <h2>De Arroyo Seco<br>desde 1917.</h2>
     <p class="prosa">Entre el puerto y la Rambla, de calles cortas y galpones bajos. El club se fundó a metros de acá y nunca se fue.</p>
+    <figure class="barrio-panorama">
+      <img src="assets/img/proyecto/terreno.jpg" alt="El predio de Lito entre las calles y galpones de Arroyo Seco" loading="lazy">
+      <figcaption>La cancha, las calles, el barrio. Arroyo Seco, Montevideo.</figcaption>
+    </figure>
+    <p class="prosa">El café de Agraciada y Santa Fe fue el punto de encuentro. La cancha sigue siendo una forma de encontrarnos.</p>
     <div class="barrio-grilla">
 """ + hueco("Calle de Arroyo Seco", "3 / 4") + hueco("Esquina del barrio", "3 / 4") + hueco("Fachadas y arquitectura", "3 / 4") + hueco("Un lugar de la historia del club", "3 / 4") + """
     </div>
@@ -595,7 +619,10 @@ def cap_club():
     <div class="rejilla rejilla--2">
       <div class="prosa">
         <p>Afiliado a la AUF, Lito ganó la Divisional Extra en 1919 y la Intermedia en 1920. Dos ascensos al hilo lo dejaron en el Campeonato Uruguayo de 1921, y ahí se mantuvo hasta 1928. Sus mejores temporadas fueron 1922 y 1923: quinto puesto, entre los grandes.</p>
+        <details class="lectura-archivo">
+          <summary>Del amateurismo a los años de silencio</summary>
         <p>Cuando el fútbol se profesionalizó en 1932, el club siguió amateur y jugó en el ascenso hasta desaparecer de la competencia oficial cerca de 1947. Desde 1952 volvió a jugar en la Federación Uruguaya de Fútbol Amateur, impulsado por los hijos de Vicente Cappuccio: dos campeonatos y dos subcampeonatos. Dejó de competir en 1960. Después, silencio.</p>
+        </details>
       </div>
       <div class="archivo archivo--pila">
 """ + hueco("Archivo", "4 / 3", "assets/img/historia/plantel-1920.jpg", "El plantel de Lito en 1920", "1920. El año del ascenso: campeón de la Divisional Intermedia.") + hueco("Archivo", "4 / 3", "assets/img/historia/plantel-1921.jpg", "El plantel de Lito en 1921, con la bandera del club", "1921. El debut en la Primera del fútbol uruguayo.") + """
@@ -604,11 +631,11 @@ def cap_club():
   </div>
 </section>
 
-<section class="lamina campeones">
+<section class="lamina campeones" id="archivo">
   <div class="marco claro">
-    <p class="cintilla">De Lito al mundo</p>
-    <h2>De Lito a campeones del mundo</h2>
-    <p class="prosa campeones-bajada">Tres jugadores que pasaron por esta camiseta terminaron levantando la copa con Uruguay.</p>
+    <p class="cintilla">Archivo histórico · Los campeones</p>
+    <h2>Antes de ser campeones del mundo,<br>fueron de Lito.</h2>
+    <p class="prosa campeones-bajada">Nasazzi. Castro. Cea. Tres nombres de nuestra historia que también son historia del fútbol mundial.</p>
     <div class="campeones-grilla">
       <article class="campeon">
 """ + hueco("Retrato · José Nasazzi", "4 / 5", "assets/img/historia/nasazzi.jpg", "Retrato de José Nasazzi") + """
@@ -790,7 +817,7 @@ def cap_club():
       </article>
       <article class="camiseta">
         <div class="muestra" style="background:linear-gradient(180deg,#1b3fa8 0 58%,var(--hueso) 58%)"><i style="background:linear-gradient(180deg,var(--rojo) 0 5%,transparent 5% 16%,var(--rojo) 16% 19%,transparent 19% 92%,var(--rojo) 92% 96%,transparent 96%)"></i></div>
-        <div class="rotulo"><h4>Conjunto de local</h4><p class="detalle">El oficial · suplente y arquero a confirmar</p></div>
+        <div class="rotulo"><h4>Conjunto de local</h4><p class="detalle">Azul y rojo · Nuestra camiseta</p></div>
       </article>
     </div>
   </div>
@@ -802,7 +829,7 @@ def cap_club():
       <div>
         <p class="cintilla">Institucional</p>
         <h2>Comisión directiva</h2>
-        <p class="prosa">La comisión se renueva en asamblea de socios. Cargar la nómina vigente y la fecha de la última asamblea.</p>
+        <p class="prosa">La vida institucional también se construye entre socios.</p>
         <dl class="datos">
           <div><dt>Presidencia</dt><dd>Rodolfo Neme</dd></div>
           <div><dt>Vicepresidencia</dt><dd>A confirmar</dd></div>
@@ -836,25 +863,25 @@ def cap_proyecto():
     <div class="rejilla rejilla--2">
       <div class="prosa">
         <p class="cintilla">El punto de partida</p>
-        <h2>El predio, hoy</h2>
-        <p>Lito juega y entrena en Arroyo Seco, sobre un predio que el club viene usando y ordenando. La foto es real y es de ahora: cancha principal, canchas auxiliares y las instalaciones que hay.</p>
+        <h2>Hoy: el lugar donde empieza todo.</h2>
+        <p>Lito juega y entrena en Arroyo Seco, sobre un predio que el club viene usando y ordenando. Cancha principal, canchas auxiliares y las instalaciones que sostienen el día a día.</p>
         <p>Sobre ese mismo terreno está dibujado el proyecto de la cancha nueva.</p>
       </div>
       <div>
         <figure class="hueco">
           <img src="assets/img/proyecto/terreno.jpg" alt="Vista aérea del predio actual del club en Arroyo Seco" loading="lazy">
-          <figcaption>El predio actual, desde el aire. Foto real.</figcaption>
+          <figcaption>HOY · Vista aérea del predio actual.</figcaption>
         </figure>
       </div>
     </div>
   </div>
 </section>
 
-<section class="lamina">
+<section class="lamina proyecto-futuro">
   <div class="marco claro">
     <p class="marbete">Proyecto · no construido</p>
     <p class="cintilla">La cancha que viene</p>
-    <h2>Cómo se vería</h2>
+    <h2>Mañana: un lugar para crecer.</h2>
     <p class="prosa">Cancha con tribunas, instalaciones deportivas y espacio abierto para el barrio. Las imágenes que siguen son renders del proyecto: muestran una intención, no una obra terminada ni una fecha.</p>
     <div class="renders renders--principal">
 """ + hueco("Render · vista aérea de la cancha", "16 / 9", "assets/img/proyecto/render-1.jpg",
@@ -897,9 +924,13 @@ def cap_proyecto():
 
 
 def cap_plantel():
-    return portadilla("II", "Plantel", "Primer equipo del Centro Atlético Lito, temporada 2026. Los puestos sin nombre están a confirmar.") + """
+    return portadilla("II", "Plantel", "Los que llevan nuestra camiseta. Primer equipo, cuerpo técnico y formativas.") + """
 <section class="seccion">
   <div class="marco">
+    <figure class="plantel-portada">
+      <img src="assets/img/galeria/plantel-2.jpg" alt="El primer equipo de Lito antes del partido" width="1500" height="1200" loading="eager">
+    </figure>
+    <p class="prosa" style="margin-bottom:26px">Primer equipo del Centro Atlético Lito, temporada 2026. Los puestos sin nombre están a confirmar.</p>
     <div data-plantel><p class="cargando">Cargando plantel…</p></div>
   </div>
 </section>
@@ -932,9 +963,9 @@ def cap_plantel():
       <img class="mascota" src="assets/img/historia/mascota.png" alt="Mascota del Centro Atlético Lito: un chico de camiseta azulgrana pateando una pelota" loading="lazy">
     </div>
     <div class="rejilla rejilla--3" style="margin-top:26px">
-      <article class="tarjeta tarjeta--borde-oro"><h3>Juveniles</h3><p>Categorías y horarios a confirmar.</p></article>
-      <article class="tarjeta tarjeta--borde-oro"><h3>Baby fútbol</h3><p>Categorías y horarios a confirmar.</p></article>
-      <article class="tarjeta tarjeta--borde-oro"><h3>Pruebas de jugadores</h3><p>Fechas a confirmar. Consultas por <a href="contacto.html">contacto</a>.</p></article>
+      <article class="tarjeta tarjeta--borde-oro"><h3>Juveniles</h3><p>Consultá al club por categorías y horarios de entrenamiento.</p></article>
+      <article class="tarjeta tarjeta--borde-oro"><h3>Baby fútbol</h3><p>Consultá al club por categorías y horarios de entrenamiento.</p></article>
+      <article class="tarjeta tarjeta--borde-oro"><h3>Pruebas de jugadores</h3><p>Consultá las próximas convocatorias por <a href="contacto.html">contacto</a>.</p></article>
     </div>
   </div>
 </section>
@@ -945,10 +976,18 @@ def cap_fixture():
     return portadilla("III", "Fixture y tabla", "Partidos, resultados y posiciones. Se actualiza después de cada fecha.") + """
 <section class="seccion">
   <div class="marco">
-    <p class="cintilla">Próximo partido</p>
+    <nav class="atajos" aria-label="Secciones deportivas">
+      <a href="#proximos">Fixture</a>
+      <a href="#tabla">Tabla</a>
+      <a href="#resultados">Resultados</a>
+    </nav>
+    <p class="cintilla">Próximo partido · Primera Divisional C</p>
     <div class="rejilla rejilla--2">
       <div data-partidos="proximo"><p class="cargando">Cargando…</p></div>
-      <div data-partidos="ultimo"><p class="cargando">Cargando…</p></div>
+      <div>
+        <p class="cintilla">Último resultado registrado</p>
+        <div data-partidos="ultimo"><p class="cargando">Cargando…</p></div>
+      </div>
     </div>
   </div>
 </section>
@@ -1029,7 +1068,7 @@ def cap_galeria():
 
 
 def cap_socios():
-    return portadilla("VII", "Hacete socio", "La cuota social paga la cancha, los viajes y las formativas. Ser socio de Lito es entrar a la cancha y tener voz en la asamblea.") + """
+    return portadilla("VII", "Hacete socio", "Ser de Lito es llevar el barrio con vos. Ser socio es ayudar a que esta historia siga.") + """
 <section class="lamina estandarte">
   <div class="marco claro estandarte-fila">
     <figure class="estandarte-foto">
@@ -1037,9 +1076,9 @@ def cap_socios():
     </figure>
     <div class="estandarte-texto">
       <p class="cintilla">El escudo</p>
-      <p class="estandarte-lema">Garra y Corazón</p>
-      <p class="prosa">El escudo no se hereda: se sostiene. La cuota social paga la cancha, los viajes y las formativas, que es lo que hace que esa camiseta salga a jugar cada domingo.</p>
-      <p><a class="boton boton--oro" href="#cuotas">Ver las cuotas</a></p>
+      <h2 class="estandarte-lema">El escudo no se hereda.<br>Se sostiene.</h2>
+      <p class="prosa">La cuota social paga la cancha, los viajes y las formativas, que es lo que hace que esa camiseta salga a jugar cada domingo.</p>
+      <p><a class="boton boton--oro" href="#cuotas">Quiero ser parte</a></p>
     </div>
   </div>
 </section>
@@ -1047,24 +1086,17 @@ def cap_socios():
 <section class="seccion" id="cuotas">
   <div class="marco">
     <p class="cintilla">Categorías</p>
-    <h2>Cuotas</h2>
-    <p class="aviso-formulario" style="margin:0 0 24px">Valores de referencia. Confirmar los importes vigentes con tesorería antes de publicar.</p>
-    <div class="rejilla rejilla--3">
-      <article class="tarjeta cuota">
-        <h3>Adherente</h3>
-        <p class="precio">$ 350<small>por mes · pesos uruguayos</small></p>
-        <ul><li>Carné de socio</li><li>Entrada a partidos de local</li><li>Novedades por correo</li></ul>
-      </article>
-      <article class="tarjeta cuota cuota--destacada">
-        <h3>Activo</h3>
-        <p class="precio">$ 600<small>por mes · pesos uruguayos</small></p>
-        <ul><li>Todo lo del adherente</li><li>Voz y voto en la asamblea</li><li>Descuento en indumentaria</li></ul>
-      </article>
-      <article class="tarjeta cuota">
-        <h3>Vitalicio</h3>
-        <p class="precio">$ 1.200<small>por mes · pesos uruguayos</small></p>
-        <ul><li>Todo lo del activo</li><li>Invitación a actos institucionales</li><li>Reconocimiento en la sede</li></ul>
-      </article>
+    <h2>Tu lugar en el club.</h2>
+    <p class="prosa">Cada socio ayuda a sostener la camiseta, el fútbol y el encuentro en el barrio.</p>
+    <div class="rejilla rejilla--3 pertenencia">
+      <article class="tarjeta"><p class="cintilla">01 · Identidad</p><h3>Llevar los colores</h3><p>Ser parte de una historia que empezó en 1917.</p></article>
+      <article class="tarjeta"><p class="cintilla">02 · Comunidad</p><h3>Sostener al club</h3><p>Acompañar a quienes hacen posible cada día de cancha.</p></article>
+      <article class="tarjeta"><p class="cintilla">03 · Futuro</p><h3>Escribir lo que viene</h3><p>Ayudar a construir el próximo capítulo de Lito.</p></article>
+    </div>
+    <div class="consulta-cuotas">
+      <h3>Categorías, beneficios y cuotas</h3>
+      <p>Escribinos para conocer las opciones de asociación y los importes vigentes.</p>
+      <a class="boton" href="mailto:socios@""" + DOMINIO + """?subject=Quiero%20ser%20socio%20de%20Lito">Consultar al club ↗</a>
     </div>
   </div>
 </section>
@@ -1075,33 +1107,28 @@ def cap_socios():
       <div>
         <p class="cintilla">Alta de socio</p>
         <h2>Sumate</h2>
-        <p class="prosa">Completá el formulario y el club se comunica para cerrar el alta y la forma de pago.</p>
-        <form class="formulario" data-sin-backend="marca@calito.uy">
-          <div class="campo-doble">
-            <div class="campo"><label for="nombre">Nombre y apellido</label><input id="nombre" name="nombre" type="text" autocomplete="name" required></div>
-            <div class="campo"><label for="documento">Documento</label><input id="documento" name="documento" type="text" inputmode="numeric" required></div>
-          </div>
+        <p class="prosa">Dejanos tu consulta en un correo. El club te orienta sobre la categoría, la cuota y los pasos para asociarte.</p>
+        <form class="formulario" data-sin-backend="socios@""" + DOMINIO + """">
+          <div class="campo"><label for="nombre">Nombre y apellido</label><input id="nombre" name="nombre" type="text" autocomplete="name" required></div>
           <div class="campo-doble">
             <div class="campo"><label for="correo">Correo</label><input id="correo" name="correo" type="email" autocomplete="email" required></div>
             <div class="campo"><label for="telefono">Teléfono</label><input id="telefono" name="telefono" type="tel" autocomplete="tel"></div>
           </div>
           <div class="campo">
             <label for="categoria">Categoría</label>
-            <select id="categoria" name="categoria"><option>Adherente</option><option>Activo</option><option>Vitalicio</option></select>
+            <select id="categoria" name="categoria"><option>Quiero conocer las categorías</option></select>
           </div>
           <div class="campo"><label for="mensaje">Comentario</label><textarea id="mensaje" name="mensaje"></textarea></div>
-          <button class="boton" type="submit">Enviar solicitud</button>
-          <p class="aviso-formulario" data-respuesta hidden></p>
-          <p class="aviso-formulario">Los datos se usan solo para gestionar el alta de socio.</p>
+          <button class="boton" type="submit">Preparar correo</button>
+          <p class="aviso-formulario">Se abrirá tu aplicación de correo para que revises y envíes el mensaje.</p>
+          <p class="aviso-formulario" data-respuesta role="status" hidden></p>
+          <p class="aviso-formulario">No incluyas documentos ni datos de pago en tu consulta.</p>
         </form>
       </div>
       <div>
         <figure class="foto-album" style="margin:0">
-          <img src="assets/img/fotos/hinchada.jpg" alt="Hinchada del Centro Atlético Lito" width="1200" height="800" loading="lazy">
+          <img src="assets/img/galeria/partido-4.jpg" alt="Jugadores de Lito en el abrazo del gol" width="1200" height="1500" loading="lazy">
         </figure>
-        <div class="nota" style="margin-top:20px">
-          El formulario todavía no está conectado a un backend. Ver README para publicar el Worker de Cloudflare.
-        </div>
       </div>
     </div>
   </div>
@@ -1143,7 +1170,8 @@ def cap_contacto():
             <select id="c-motivo" name="motivo"><option>Consulta general</option><option>Socios</option><option>Formativas</option><option>Prensa</option><option>Sponsors</option></select>
           </div>
           <div class="campo"><label for="c-mensaje">Mensaje</label><textarea id="c-mensaje" name="mensaje" required></textarea></div>
-          <button class="boton" type="submit">Enviar</button>
+          <button class="boton" type="submit">Preparar correo</button>
+          <p class="aviso-formulario">Se abrirá tu aplicación de correo para que revises y envíes el mensaje.</p>
           <p class="aviso-formulario" data-respuesta hidden></p>
         </form>
       </div>
@@ -1227,7 +1255,7 @@ def main():
     pendientes = sorted({f for f in faltantes})
     if pendientes:
         print(f"\n{len(pendientes)} frases sin traducir en data/i18n-en.json:")
-        for f in pendientes[:40]:
+        for f in pendientes:
             print("  ·", f[:100])
 
 

@@ -61,7 +61,7 @@
   <div class="marco">
     <p class="romano-grande">Capítulo VII</p>
     <h1>Hacete socio</h1>
-    <p class="plomo">La cuota social paga la cancha, los viajes y las formativas. Ser socio de Lito es entrar a la cancha y tener voz en la asamblea.</p>
+    <p class="plomo">Ser de Lito es llevar el barrio con vos. Ser socio es ayudar a que esta historia siga.</p>
     <div class="filete-cap"></div>
   </div>
 </section>
@@ -73,9 +73,9 @@
     </figure>
     <div class="estandarte-texto">
       <p class="cintilla">El escudo</p>
-      <p class="estandarte-lema">Garra y Corazón</p>
-      <p class="prosa">El escudo no se hereda: se sostiene. La cuota social paga la cancha, los viajes y las formativas, que es lo que hace que esa camiseta salga a jugar cada domingo.</p>
-      <p><a class="boton boton--oro" href="#cuotas">Ver las cuotas</a></p>
+      <h2 class="estandarte-lema">El escudo no se hereda.<br>Se sostiene.</h2>
+      <p class="prosa">La cuota social paga la cancha, los viajes y las formativas, que es lo que hace que esa camiseta salga a jugar cada domingo.</p>
+      <p><a class="boton boton--oro" href="#cuotas">Quiero ser parte</a></p>
     </div>
   </div>
 </section>
@@ -83,24 +83,17 @@
 <section class="seccion" id="cuotas">
   <div class="marco">
     <p class="cintilla">Categorías</p>
-    <h2>Cuotas</h2>
-    <p class="aviso-formulario" style="margin:0 0 24px">Valores de referencia. Confirmar los importes vigentes con tesorería antes de publicar.</p>
-    <div class="rejilla rejilla--3">
-      <article class="tarjeta cuota">
-        <h3>Adherente</h3>
-        <p class="precio">$ 350<small>por mes · pesos uruguayos</small></p>
-        <ul><li>Carné de socio</li><li>Entrada a partidos de local</li><li>Novedades por correo</li></ul>
-      </article>
-      <article class="tarjeta cuota cuota--destacada">
-        <h3>Activo</h3>
-        <p class="precio">$ 600<small>por mes · pesos uruguayos</small></p>
-        <ul><li>Todo lo del adherente</li><li>Voz y voto en la asamblea</li><li>Descuento en indumentaria</li></ul>
-      </article>
-      <article class="tarjeta cuota">
-        <h3>Vitalicio</h3>
-        <p class="precio">$ 1.200<small>por mes · pesos uruguayos</small></p>
-        <ul><li>Todo lo del activo</li><li>Invitación a actos institucionales</li><li>Reconocimiento en la sede</li></ul>
-      </article>
+    <h2>Tu lugar en el club.</h2>
+    <p class="prosa">Cada socio ayuda a sostener la camiseta, el fútbol y el encuentro en el barrio.</p>
+    <div class="rejilla rejilla--3 pertenencia">
+      <article class="tarjeta"><p class="cintilla">01 · Identidad</p><h3>Llevar los colores</h3><p>Ser parte de una historia que empezó en 1917.</p></article>
+      <article class="tarjeta"><p class="cintilla">02 · Comunidad</p><h3>Sostener al club</h3><p>Acompañar a quienes hacen posible cada día de cancha.</p></article>
+      <article class="tarjeta"><p class="cintilla">03 · Futuro</p><h3>Escribir lo que viene</h3><p>Ayudar a construir el próximo capítulo de Lito.</p></article>
+    </div>
+    <div class="consulta-cuotas">
+      <h3>Categorías, beneficios y cuotas</h3>
+      <p>Escribinos para conocer las opciones de asociación y los importes vigentes.</p>
+      <a class="boton" href="mailto:socios@calito.uy?subject=Quiero%20ser%20socio%20de%20Lito">Consultar al club ↗</a>
     </div>
   </div>
 </section>
@@ -111,33 +104,28 @@
       <div>
         <p class="cintilla">Alta de socio</p>
         <h2>Sumate</h2>
-        <p class="prosa">Completá el formulario y el club se comunica para cerrar el alta y la forma de pago.</p>
-        <form class="formulario" data-sin-backend="marca@calito.uy">
-          <div class="campo-doble">
-            <div class="campo"><label for="nombre">Nombre y apellido</label><input id="nombre" name="nombre" type="text" autocomplete="name" required></div>
-            <div class="campo"><label for="documento">Documento</label><input id="documento" name="documento" type="text" inputmode="numeric" required></div>
-          </div>
+        <p class="prosa">Dejanos tu consulta en un correo. El club te orienta sobre la categoría, la cuota y los pasos para asociarte.</p>
+        <form class="formulario" data-sin-backend="socios@calito.uy">
+          <div class="campo"><label for="nombre">Nombre y apellido</label><input id="nombre" name="nombre" type="text" autocomplete="name" required></div>
           <div class="campo-doble">
             <div class="campo"><label for="correo">Correo</label><input id="correo" name="correo" type="email" autocomplete="email" required></div>
             <div class="campo"><label for="telefono">Teléfono</label><input id="telefono" name="telefono" type="tel" autocomplete="tel"></div>
           </div>
           <div class="campo">
             <label for="categoria">Categoría</label>
-            <select id="categoria" name="categoria"><option>Adherente</option><option>Activo</option><option>Vitalicio</option></select>
+            <select id="categoria" name="categoria"><option>Quiero conocer las categorías</option></select>
           </div>
           <div class="campo"><label for="mensaje">Comentario</label><textarea id="mensaje" name="mensaje"></textarea></div>
-          <button class="boton" type="submit">Enviar solicitud</button>
-          <p class="aviso-formulario" data-respuesta hidden></p>
-          <p class="aviso-formulario">Los datos se usan solo para gestionar el alta de socio.</p>
+          <button class="boton" type="submit">Preparar correo</button>
+          <p class="aviso-formulario">Se abrirá tu aplicación de correo para que revises y envíes el mensaje.</p>
+          <p class="aviso-formulario" data-respuesta role="status" hidden></p>
+          <p class="aviso-formulario">No incluyas documentos ni datos de pago en tu consulta.</p>
         </form>
       </div>
       <div>
         <figure class="foto-album" style="margin:0">
-          <img src="assets/img/fotos/hinchada.jpg" alt="Hinchada del Centro Atlético Lito" width="1200" height="800" loading="lazy">
+          <img src="assets/img/galeria/partido-4.jpg" alt="Jugadores de Lito en el abrazo del gol" width="1200" height="1500" loading="lazy">
         </figure>
-        <div class="nota" style="margin-top:20px">
-          El formulario todavía no está conectado a un backend. Ver README para publicar el Worker de Cloudflare.
-        </div>
       </div>
     </div>
   </div>

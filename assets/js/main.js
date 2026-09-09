@@ -30,7 +30,9 @@ const TEXTOS = {
     tablaCorta: ['#', 'Equipo', 'PJ', 'DG', 'Pts'],
     tablaLarga: ['#', 'Equipo', 'PJ', 'G', 'E', 'P', 'GF', 'GC', 'DG', 'Pts', 'Últimos 5'],
     fecha: 'fecha', actualizado: 'actualizado', fuente: 'fuente',
-    sinBackend: correo => `El formulario todavía no está conectado. Escribinos a ${correo}.`
+    asuntoSocio: 'Quiero ser socio de Lito',
+    asuntoConsulta: 'Consulta al Centro Atlético Lito',
+    correoListo: (enlace, correo) => `Tu mensaje está preparado. Revisalo y envialo desde tu aplicación de correo. Si no se abrió, <a href="${enlace}">abrí el correo acá</a> o escribí a ${correo}.`
   },
   en: {
     meses: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
@@ -46,7 +48,9 @@ const TEXTOS = {
     tablaCorta: ['#', 'Team', 'P', 'GD', 'Pts'],
     tablaLarga: ['#', 'Team', 'P', 'W', 'D', 'L', 'GF', 'GA', 'GD', 'Pts', 'Last 5'],
     fecha: 'round', actualizado: 'updated', fuente: 'source',
-    sinBackend: correo => `The form is not connected yet. Write to us at ${correo}.`
+    asuntoSocio: 'I want to join Lito',
+    asuntoConsulta: 'Enquiry to Centro Atlético Lito',
+    correoListo: (enlace, correo) => `Your message is ready. Check it and send it from your email app. If it did not open, <a href="${enlace}">open the email here</a> or write to ${correo}.`
   }
 };
 
@@ -479,10 +483,17 @@ function formularios() {
     f.addEventListener('submit', ev => {
       ev.preventDefault();
       const aviso = f.querySelector('[data-respuesta]');
-      if (aviso) {
-        aviso.hidden = false;
-        aviso.textContent = T.sinBackend(f.dataset.sinBackend || 'info@calito.uy');
-      }
+      if (!aviso) return;
+      /* Sin backend, el formulario arma el correo con lo que se escribió y
+         abre el cliente de mail: el mensaje sale igual, y el visitante ve lo
+         que manda antes de mandarlo. */
+      const correo = f.dataset.sinBackend || 'marca@calito.uy';
+      const cuerpo = Array.from(new FormData(f), ([campo, valor]) => `${campo}: ${valor}`).join('\n');
+      const asunto = f.querySelector('#categoria') ? T.asuntoSocio : T.asuntoConsulta;
+      const enlace = `mailto:${correo}?subject=${encodeURIComponent(asunto)}&body=${encodeURIComponent(cuerpo)}`;
+      aviso.hidden = false;
+      aviso.innerHTML = T.correoListo(esc(enlace), esc(correo));
+      window.location.href = enlace;
     });
   });
 }
@@ -502,3 +513,17 @@ tabla();
 plantel();
 noticias();
 galeria();
+
+/* Aparición al entrar en pantalla. Es un adorno: si no hay JavaScript, si el
+   navegador no trae IntersectionObserver o si el sistema pide menos
+   movimiento, el contenido se ve igual, porque la clase que lo atenúa la
+   agrega este mismo script. */
+if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) {
+  const observador = new IntersectionObserver(entradas => entradas.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('en-vista'); observador.unobserve(e.target); }
+  }), { threshold: 0.12 });
+  document.querySelectorAll('.timeline-visual li, .campeon, .renders, .momento, .barrio-panorama').forEach(n => {
+    n.classList.add('revelar');
+    observador.observe(n);
+  });
+}
