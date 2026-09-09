@@ -1,5 +1,5 @@
 {
-  "_nota": "Tabla del Clausura cargada a mano. La planilla de origen no publica ganados, empatados ni perdidos: se deducen de los puntos y del porcentaje de victorias, y el cálculo cierra en las dieciocho filas. Quedan tres nombres cortados por completar: filas 9, 12 y 14.",
+  "_nota": "Tabla del Clausura cargada a mano. La planilla de origen no publica ganados, empatados ni perdidos: se deducen de los puntos y del porcentaje de victorias, y el cálculo cierra en las dieciocho filas. Los nombres de las filas 12 y 14 quedan como los publica la fuente. Falta completar el de la fila 9.",
   "ejemplo": false,
   "torneo": "Primera Divisional C · Clausura 2026",
   "fecha_jugada": 7,
