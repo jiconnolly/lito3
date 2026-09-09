@@ -356,6 +356,56 @@ def pagina_portada():
         </li>""" for h, t, r, a in CAPITULOS)
 
     return f"""
+<main id="contenido" class="portada-editorial">
+<section class="portada-viva" aria-labelledby="titulo-portada">
+  <img class="portada-foto" src="assets/img/galeria/partido-5.jpg" alt="El plantel de Lito sale del túnel hacia la cancha" width="1200" height="1500" fetchpriority="high">
+  <div class="portada-cornisa">
+    <span>El libro del club · Tomo 1917</span>
+    <span class="portada-cornisa-fin">
+      <a class="idioma idioma--portada" href="en/index.html" hreflang="en" lang="en" aria-label="Read this page in English" data-idioma>EN</a>
+      <a href="socios.html">Hacete socio ↗</a>
+    </span>
+  </div>
+  <div class="portada-relato">
+    <img class="portada-escudo" src="assets/img/escudo.png" alt="Escudo del Centro Atlético Lito" width="720" height="879">
+    <p class="cintilla">1917 · Montevideo</p>
+    <h1 id="titulo-portada"><span>Centro Atlético</span>Lito</h1>
+    <p class="portada-lema">Garra y Corazón</p>
+    <p class="portada-bajada">Un barrio. Una camiseta.<br>Una historia que sigue en la cancha.</p>
+    <div class="acciones">
+      <a class="boton" href="#libro" data-entrada>Abrir el libro <span aria-hidden="true">↓</span></a>
+      <a class="portada-fixture" href="fixture.html">Fixture y resultados ↗</a>
+    </div>
+  </div>
+  <div class="portada-pie">
+    <span>De Arroyo Seco desde 1917.</span>
+    <span>Archivo histórico / Fútbol vivo</span>
+  </div>
+</section>
+
+<section class="actualidad-portada" aria-label="Actualidad deportiva">
+  <div class="marco">
+    <div class="encabezado-seccion">
+      <div>
+        <p class="cintilla">El club, hoy</p>
+        <h2>La próxima página<br>se juega en la cancha.</h2>
+      </div>
+      <nav class="atajos" aria-label="Información deportiva">
+        <a href="fixture.html">Fixture</a>
+        <a href="fixture.html#tabla">Tabla</a>
+        <a href="fixture.html#resultados">Resultados</a>
+      </nav>
+    </div>
+    <div data-partidos="proximo"><p>Consultá la programación en <a href="fixture.html">Fixture y tabla</a>.</p></div>
+  </div>
+</section>
+
+<section id="libro" class="entrada-indice">
+  <p class="cintilla">Ocho capítulos. Una misma camiseta.</p>
+  <h2>Entrá en nuestra historia.</h2>
+  <p>Elegí un capítulo del libro.</p>
+</section>
+
 <div class="escena" data-escena>
   <button class="abrir-libro" type="button" data-abrir>Abrir el libro del club</button>
   <div class="camara" data-camara>
@@ -380,7 +430,6 @@ def pagina_portada():
         <span>Tomo del club · 2026</span>
         <a href="socios.html">Hacete socio</a>
       </p>
-      <p class="indice-idioma"><a href="en/index.html" hreflang="en" lang="en" aria-label="Read this page in English" data-idioma>English</a></p>
       <div class="marcas">
         <img src="assets/img/marcas/auf.png" alt="Asociación Uruguaya de Fútbol" width="111" height="180" loading="lazy">
         <img src="assets/img/marcas/mgr.png" alt="MGR Sport" width="342" height="110" loading="lazy">
@@ -1137,7 +1186,7 @@ def main():
     paginas["index.html"] = (
         encabezado_html("El libro del club", "Sitio oficial del Centro Atlético Lito: historia, plantel, fixture, noticias y socios. Montevideo, desde 1917.", "")
         + pagina_portada()
-        + '\n<script src="assets/js/main.js"></script>\n</body>\n</html>\n'
+        + '\n</main>\n<script src="assets/js/main.js"></script>\n</body>\n</html>\n'
     )
 
     for archivo, titulo, _romano, _apunte in CAPITULOS:

@@ -15,28 +15,6 @@ papel y el azul profundo de cuero. La única adición al sistema tipográfico es
 **EB Garamond**, para la prosa larga; los datos, tablas y formularios siguen en
 Manrope, y los titulares en Oswald, como manda el manual.
 
-El sitio publicado vive en <https://jiconnolly.github.io/lito3/>. Este repo
-tiene el sitio generado **y** la fuente que lo genera: se edita `build.py`, se
-corre `python3 build.py` y se commitean los HTML resultantes.
-
-## Dos idiomas
-
-`build.py` escribe cada página dos veces: español en la raíz e inglés en `en/`.
-La traducción no está en el código sino en `data/i18n-en.json`, una tabla de
-frase a frase; el generador recorre el HTML y cambia sólo los nodos de texto y
-los atributos que se leen (`alt`, `title`, `placeholder`, `aria-label` y los
-`content` de las metas). Al terminar avisa qué frases quedaron sin traducir,
-así que agregar contenido nuevo no puede romper la versión inglesa en silencio.
-
-La letra del himno queda en español a propósito: es la canción del club.
-
-Los textos que escribe el JavaScript (meses, "Cargando…", los puestos del
-plantel, los encabezados de la tabla) viven en `TEXTOS` dentro de
-`assets/js/main.js`, porque no pasan por el generador.
-
-El cambio de idioma es un enlace normal a la misma página en el otro idioma:
-`EN` en la cornisa y `English` al pie de la guarda del libro.
-
 ## Estructura
 
 ```
@@ -60,9 +38,7 @@ assets/img/historia Archivo y retratos históricos
 assets/img/proyecto El predio actual y los tres renders del proyecto
 data/*.json         Datos editables
 worker/api.js       Worker de Cloudflare (todavía sin publicar)
-en/                 Las mismas nueve páginas, en inglés
-data/i18n-en.json   Tabla de traducción, frase por frase
-build.py            Regenera las nueve páginas en los dos idiomas
+build.py            Regenera las nueve páginas desde plantillas compartidas
 ```
 
 Las páginas comparten cabecera y pie. **Para cambiar el menú, el pie, los textos

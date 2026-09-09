@@ -147,6 +147,129 @@ p { margin: 0 0 1.05em; max-width: 66ch; }
 .claro a { color: var(--oro); }
 .claro a:hover { color: var(--hueso); }
 
+
+/* ============================================================
+   PORTADA EDITORIAL — la pantalla azul, antes del libro
+   El visitante llega a una portada de revista; el tomo con el índice
+   espera más abajo, a un scroll de distancia.
+   ============================================================ */
+
+.portada-viva {
+  position: relative; isolation: isolate;
+  background: var(--azul-profundo); color: var(--hueso);
+  min-height: min(960px, 100svh);
+  overflow: hidden;
+  padding: 0 max(6vw, 24px);
+  display: flex; flex-direction: column;
+}
+.portada-foto {
+  position: absolute; right: 0; top: 0; width: 58%; height: 100%;
+  object-fit: cover; object-position: 50% 42%; z-index: -3;
+}
+/* El azul avanza sobre la foto y le deja aire al texto. */
+.portada-viva::before {
+  content: ""; position: absolute; inset: 0; z-index: -2;
+  background:
+    linear-gradient(90deg, #0f1a40 0%, #0f1a40 31%, rgba(15, 26, 64, .88) 44%, rgba(15, 26, 64, .12) 75%),
+    linear-gradient(0deg, rgba(7, 14, 35, .85), transparent 25%);
+}
+/* El filete rojo del margen, como el canto de un libro. */
+.portada-viva::after {
+  content: ""; position: absolute; top: 0; bottom: 0; left: 22px;
+  width: 6px; background: var(--rojo); z-index: -1;
+}
+
+.portada-cornisa, .portada-pie {
+  display: flex; justify-content: space-between; gap: 20px;
+  font: 10px/1.6 var(--mono); letter-spacing: .15em; text-transform: uppercase;
+}
+.portada-cornisa { padding: 25px 0; border-bottom: 1px solid rgba(255, 255, 255, .19); }
+.portada-cornisa a { color: var(--hueso); text-decoration: none; }
+.portada-cornisa a:hover { color: var(--oro); }
+.portada-cornisa-fin { display: flex; align-items: center; gap: 16px; }
+.idioma--portada {
+  color: var(--hueso); border-color: rgba(255, 255, 255, .3);
+  padding: 4px 9px; font-size: 9.5px;
+}
+.idioma--portada:hover { color: var(--oro); border-color: var(--oro); }
+
+.portada-relato {
+  padding: clamp(22px, 4vh, 48px) 0; flex: 1;
+  display: flex; flex-direction: column; justify-content: center; align-items: flex-start;
+}
+.portada-escudo { width: clamp(68px, 8vw, 112px); height: auto; margin-bottom: 18px; }
+.portada-relato .cintilla { color: var(--hueso); font-size: 11px; }
+.portada-relato h1 {
+  font-size: clamp(100px, 12vw, 182px); line-height: .98;
+  letter-spacing: -.035em; margin-bottom: 14px; color: var(--hueso);
+}
+.portada-relato h1 span {
+  display: block; font-size: clamp(22px, 2.8vw, 38px);
+  line-height: 1.5; letter-spacing: .04em;
+}
+.portada-lema { font: italic clamp(27px, 3vw, 40px)/1.2 var(--prosa); margin-bottom: 20px; color: var(--oro); }
+.portada-bajada { color: #d9dce5; font-size: 14px; line-height: 1.7; }
+.portada-relato .boton { background: var(--rojo); color: var(--hueso); border-color: var(--rojo); }
+.portada-fixture { color: var(--hueso); font-size: 12px; padding: 13px 0; text-decoration: none; }
+.portada-fixture:hover { color: var(--oro); }
+.portada-pie { padding: 18px 0; border-top: 1px solid rgba(255, 255, 255, .19); }
+
+/* El presente, apenas se baja de la portada. */
+.actualidad-portada { padding: clamp(36px, 5vw, 64px) 0; background: var(--hueso); }
+.actualidad-portada h2 { font-size: clamp(27px, 3.4vw, 44px); }
+.encabezado-seccion {
+  display: flex; align-items: flex-end; justify-content: space-between;
+  gap: 22px; flex-wrap: wrap; margin-bottom: 28px;
+}
+.encabezado-seccion h2 { margin: 0; }
+.atajos { display: flex; flex-wrap: wrap; gap: 8px; }
+.atajos a {
+  min-height: 44px; display: inline-flex; align-items: center;
+  padding: 10px 18px; border: 1px solid rgba(28, 44, 107, .19);
+  font-family: var(--display); font-size: 12px; font-weight: 700;
+  letter-spacing: .08em; text-transform: uppercase;
+  color: var(--azul); text-decoration: none;
+}
+.atajos a:hover { background: var(--azul); color: var(--hueso); }
+
+/* La bisagra: acá empieza el libro. */
+.entrada-indice {
+  padding: 45px 24px 12px; text-align: center;
+  color: var(--hueso); background: #17110c;
+  scroll-margin-top: 0;
+}
+.entrada-indice .cintilla { color: var(--hueso); justify-content: center; }
+.entrada-indice h2 { font-size: clamp(32px, 4vw, 54px); color: var(--hueso); }
+.entrada-indice p { margin-left: auto; margin-right: auto; color: rgba(244, 239, 230, .78); }
+.entrada-indice + .escena { min-height: max(800px, 100svh); }
+
+@media (min-width: 1600px) {
+  .portada-viva { padding-left: calc((100vw - 1400px) / 2); padding-right: calc((100vw - 1400px) / 2); }
+}
+@media (max-width: 1000px) {
+  .portada-relato h1 { font-size: 120px; }
+}
+@media (max-width: 760px) {
+  .portada-viva { min-height: 100svh; padding: 0 26px; }
+  .portada-viva::after { left: 0; width: 4px; }
+  .portada-foto { width: 100%; object-position: 65% 40%; }
+  .portada-viva::before {
+    background:
+      linear-gradient(90deg, rgba(15, 26, 64, .95), rgba(15, 26, 64, .48) 80%),
+      linear-gradient(0deg, #0f1a40, transparent 65%);
+  }
+  .portada-cornisa { font-size: 8px; padding: 20px 0; letter-spacing: .06em; }
+  .portada-relato { padding: 28px 0; }
+  .portada-relato h1 { font-size: clamp(100px, 25vw, 145px); }
+  .portada-escudo { width: 72px; }
+  .portada-relato h1 span { font-size: 25px; }
+  .portada-bajada { font-size: 13px; }
+  .portada-relato .acciones { gap: 8px 20px; }
+  .portada-pie { font-size: 9px; }
+  .portada-pie span:last-child { display: none; }
+  .actualidad-portada .encabezado-seccion { gap: 18px; }
+}
+
 /* ============================================================
    LA TAPA — sólo en la portada
    ============================================================ */
