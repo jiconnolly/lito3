@@ -1,0 +1,39 @@
+{
+  "_nota": "TEXTOS DE EJEMPLO. Reemplazar por notas reales del club antes de publicar.",
+  "ejemplo": true,
+  "actualizado": "2026-05-10",
+  "notas": [
+    {
+      "fecha": "2026-05-10",
+      "titulo": "Título de la nota principal",
+      "bajada": "Bajada de una o dos líneas. Frases cortas, una idea por pieza, datos antes que adjetivos.",
+      "etiqueta": "Primer equipo",
+      "imagen": "assets/img/fotos/noticia-1.jpg",
+      "enlace": ""
+    },
+    {
+      "fecha": "2026-05-06",
+      "titulo": "Título de la segunda nota",
+      "bajada": "Bajada de ejemplo para el listado de noticias del club.",
+      "etiqueta": "Institucional",
+      "imagen": "assets/img/fotos/noticia-2.jpg",
+      "enlace": ""
+    },
+    {
+      "fecha": "2026-05-02",
+      "titulo": "Título de la tercera nota",
+      "bajada": "Bajada de ejemplo para el listado de noticias del club.",
+      "etiqueta": "Formativas",
+      "imagen": "assets/img/fotos/noticia-3.jpg",
+      "enlace": ""
+    },
+    {
+      "fecha": "2026-04-28",
+      "titulo": "Título de la cuarta nota",
+      "bajada": "Bajada de ejemplo para el listado de noticias del club.",
+      "etiqueta": "Socios",
+      "imagen": "assets/img/fotos/noticia-4.jpg",
+      "enlace": ""
+    }
+  ]
+}

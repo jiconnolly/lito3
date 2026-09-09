@@ -1,0 +1,1583 @@
+/* ============================================================
+   CENTRO ATLÉTICO LITO — hoja de estilos única
+   "El libro del club": la web como un tomo encuadernado de 1917.
+
+   Paleta y tipografías del Manual de Marca, edición 2026 (v1.0).
+   El hueso del manual (#F4EFE6) hace de papel; el azul profundo,
+   de cuero; el oro, de grabado. Proporción 55 azul · 25 hueso ·
+   12 rojo · 8 oro, leída sobre el conjunto tapa + hojas.
+   ============================================================ */
+
+:root {
+  /* Paleta del manual (cap. 08) */
+  --azul: #1C2C6B;
+  --rojo: #D12C3E;
+  --oro: #D4A85A;
+  --hueso: #F4EFE6;
+
+  --azul-profundo: #0F1A40;
+  --azul-80: #16245A;
+  --rojo-80: #B72335;
+  --oro-80: #B98E40;
+  --hueso-80: #E9E2D2;
+  --tinta: #0C1024;
+
+  /* Roles del libro */
+  --papel: var(--hueso);
+  --papel-sombra: var(--hueso-80);
+  --cuero: var(--azul-profundo);
+  --cuero-alto: var(--azul-80);
+
+  /* Neutro cálido, sesgado hacia el papel: reglas, folios, texto de apoyo */
+  --sepia: #8A7E68;
+
+  /* Estado de un resultado. No son colores de marca: son semánticos, y por eso
+     viven fuera de la paleta del manual. */
+  --ganado: #2F6B4A;
+  --empatado: #8A8681;
+  --perdido: var(--rojo);
+  --sepia-suave: rgba(138, 126, 104, .34);
+
+  --display: 'Oswald', 'Arial Narrow', system-ui, sans-serif;
+  --prosa: 'EB Garamond', Georgia, 'Times New Roman', serif;
+  --texto: 'Manrope', system-ui, -apple-system, Segoe UI, sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --marco: 1100px;
+  --radio: 3px;
+  --encuadernacion: 26px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--papel);
+  color: var(--tinta);
+  font-family: var(--texto);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+a { color: var(--azul); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { color: var(--rojo); }
+
+:focus-visible { outline: 3px solid var(--oro); outline-offset: 3px; }
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+.saltar {
+  position: absolute; left: -9999px; top: 0; z-index: 100;
+  background: var(--oro); color: var(--tinta); padding: 10px 16px;
+  font-family: var(--mono); font-size: 12px; letter-spacing: .18em; text-transform: uppercase;
+}
+.saltar:focus { left: 8px; top: 8px; }
+
+.marco { width: 100%; max-width: var(--marco); margin: 0 auto; padding: 0 26px; }
+
+/* ---------- Grano del papel ----------
+   Textura generada aparte; el degradado es el respaldo si no carga. */
+.papel-grano {
+  background-color: var(--papel);
+  background-image:
+    radial-gradient(circle at 18% 12%, rgba(138, 126, 104, .07), transparent 42%),
+    radial-gradient(circle at 82% 78%, rgba(138, 126, 104, .06), transparent 46%);
+}
+
+/* ---------- Tipografía ---------- */
+
+h1, h2, h3, h4 {
+  font-family: var(--display);
+  font-weight: 600;
+  line-height: 1.04;
+  text-transform: uppercase;
+  letter-spacing: -0.005em;
+  text-wrap: balance;
+  margin: 0 0 .45em;
+}
+
+h1 { font-size: clamp(36px, 5.6vw, 66px); }
+h2 { font-size: clamp(26px, 3.4vw, 42px); }
+h3 { font-size: clamp(19px, 2vw, 26px); }
+h4 { font-size: 17px; letter-spacing: .03em; }
+
+p { margin: 0 0 1.05em; max-width: 66ch; }
+
+/* La prosa del libro va en serif; los datos y la interfaz, en Manrope. */
+.prosa, .prosa p, .plomo {
+  font-family: var(--prosa);
+  font-size: 19px;
+  line-height: 1.62;
+}
+.plomo { font-size: clamp(20px, 1.9vw, 25px); line-height: 1.5; }
+.prosa em { color: var(--sepia); }
+
+.capitular::first-letter {
+  float: left;
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 4.1em;
+  line-height: .82;
+  padding: .06em .12em 0 0;
+  color: var(--rojo);
+}
+
+.cintilla {
+  font-family: var(--mono);
+  font-size: 11.5px; font-weight: 500;
+  letter-spacing: .2em; text-transform: uppercase;
+  color: var(--azul);
+  margin: 0 0 14px;
+  display: flex; align-items: center; gap: 10px;
+}
+.cintilla::before { content: ""; width: 24px; height: 2px; background: var(--rojo); flex: none; }
+
+.mono { font-family: var(--mono); font-size: 11.5px; letter-spacing: .18em; text-transform: uppercase; }
+
+.claro { color: var(--hueso); }
+.claro .cintilla { color: var(--oro); }
+.claro a { color: var(--oro); }
+.claro a:hover { color: var(--hueso); }
+
+/* ============================================================
+   LA TAPA — sólo en la portada
+   ============================================================ */
+
+.escena {
+  position: relative;
+  min-height: 100svh;
+  overflow: hidden;
+  perspective: 1800px;
+  perspective-origin: 50% 44%;
+  background: #17110c;
+}
+
+/* Al elegir un capítulo: se pasa la hoja, la cámara entra y el papel llena la
+   pantalla. El capítulo arranca del mismo color, así la costura no se ve. */
+.escena.pasando .camara {
+  transform: translate(-4%, -13%) translateZ(470px);
+  transition: transform .66s cubic-bezier(.42, 0, .62, 1);
+}
+.escena.pasando .hoja-vuelta {
+  opacity: 1;
+  animation: pasar-hoja .52s cubic-bezier(.42, 0, .72, 1) forwards;
+}
+.escena.pasando::before {
+  content: "";
+  position: absolute; inset: 0; z-index: 8; pointer-events: none;
+  background: var(--papel);
+  opacity: 0;
+  animation: velo-papel .28s ease .34s forwards;
+}
+@keyframes pasar-hoja {
+  from { transform: rotateY(0deg); }
+  to   { transform: rotateY(-148deg); }
+}
+@keyframes velo-papel { to { opacity: 1; } }
+
+/* El capítulo aparece desde ese mismo papel */
+@keyframes aparecer-hoja {
+  from { opacity: 0; transform: scale(.988); }
+  to   { opacity: 1; transform: none; }
+}
+.hoja { animation: aparecer-hoja .34s ease both; }
+
+/* Con el libro cerrado, toda la escena es el disparador: no hace falta
+   ningún cartel que explique dónde tocar. */
+.escena.lejos { cursor: pointer; }
+
+/* La escena se abre con un toque en cualquier parte; esto es para el teclado.
+   Sólo se ve al enfocarlo, como el salto al contenido. */
+.abrir-libro {
+  position: absolute; left: -9999px; top: 16px; z-index: 20;
+  background: var(--oro); color: var(--tinta); border: 0;
+  padding: 10px 16px; cursor: pointer;
+  font-family: var(--mono); font-size: 11px; letter-spacing: .18em; text-transform: uppercase;
+}
+.abrir-libro:focus { left: 16px; }
+
+/* La cámara: mesa y libro se mueven juntos, como una sola toma.
+   Cerrado, la toma está lejos y de costado; al abrir, se acerca y se endereza. */
+.camara {
+  position: absolute; inset: 0;
+  transform-style: preserve-3d;
+  transform: translate(9%, -13%) translateZ(215px);
+  transition: transform 1.5s cubic-bezier(.32, .68, .16, 1);
+}
+.camara.lejos {
+  transform: translateZ(-200px) rotateX(10deg) rotateY(-15deg) rotateZ(-1deg);
+}
+
+/* El plano de la mesa. Es más grande que el encuadre para que al girar la toma
+   nunca se vea su borde, pero la foto se mide contra la pantalla (vh), no
+   contra el plano: así el encuadre no depende del tamaño del plano. */
+.tablero {
+  position: absolute; inset: -45%;
+  background-color: #17110c;
+  background-image: url('../img/texturas/fondo.jpg');
+  background-size: auto 140vh;
+  background-position: 44% 40%;
+  background-repeat: no-repeat;
+  /* Profundidad real: el fondo está 520 px detrás del libro, así que al
+     acercarse la toma el libro crece más rápido que el fondo. La escala
+     compensa lo que la perspectiva le quita a esa distancia. */
+  transform: translateZ(-520px) scale(1.33);
+}
+
+/* Luz y viñeta: van sobre el encuadre, no sobre el plano */
+.escena::after {
+  content: "";
+  position: absolute; inset: 0; z-index: 3; pointer-events: none;
+  background:
+    radial-gradient(ellipse 50% 42% at 50% 46%, rgba(255, 214, 150, .08), transparent 72%),
+    radial-gradient(ellipse 86% 84% at 50% 48%, transparent 38%, rgba(0, 0, 0, .66) 100%);
+}
+
+/* La mesa sostiene el libro y su sombra proyectada */
+.mesa {
+  position: absolute; left: 58%; top: 62%;
+  width: min(396px, 78vw); aspect-ratio: 3 / 4;
+  transform: translate(-50%, -50%);
+  transform-style: preserve-3d;
+}
+
+.sombra {
+  position: absolute; left: -14%; right: -14%; bottom: -7%; height: 26%;
+  background: radial-gradient(ellipse at 50% 62%, rgba(0, 0, 0, .78), rgba(0, 0, 0, .34) 46%, transparent 72%);
+  filter: blur(17px);
+  transform: translateZ(-12px);
+  transition: transform 1.05s cubic-bezier(.3, .7, .2, 1), opacity 1.05s ease;
+  pointer-events: none;
+}
+.escena.lejos .sombra {
+  transform: translateZ(-12px) translate(4%, 1%) scale(1.06, 1);
+  opacity: .92;
+}
+
+/* El libro queda quieto sobre la barra; el desvío de la toma lo pone la cámara. */
+.libro {
+  --grosor: 58px;
+  position: absolute; inset: 0;
+  transform-style: preserve-3d;
+}
+
+.hoja-vuelta {
+  position: absolute; inset: 0; z-index: 2;
+  transform-origin: left center;
+  transform: rotateY(0deg);
+  opacity: 0;
+  border-radius: 3px 6px 6px 3px;
+  background-color: var(--papel);
+  background-image:
+    linear-gradient(90deg, rgba(12, 16, 36, .22), transparent 22%, transparent 78%, rgba(12, 16, 36, .1)),
+    url('../img/texturas/papel.jpg');
+  background-size: cover, 520px 520px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, .4);
+}
+
+/* ---- El cuerpo del tomo: caras reales, no un canto dibujado ----
+   Son decorativas: nunca deben interceptar un click del índice. */
+.cara-lomo, .cara-cabeza, .cara-canto, .contratapa, .hoja-vuelta { pointer-events: none; }
+
+/* Lomo, con los nervios de la encuadernación */
+.cara-lomo {
+  position: absolute; left: 0; top: 0; bottom: 0; width: var(--grosor);
+  transform-origin: left center;
+  transform: rotateY(90deg);
+  background-color: var(--cuero);
+  background-image:
+    linear-gradient(90deg, rgba(0, 0, 0, .5), rgba(255, 255, 255, .04) 45%, rgba(0, 0, 0, .42)),
+    url('../img/texturas/lomo.jpg');
+  background-size: cover;
+  background-position: center;
+  box-shadow: inset 0 0 22px rgba(0, 0, 0, .45);
+}
+
+/* Canto de cabeza: las hojas vistas desde arriba */
+.cara-cabeza {
+  position: absolute; left: 0; right: 0; top: 0; height: var(--grosor);
+  transform-origin: center top;
+  transform: rotateX(-90deg);
+  background-image:
+    repeating-linear-gradient(90deg,
+      rgba(108, 92, 68, .5) 0 1px,
+      rgba(232, 224, 205, .45) 1px 2px,
+      transparent 2px 4px),
+    linear-gradient(180deg, #e6ddc5, #cabda2 58%, #a3957c);
+  box-shadow: inset 0 -6px 12px rgba(0, 0, 0, .35);
+}
+
+/* Canto delantero */
+.cara-canto {
+  position: absolute; right: 0; top: 0; bottom: 0; width: var(--grosor);
+  transform-origin: right center;
+  transform: rotateY(-90deg);
+  background-image:
+    repeating-linear-gradient(180deg,
+      rgba(108, 92, 68, .55) 0 1px,
+      rgba(232, 224, 205, .5) 1px 2px,
+      transparent 2px 4px),
+    linear-gradient(90deg, #a89b80 0%, #ded5be 34%, #efe8d6 52%, #cfc3a8 78%, #a1937a 100%);
+  box-shadow: inset 0 12px 20px -10px rgba(0, 0, 0, .55), inset 0 -12px 20px -10px rgba(0, 0, 0, .55);
+}
+
+/* Contratapa, para que el tomo no quede hueco al abrirse */
+.contratapa {
+  position: absolute; inset: 0;
+  transform: translateZ(calc(var(--grosor) * -1));
+  background-color: var(--cuero);
+  background-image:
+    linear-gradient(160deg, rgba(8, 14, 38, .55), rgba(4, 7, 20, .72)),
+    url('../img/texturas/tapa.jpg');
+  background-size: cover;
+  border-radius: 3px 8px 8px 3px;
+  box-shadow: 0 38px 60px rgba(0, 0, 0, .6);
+}
+
+.tapa {
+  position: absolute; inset: 0; z-index: 3;
+  transform-origin: left center;
+  transform-style: preserve-3d;
+  transition: transform 1.35s cubic-bezier(.32, .72, .2, 1) 1.05s;
+  cursor: pointer;
+  border: 0; padding: 0; margin: 0;
+  background: transparent;
+  display: block; width: 100%;
+}
+
+.cara {
+  position: absolute; inset: 0;
+  backface-visibility: hidden;
+  transform: translateZ(.5px);
+  border-radius: 3px 8px 8px 3px;
+  overflow: hidden;
+}
+
+.cara-frente {
+  background-color: var(--cuero);
+  background-image:
+    radial-gradient(ellipse at 76% 12%, rgba(255, 236, 200, .13), transparent 52%),
+    linear-gradient(160deg, rgba(255, 255, 255, .05), rgba(6, 10, 28, .2) 70%, rgba(4, 7, 20, .36)),
+    url('../img/texturas/tapa.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow:
+    inset -12px 0 30px rgba(0, 0, 0, .38),
+    inset 0 0 70px rgba(0, 0, 0, .22),
+    0 30px 66px rgba(0, 0, 0, .62);
+  display: grid;
+  /* El filete dorado ya viene impreso en la foto: el contenido va adentro. */
+  grid-template-rows: 1fr auto auto 1fr;
+  justify-items: center;
+  align-items: center;
+  padding: 13% 14% 12.5%;
+  text-align: center;
+}
+
+.grabado-arriba, .grabado-abajo {
+  position: relative; z-index: 2; margin: 0;
+  font-family: var(--display); font-weight: 500;
+  color: var(--oro);
+  text-transform: uppercase;
+}
+.grabado-arriba {
+  align-self: end;
+  margin-bottom: clamp(12px, 2.4vw, 20px);
+  font-size: clamp(17px, 3.2vw, 23px);
+  /* El interletrado cede para que entre en una línea a este cuerpo. */
+  letter-spacing: .17em; padding-left: .17em;
+  white-space: nowrap;
+  line-height: 1.05;
+  text-shadow:
+    0 -1px 0 rgba(255, 240, 210, .34),
+    0 1px 1px rgba(0, 0, 0, .78),
+    0 2px 3px rgba(0, 0, 0, .5);
+}
+.grabado-arriba .nombre {
+  display: block;
+  margin-top: clamp(4px, .9vw, 8px);
+  font-weight: 600;
+  font-size: clamp(34px, 6.6vw, 50px);
+  letter-spacing: .13em; padding-left: .13em;
+}
+
+.grabado-abajo {
+  align-self: start;
+  margin-top: clamp(9px, 1.5vw, 14px);
+  font-family: var(--mono); font-size: clamp(9px, 1.5vw, 11px);
+  letter-spacing: .34em; padding-left: .34em;
+  color: rgba(212, 168, 90, .82);
+  text-shadow: 0 -1px 0 rgba(255, 240, 210, .26), 0 1px 1px rgba(0, 0, 0, .72);
+}
+
+.lema {
+  position: relative; z-index: 2;
+  margin: clamp(14px, 2.4vw, 20px) 0 0;
+  display: flex; align-items: center; gap: clamp(9px, 1.6vw, 14px);
+  font-family: var(--prosa); font-style: italic; font-weight: 500;
+  font-size: clamp(16px, 2.9vw, 24px);
+  letter-spacing: .045em;
+  color: var(--oro);
+  text-shadow:
+    0 -1px 0 rgba(255, 240, 210, .3),
+    0 1px 1px rgba(0, 0, 0, .8),
+    0 0 10px rgba(212, 168, 90, .14);
+  white-space: nowrap;
+}
+.lema::before, .lema::after {
+  content: ""; width: clamp(16px, 3.4vw, 30px); height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212, 168, 90, .75), transparent);
+}
+
+.escudo-tapa {
+  position: relative; z-index: 2;
+  width: clamp(120px, 28vw, 176px);
+  transition: transform .5s ease;
+}
+.tapa:hover .escudo-tapa { transform: translateY(-4px) scale(1.02); }
+
+/* Guarda: el reverso de la tapa */
+.cara-dorso {
+  transform: rotateY(180deg) translateZ(.5px);
+  display: grid;
+  place-items: center;
+  padding: clamp(20px, 4vw, 32px) clamp(18px, 3.6vw, 30px);
+  background-color: var(--papel-sombra);
+  background-image:
+    radial-gradient(ellipse 76% 68% at 50% 48%, rgba(244, 239, 230, .82), transparent 72%),
+    repeating-linear-gradient(45deg, rgba(28, 44, 107, .06) 0 2px, transparent 2px 15px),
+    repeating-linear-gradient(-45deg, rgba(209, 44, 62, .04) 0 2px, transparent 2px 15px),
+    url('../img/texturas/papel.jpg');
+  background-size: auto, auto, auto, 460px 460px;
+  box-shadow: inset 0 0 60px rgba(138, 126, 104, .5);
+}
+
+/* Por defecto el libro está abierto; JS agrega .cerrado para la ceremonia. */
+.tapa { transform: rotateY(-162deg); pointer-events: none; }
+.libro.cerrado .tapa { transform: none; pointer-events: auto; transition-delay: 0s; }
+.libro:not(.cerrado) .cara-frente { box-shadow: none; }
+
+/* La hoja del índice, debajo de la tapa */
+.cancion {
+  position: relative; z-index: 2;
+  text-align: center;
+  color: var(--tinta);
+  max-width: 30ch;
+}
+.cancion-rotulo {
+  margin: 0 0 clamp(8px, 1.6vw, 13px);
+  font-family: 'Pinyon Script', 'EB Garamond', serif;
+  font-size: clamp(20px, 4vw, 30px);
+  line-height: 1;
+  color: var(--azul);
+}
+.cancion-rotulo::after {
+  content: "";
+  display: block; width: 46%; height: 1px; margin: clamp(7px, 1.4vw, 11px) auto 0;
+  background: linear-gradient(90deg, transparent, var(--oro-80), transparent);
+}
+.cancion-letra p {
+  margin: 0 0 clamp(9px, 1.8vw, 14px);
+  max-width: none;
+  font-family: var(--prosa);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(11.5px, 2.3vw, 15px);
+  line-height: 1.62;
+  color: rgba(12, 16, 36, .88);
+}
+.cancion-letra p:last-child { margin-bottom: 0; }
+/* La inicial, en la misma mano que el rótulo */
+.inicial {
+  font-family: 'Pinyon Script', 'EB Garamond', serif;
+  font-style: normal;
+  font-size: 2.1em;
+  line-height: .7;
+  color: var(--rojo);
+  padding-right: .04em;
+  vertical-align: -.18em;
+}
+.cancion-pie {
+  margin: clamp(10px, 2vw, 16px) 0 0;
+  max-width: none;
+  font-family: var(--mono);
+  font-size: clamp(7px, 1.4vw, 9px);
+  letter-spacing: .16em; text-transform: uppercase;
+  color: var(--sepia);
+}
+
+.hoja-indice {
+  position: absolute; inset: 0; z-index: 1;
+  background-color: var(--papel);
+  background-image:
+    radial-gradient(circle at 20% 10%, rgba(138, 126, 104, .09), transparent 45%),
+    radial-gradient(circle at 85% 85%, rgba(138, 126, 104, .08), transparent 48%),
+    url('../img/texturas/papel.jpg');
+  background-size: cover, cover, 520px 520px;
+  background-repeat: no-repeat, no-repeat, repeat;
+  border-radius: 3px 6px 6px 3px;
+  padding: clamp(20px, 4vw, 30px) clamp(16px, 3.2vw, 24px) clamp(16px, 2.6vw, 22px) clamp(26px, 4.4vw, 38px);
+  overflow: auto;
+  box-shadow: inset 22px 0 30px -18px rgba(12, 16, 36, .62);
+  transition: opacity .55s ease 1.95s;
+}
+
+.libro.cerrado .hoja-indice { opacity: 0; transition-delay: 0s; }
+
+.indice-pie {
+  display: flex; justify-content: space-between; align-items: baseline; gap: 12px;
+  margin: 16px 0 0; padding-top: 10px; border-top: 1px solid var(--sepia-suave);
+  font-family: var(--mono); font-size: 9.5px; letter-spacing: .2em; text-transform: uppercase;
+  color: var(--sepia);
+}
+.indice-pie a { color: var(--rojo); text-decoration: none; border-bottom: 1px solid currentColor; }
+
+/* Marcas al pie del índice. Van sobre blanco y en multiply: el papel se ve a
+   través y quedan impresas en la hoja, no pegadas encima. */
+.marcas {
+  display: flex; align-items: center; justify-content: center;
+  gap: clamp(11px, 2.4vw, 18px);
+  margin-top: clamp(10px, 1.9vw, 14px);
+  padding-top: clamp(9px, 1.7vw, 12px);
+  border-top: 1px dotted var(--sepia-suave);
+}
+.marcas img {
+  mix-blend-mode: multiply;
+  width: auto;
+  opacity: .9;
+  filter: saturate(.9);
+}
+/* La AUF manda por ser la afiliación; los sponsors, parejos entre sí. */
+.marcas img:nth-child(1) { height: clamp(27px, 5.4vw, 36px); }
+.marcas img:nth-child(2) { height: clamp(13px, 2.5vw, 17px); }
+.marcas img:nth-child(3) { height: clamp(10px, 2.1vw, 14px); }
+.marcas img:nth-child(4) { height: clamp(15px, 3vw, 20px); }
+.indice-pie a:hover { color: var(--azul); }
+
+.hoja-indice h1 {
+  font-size: clamp(19px, 3vw, 26px);
+  margin: 0 0 3px;
+  letter-spacing: .04em;
+}
+.hoja-indice .sello {
+  font-family: var(--mono); font-size: 9.5px; letter-spacing: .26em;
+  text-transform: uppercase; color: var(--sepia);
+  margin: 0 0 12px;
+}
+.hoja-indice .regla {
+  height: 1px; background: var(--sepia-suave); margin: 0 0 12px;
+}
+
+.indice { list-style: none; margin: 0; padding: 0; }
+.indice li { margin: 0; }
+.indice a {
+  display: grid;
+  grid-template-columns: 1.8em auto minmax(0, 1fr);
+  align-items: baseline;
+  gap: 6px;
+  padding: 4px 2px;
+  text-decoration: none;
+  color: var(--tinta);
+  border-bottom: 1px dotted var(--sepia-suave);
+}
+.indice a:hover, .indice a:focus-visible { color: var(--rojo); background: rgba(212, 168, 90, .12); }
+.indice .romano {
+  font-family: var(--mono); font-size: 10.5px; letter-spacing: .1em;
+  color: var(--oro-80);
+}
+.indice .titulo {
+  font-family: var(--display); font-weight: 500;
+  font-size: clamp(12.5px, 1.75vw, 14.5px);
+  text-transform: uppercase; letter-spacing: .015em;
+  /* Con ocho capítulos, el título tiene que entrar en una línea o la guarda
+     se come las marcas del pie. */
+  white-space: nowrap;
+}
+.indice .apunte {
+  font-family: var(--prosa); font-style: italic;
+  font-size: 11.5px; color: var(--sepia); text-align: right;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+
+/* ============================================================
+   LAS HOJAS — páginas interiores
+   ============================================================ */
+
+.cabecera {
+  position: sticky; top: 0; z-index: 40;
+  background: rgba(244, 239, 230, .94);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--sepia-suave);
+  box-shadow: 0 1px 0 rgba(212, 168, 90, .5);
+}
+
+.cabecera-fila { display: flex; align-items: center; gap: 14px; min-height: 62px; }
+
+.marca { display: flex; align-items: center; gap: 11px; flex: none; text-decoration: none; color: var(--tinta); }
+.marca img { width: 30px; }
+.marca-texto {
+  font-family: var(--display); font-weight: 600; font-size: 14.5px;
+  letter-spacing: .1em; text-transform: uppercase; line-height: 1.1;
+}
+.marca-texto small {
+  display: block;
+  font-family: var(--mono); font-weight: 500; font-size: 8.5px;
+  letter-spacing: .22em; color: var(--sepia);
+}
+
+.menu-boton {
+  margin-left: auto; display: none;
+  background: transparent; color: var(--azul);
+  border: 1px solid var(--sepia-suave);
+  font-family: var(--mono); font-size: 10.5px; letter-spacing: .18em; text-transform: uppercase;
+  padding: 8px 13px; border-radius: var(--radio); cursor: pointer;
+}
+.menu-boton:hover { border-color: var(--oro); color: var(--rojo); }
+
+.menu { margin-left: auto; display: flex; gap: 2px; flex-wrap: wrap; }
+.menu a {
+  font-family: var(--display); font-weight: 500; font-size: 11.5px;
+  letter-spacing: .05em; text-transform: uppercase;
+  color: var(--sepia); text-decoration: none;
+  padding: 9px 6px; border-bottom: 2px solid transparent;
+}
+.menu a:hover { color: var(--azul); border-bottom-color: var(--rojo); }
+.menu a[aria-current="page"] { color: var(--azul); border-bottom-color: var(--oro); }
+
+
+/* Cambio de idioma. Es un enlace normal a la misma página en el otro idioma:
+   cada versión tiene su URL, se comparte y se indexa. */
+.idioma {
+  margin-left: auto; min-width: 38px; text-align: center;
+  font-family: var(--mono); font-size: 10px; letter-spacing: .18em;
+  text-transform: uppercase; text-decoration: none;
+  color: var(--sepia);
+  padding: 6px 10px;
+  border: 1px solid var(--sepia-suave); border-radius: var(--radio);
+  white-space: nowrap;
+}
+.idioma:hover { border-color: var(--oro); color: var(--rojo); }
+.menu { margin-left: 14px; }
+
+/* En la guarda el cambio de idioma va en su propia línea, entre el colofón y
+   las marcas: en la fila del colofón no entra sin partirla en dos. */
+.indice-idioma { margin: 9px 0 0; text-align: right; }
+.indice-idioma a {
+  font-family: var(--mono); font-size: 8.5px; letter-spacing: .2em;
+  text-transform: uppercase; text-decoration: none;
+  color: var(--sepia);
+  border-bottom: 1px solid var(--sepia-suave);
+}
+.indice-idioma a:hover { color: var(--rojo); border-bottom-color: currentColor; }
+
+@media (max-width: 1240px) {
+  /* Con el menú plegado el toggle acompaña al botón, no se va al fondo. */
+  .idioma { margin-left: auto; order: 2; }
+  .menu-boton { margin-left: 10px; order: 3; }
+  .menu { margin-left: 0; order: 4; }
+}
+
+
+/* Encuadernación: el lomo acompaña toda la página interior */
+.hoja {
+  position: relative;
+  background-color: var(--papel);
+  background-image:
+    radial-gradient(circle at 12% 6%, rgba(138, 126, 104, .07), transparent 40%),
+    radial-gradient(circle at 88% 92%, rgba(138, 126, 104, .06), transparent 44%),
+    url('../img/texturas/papel.jpg');
+  background-size: cover, cover, 520px 520px;
+  background-repeat: no-repeat, no-repeat, repeat;
+  background-attachment: scroll;
+  padding-left: var(--encuadernacion);
+}
+.hoja::before {
+  content: "";
+  position: absolute; left: 0; top: 0; bottom: 0; width: var(--encuadernacion);
+  background:
+    linear-gradient(90deg, var(--cuero) 0 9px, rgba(212, 168, 90, .55) 9px 10px, rgba(138, 126, 104, .16) 10px 100%),
+    repeating-linear-gradient(180deg, transparent 0 20px, rgba(244, 239, 230, .5) 20px 24px);
+  background-size: 100% 100%, 9px 100%;
+  background-repeat: no-repeat, repeat-y;
+}
+
+.seccion { padding: clamp(40px, 6vw, 76px) 0; }
+.seccion + .seccion { border-top: 1px solid var(--sepia-suave); }
+
+/* Lámina: la página oscura del libro, para respirar y dar jerarquía */
+.lamina {
+  background-color: var(--cuero);
+  background-image: repeating-linear-gradient(-45deg, rgba(244, 239, 230, .04) 0 16px, transparent 16px 42px);
+  color: var(--hueso);
+  padding: clamp(44px, 6.5vw, 84px) 0;
+  border-top: 3px double rgba(212, 168, 90, .5);
+  border-bottom: 3px double rgba(212, 168, 90, .5);
+}
+
+.portadilla { padding: clamp(46px, 7vw, 92px) 0 clamp(30px, 4vw, 52px); }
+.portadilla .romano-grande {
+  font-family: var(--mono); font-size: 12px; letter-spacing: .3em;
+  text-transform: uppercase; color: var(--oro-80); margin: 0 0 18px;
+}
+.portadilla h1 { margin-bottom: 18px; }
+.portadilla .filete-cap {
+  width: 88px; height: 3px; background: var(--rojo); margin: 26px 0 0;
+}
+
+.encabezado-seccion {
+  display: flex; align-items: flex-end; justify-content: space-between;
+  gap: 22px; flex-wrap: wrap; margin-bottom: 28px;
+}
+.encabezado-seccion h2 { margin: 0; }
+
+.folio {
+  display: flex; justify-content: center; align-items: center; gap: 14px;
+  padding: 30px 0 44px;
+  font-family: var(--mono); font-size: 10.5px; letter-spacing: .24em; text-transform: uppercase;
+  color: var(--sepia);
+}
+.folio i { display: block; width: 40px; height: 1px; background: var(--sepia-suave); }
+
+/* ---------- Botones ---------- */
+
+.boton {
+  display: inline-flex; align-items: center; gap: 9px;
+  font-family: var(--display); font-weight: 600; font-size: 13.5px;
+  letter-spacing: .11em; text-transform: uppercase;
+  background: var(--rojo); color: var(--hueso);
+  padding: 12px 21px; border: 2px solid var(--rojo); border-radius: var(--radio);
+  text-decoration: none; cursor: pointer;
+  transition: background .15s ease, color .15s ease, border-color .15s ease;
+}
+.boton:hover { background: var(--rojo-80); border-color: var(--rojo-80); color: var(--hueso); }
+.boton--fantasma { background: transparent; border-color: currentColor; color: var(--azul); }
+.boton--fantasma:hover { background: var(--azul); border-color: var(--azul); color: var(--hueso); }
+.claro .boton--fantasma { color: var(--hueso); }
+.claro .boton--fantasma:hover { background: var(--oro); border-color: var(--oro); color: var(--tinta); }
+.boton--oro { background: var(--oro); border-color: var(--oro); color: var(--tinta); }
+.boton--oro:hover { background: var(--oro-80); border-color: var(--oro-80); }
+.claro .boton--oro, .claro .boton--oro:hover { color: var(--tinta); }
+.claro .boton, .claro .boton:hover { color: var(--hueso); }
+
+.acciones { display: flex; gap: 13px; flex-wrap: wrap; margin-top: 26px; }
+
+/* ---------- Cifras ---------- */
+
+.cifras {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  border-top: 1px solid var(--sepia-suave);
+  border-bottom: 1px solid var(--sepia-suave);
+}
+.cifra { padding: 24px 22px; border-left: 1px solid var(--sepia-suave); }
+.cifra:first-child { border-left: 0; }
+.cifra strong {
+  display: block; font-family: var(--display); font-weight: 600;
+  font-size: clamp(26px, 3vw, 38px); line-height: 1.05; color: var(--azul);
+}
+.cifra span {
+  font-family: var(--mono); font-size: 10px; letter-spacing: .2em;
+  text-transform: uppercase; color: var(--sepia); max-width: none;
+}
+.lamina .cifras { border-color: rgba(212, 168, 90, .3); }
+.lamina .cifra { border-left-color: rgba(212, 168, 90, .3); }
+.lamina .cifra strong { color: var(--oro); }
+.lamina .cifra span { color: rgba(244, 239, 230, .74); }
+
+/* ---------- Partidos ---------- */
+
+.partido {
+  background: var(--papel);
+  border: 1px solid var(--sepia-suave);
+  border-top: 3px solid var(--azul);
+  border-radius: var(--radio);
+  padding: 22px;
+  display: flex; flex-direction: column;
+  box-shadow: 0 2px 0 rgba(138, 126, 104, .16);
+}
+.rejilla .partido { height: 100%; }
+.partido .competencia {
+  font-family: var(--mono); font-size: 10.5px; letter-spacing: .2em;
+  text-transform: uppercase; color: var(--rojo); max-width: none;
+}
+.partido-equipos {
+  display: grid; grid-template-columns: 1fr auto 1fr; align-items: center;
+  gap: 14px; margin: 16px 0 14px;
+}
+.partido-equipo {
+  font-family: var(--display); font-weight: 600;
+  font-size: clamp(17px, 2.2vw, 25px); text-transform: uppercase; line-height: 1.05;
+}
+.partido-equipo.der { text-align: right; }
+.partido-vs { font-family: var(--mono); font-size: 11px; letter-spacing: .18em; color: var(--sepia); }
+.partido-marcador {
+  font-family: var(--display); font-weight: 600;
+  font-size: clamp(27px, 3.4vw, 40px); color: var(--azul); letter-spacing: .04em;
+}
+.partido-pie {
+  margin-top: auto; margin-bottom: 0; max-width: none;
+  font-family: var(--mono); font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--sepia);
+  border-top: 1px solid var(--sepia-suave); padding-top: 11px;
+}
+.partido--hueso { border-top-color: var(--rojo); }
+.partido--hueso .competencia { color: var(--azul); }
+.lamina .partido {
+  background: rgba(244, 239, 230, .05); border-color: rgba(212, 168, 90, .35);
+  border-top-color: var(--oro); color: var(--hueso); box-shadow: none;
+}
+.lamina .partido-marcador { color: var(--oro); }
+.lamina .partido-pie { color: rgba(244, 239, 230, .68); border-top-color: rgba(244, 239, 230, .18); }
+.lamina .partido .competencia { color: var(--oro); }
+.lamina .partido-vs { color: rgba(244, 239, 230, .7); }
+
+.lista-partidos { display: grid; gap: 0; }
+.fila-partido {
+  display: grid; grid-template-columns: 104px 1fr auto; gap: 18px; align-items: center;
+  padding: 15px 4px 15px 16px;
+  border-bottom: 1px dotted var(--sepia-suave);
+  border-left: 3px solid transparent;
+}
+.fila-partido.local { border-left-color: var(--rojo); }
+.fila-partido p { max-width: none; margin: 0; }
+.fila-partido .fecha {
+  font-family: var(--mono); font-size: 10.5px; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--azul); line-height: 1.55;
+}
+.fila-partido .cruce {
+  font-family: var(--display); font-weight: 500; font-size: 18px; text-transform: uppercase;
+}
+.fila-partido .partido-vs { font-size: 12px; color: var(--rojo); }
+.fila-partido .dato {
+  font-family: var(--mono); font-size: 10.5px; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--sepia); text-align: right;
+}
+
+/* ---------- Tabla ---------- */
+
+.tabla-envoltorio { overflow-x: auto; border-top: 2px solid var(--azul); }
+table.posiciones {
+  width: 100%; border-collapse: collapse; min-width: 560px;
+  font-size: 14px; font-variant-numeric: tabular-nums;
+}
+table.posiciones th {
+  font-family: var(--mono); font-weight: 500; font-size: 10px;
+  letter-spacing: .16em; text-transform: uppercase; color: var(--sepia);
+  padding: 12px 9px; text-align: center; white-space: nowrap;
+  border-bottom: 1px solid var(--sepia-suave);
+}
+table.posiciones th:nth-child(2) { text-align: left; }
+table.posiciones td { padding: 11px 9px; text-align: center; border-bottom: 1px dotted var(--sepia-suave); }
+table.posiciones td:nth-child(2) { text-align: left; font-family: var(--display); font-weight: 500; letter-spacing: .03em; text-transform: uppercase; }
+table.posiciones .pts { font-family: var(--display); font-weight: 600; font-size: 17px; }
+table.posiciones .fila-nuestra { background: rgba(212, 168, 90, .16); box-shadow: inset 3px 0 0 var(--rojo); }
+table.posiciones .fila-nuestra td:nth-child(2) { color: var(--azul); font-weight: 600; }
+
+.forma { display: inline-flex; gap: 3px; }
+.forma i {
+  width: 17px; height: 17px; border-radius: 50%; font-style: normal;
+  font-family: var(--mono); font-size: 9px; font-weight: 500; color: var(--hueso);
+  display: inline-flex; align-items: center; justify-content: center;
+}
+.forma i.G { background: var(--ganado); }
+.forma i.E { background: var(--empatado); }
+.forma i.P { background: var(--perdido); }
+
+/* ---------- Rejillas y tarjetas ---------- */
+
+.rejilla { display: grid; gap: 22px; }
+.rejilla--2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+.rejilla--3 { grid-template-columns: repeat(auto-fit, minmax(255px, 1fr)); }
+.rejilla--4 { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+
+.tarjeta { border-top: 2px solid var(--sepia-suave); padding: 20px 0 0; }
+.tarjeta h3 { margin-bottom: .4em; }
+.tarjeta p { margin-bottom: 0; font-family: var(--prosa); font-size: 17.5px; }
+.tarjeta--borde-oro { border-top-color: var(--oro); }
+
+.nota {
+  border-left: 3px solid var(--oro);
+  background: rgba(212, 168, 90, .11);
+  padding: 15px 19px; max-width: 62ch;
+  font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase;
+  line-height: 1.85; color: var(--sepia);
+}
+[data-aviso-ejemplo] { margin-top: 24px; }
+
+/* Foto pegada con esquineros, como en un álbum */
+.foto-album { position: relative; padding: 13px; background: var(--papel-sombra); box-shadow: 0 2px 0 rgba(138, 126, 104, .3); }
+.foto-album img { filter: sepia(.06) contrast(1.02); }
+.foto-album::before, .foto-album::after {
+  content: ""; position: absolute; width: 20px; height: 20px; border: 2px solid var(--oro-80); opacity: .8;
+}
+.foto-album::before { left: 4px; top: 4px; border-right: 0; border-bottom: 0; }
+.foto-album::after { right: 4px; bottom: 4px; border-left: 0; border-top: 0; }
+.epigrafe {
+  margin: 10px 0 0; max-width: none;
+  font-family: var(--prosa); font-style: italic; font-size: 15px; color: var(--sepia);
+}
+
+
+
+
+/* ============================================================
+   EL ARCO NARRATIVO — cuatro momentos: 1917, 1921, 2022, 2026
+   ============================================================ */
+
+/* Riel: el índice del relato, arriba del capítulo. */
+.riel { background: var(--papel-sombra); border-bottom: 1px solid var(--sepia-suave); }
+.riel-fila { display: flex; gap: 0; overflow-x: auto; scrollbar-width: none; }
+.riel-fila::-webkit-scrollbar { display: none; }
+.riel a {
+  flex: 1 1 0; min-width: 132px;
+  display: flex; flex-direction: column; gap: 3px;
+  padding: 15px 4px 14px;
+  text-decoration: none; color: var(--sepia);
+  border-top: 2px solid transparent;
+  transition: color .15s ease, border-color .15s ease;
+}
+.riel a + a { box-shadow: inset 1px 0 0 var(--sepia-suave); }
+.riel a b {
+  font-family: var(--mono); font-size: 12.5px; letter-spacing: .16em;
+  color: var(--oro-80);
+}
+.riel a span {
+  font-family: var(--display); font-weight: 500; font-size: 14px;
+  letter-spacing: .05em; text-transform: uppercase; color: var(--azul);
+}
+.riel a:hover { border-top-color: var(--rojo); color: var(--tinta); }
+.riel a:hover span { color: var(--rojo); }
+@media (max-width: 620px) {
+  /* En el teléfono el riel se acomoda en dos filas: los cuatro momentos
+     tienen que verse de una, no quedar escondidos detrás de un arrastre. */
+  .riel-fila { display: grid; grid-template-columns: 1fr 1fr; overflow: visible; }
+  .riel a { min-width: 0; padding: 12px 4px; }
+  .riel a + a { box-shadow: none; }
+  .riel a:nth-child(even) { box-shadow: inset 1px 0 0 var(--sepia-suave); }
+  .riel a:nth-child(n+3) { border-top: 1px solid var(--sepia-suave); }
+}
+
+/* Cabecera de un momento: el año manda y el título lo sigue. */
+.momento { padding: clamp(46px, 7vw, 82px) 0 0; scroll-margin-top: 70px; }
+.momento-fila {
+  display: grid; grid-template-columns: auto minmax(0, 1fr);
+  gap: clamp(20px, 4vw, 44px); align-items: baseline;
+  padding-bottom: clamp(16px, 2.4vw, 22px);
+  border-bottom: 2px solid var(--azul);
+}
+.momento-anio {
+  margin: 0;
+  font-family: var(--display); font-weight: 700;
+  font-size: clamp(42px, 9vw, 92px); line-height: .86;
+  letter-spacing: -.01em;
+  color: var(--oro-80);
+}
+.momento-titulo {
+  margin: 0 0 6px;
+  font-size: clamp(24px, 4.4vw, 40px);
+  text-transform: uppercase; letter-spacing: .02em;
+  color: var(--azul);
+}
+.momento-bajada {
+  margin: 0; max-width: 52ch;
+  font-family: var(--prosa); font-size: clamp(15px, 1.9vw, 17.5px);
+  color: var(--sepia);
+}
+@media (max-width: 620px) {
+  .momento-fila { grid-template-columns: 1fr; gap: 8px; align-items: start; }
+}
+
+/* Huecos: fotos que todavía no existen. Discretos, no rompen la página, y
+   se reemplazan pasándole el archivo al mismo bloque de build.py. */
+.hueco { margin: 0; }
+.hueco img { width: 100%; display: block; filter: sepia(.06) contrast(1.02); }
+.hueco figcaption {
+  margin-top: 8px;
+  font-family: var(--mono); font-size: 10.5px; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--sepia);
+}
+.hueco--vacio {
+  display: grid; place-items: center; padding: 18px;
+  border: 1px dashed var(--sepia-suave);
+  background:
+    repeating-linear-gradient(45deg, rgba(138, 126, 104, .05) 0 2px, transparent 2px 11px),
+    var(--papel-sombra);
+}
+.hueco-rotulo {
+  font-family: var(--mono); font-size: 10.5px; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--sepia); text-align: center;
+  max-width: 22ch; line-height: 1.7;
+}
+.claro .hueco--vacio {
+  border-color: rgba(212, 168, 90, .34);
+  background:
+    repeating-linear-gradient(45deg, rgba(244, 239, 230, .05) 0 2px, transparent 2px 11px),
+    rgba(4, 7, 20, .18);
+}
+.claro .hueco-rotulo { color: rgba(244, 239, 230, .72); }
+.claro .hueco figcaption { color: rgba(244, 239, 230, .66); }
+.epigrafe--claro { color: rgba(244, 239, 230, .66); }
+
+/* El barrio */
+.barrio-grilla {
+  display: grid; gap: 18px; margin-top: 26px;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+}
+
+/* Archivo: las fotos viejas van en blanco y negro cálido, como copias. */
+.archivo .hueco img { filter: grayscale(1) sepia(.22) contrast(1.06) brightness(1.02); }
+
+/* Dos años seguidos, uno debajo del otro: el ascenso y el debut. */
+.archivo--pila { display: grid; gap: clamp(18px, 2.6vw, 26px); align-content: start; }
+
+/* De Lito a campeones del mundo */
+.campeones-bajada { max-width: 46ch; margin-bottom: 34px; }
+.campeones-grilla {
+  display: grid; gap: clamp(18px, 3vw, 30px);
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+}
+.campeon { text-align: left; }
+.campeon .hueco img, .campeon .hueco--vacio { aspect-ratio: 4 / 5; object-fit: cover; }
+.campeon .hueco img { filter: grayscale(.15) contrast(1.04); }
+.campeon h3 {
+  margin: 15px 0 3px; min-height: 2.2em; font-size: clamp(17px, 2.2vw, 21px);
+  text-transform: uppercase; letter-spacing: .03em;
+  border-top: 2px solid var(--oro); padding-top: 12px;
+}
+.campeon .detalle { margin: 0; }
+
+/* Lito redondo vs Lito cuadrado */
+.escision-fila {
+  display: grid; grid-template-columns: 1fr auto 1fr;
+  gap: clamp(16px, 3.4vw, 38px); align-items: center;
+  margin-top: 30px;
+}
+.escision-lado { text-align: center; }
+.escision-lado .hueco { max-width: 220px; margin: 0 auto; }
+.escision-lado .hueco--vacio { display: grid; place-items: center; }
+.escision-lado:first-of-type .hueco--vacio { border-radius: 50%; }
+/* Los dos escudos se comparan a la misma altura, no al mismo ancho: uno es un
+   blasón alto y el otro un rectángulo apaisado, y por ancho el primero le
+   sacaba el doble de tamaño al segundo. */
+.escision-lado .hueco { display: grid; align-content: center; min-height: 200px; }
+.escision-lado .hueco img { max-height: 175px; width: auto; margin: 0 auto; }
+.escision-lado h3 {
+  margin: 16px 0 4px; font-size: clamp(16px, 2.1vw, 20px);
+  text-transform: uppercase; letter-spacing: .04em; color: var(--azul);
+}
+.escision-lado .detalle { margin: 0 auto; max-width: 26ch; }
+.escision-versus {
+  margin: 0; position: relative; font-family: var(--prosa); font-style: italic;
+  font-size: clamp(18px, 2.6vw, 26px); color: var(--oro-80);
+}
+@media (max-width: 620px) {
+  .escision-fila { grid-template-columns: 1fr; }
+  .escision-versus { text-align: center; }
+}
+
+/* El regreso: la sección que tiene que pegar */
+.regreso {
+  position: relative; isolation: isolate;
+  padding: clamp(54px, 9vw, 110px) 0;
+  color: var(--hueso);
+  background: var(--azul);
+  overflow: hidden;
+}
+/* El velo va como primera capa del mismo fondo: como pseudo-elemento
+   quedaba por debajo de la foto y el texto se perdía encima de la imagen. */
+/* El velo y la foto van como capas del mismo fondo, en ese orden: la primera
+   capa pinta arriba. Con un pseudo-elemento de z-index negativo la foto
+   terminaba encima del velo y el texto se perdía. */
+.regreso-foto {
+  position: absolute; inset: 0; z-index: -1;
+  background-image:
+    linear-gradient(100deg, rgba(9, 15, 40, .9) 0 24%, rgba(9, 15, 40, .74) 52%, rgba(9, 15, 40, .5)),
+    linear-gradient(to bottom, rgba(9, 15, 40, .35), transparent 38%, rgba(9, 15, 40, .28)),
+    url('../img/galeria/partido-5.jpg');
+  background-size: cover, cover, cover;
+  background-position: center, center, 50% 38%;
+  background-repeat: no-repeat;
+}
+.regreso-antetitulo {
+  margin: 0 0 10px;
+  font-family: var(--mono); font-size: 11.5px; letter-spacing: .3em;
+  text-transform: uppercase; color: var(--oro);
+}
+.regreso-titulo {
+  margin: 0 0 clamp(26px, 4vw, 40px);
+  font-family: var(--display); font-weight: 700;
+  font-size: clamp(42px, 9.4vw, 104px); line-height: .9;
+  letter-spacing: -.015em; text-transform: uppercase;
+  color: var(--hueso);
+  text-shadow: 0 2px 24px rgba(4, 7, 20, .5);
+}
+.regreso-hitos {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; gap: 0;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  border-top: 1px solid rgba(212, 168, 90, .45);
+}
+.regreso-hitos li {
+  padding: 20px 22px 20px 0;
+  border-right: 1px solid rgba(212, 168, 90, .28);
+}
+.regreso-hitos li:last-child { border-right: 0; }
+.regreso-hitos b {
+  display: block; margin-bottom: 5px;
+  font-family: var(--mono); font-size: 13px; letter-spacing: .18em;
+  color: var(--oro);
+}
+.regreso-hitos span {
+  font-family: var(--prosa); font-size: clamp(15px, 1.9vw, 17.5px);
+  color: rgba(244, 239, 230, .96);
+  text-shadow: 0 1px 8px rgba(4, 7, 20, .8);
+}
+.regreso-hitos b { text-shadow: 0 1px 8px rgba(4, 7, 20, .85); }
+.regreso-antetitulo { text-shadow: 0 1px 8px rgba(4, 7, 20, .85); }
+@media (max-width: 620px) {
+  .regreso-hitos li { border-right: 0; border-bottom: 1px solid rgba(212, 168, 90, .22); padding-right: 0; }
+  .regreso-hitos li:last-child { border-bottom: 0; }
+}
+
+/* Marbete: avisa que lo que se ve es proyecto y no obra. */
+.marbete {
+  display: inline-block; margin: 0 0 18px;
+  padding: 7px 13px;
+  border: 1px solid var(--oro);
+  font-family: var(--mono); font-size: 10.5px; letter-spacing: .22em;
+  text-transform: uppercase; color: var(--oro);
+}
+.renders {
+  display: grid; gap: clamp(16px, 2.6vw, 26px); margin-top: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+/* El aéreo es el que explica el proyecto: va solo y a todo el ancho. */
+.renders--principal { grid-template-columns: 1fr; }
+.renders .hueco { position: relative; }
+/* Cada render lleva su propia marca: nadie tiene que deducir que es un dibujo. */
+.renders .hueco::after {
+  content: "Proyecto"; position: absolute; top: 10px; left: 10px;
+  padding: 5px 10px; background: rgba(11, 18, 46, .82);
+  border: 1px solid rgba(212, 168, 90, .6);
+  font-family: var(--mono); font-size: 9.5px; letter-spacing: .2em;
+  text-transform: uppercase; color: var(--oro);
+}
+
+
+/* El acta fundacional: la página del libro manda y el texto la acompaña. */
+.acta-fila {
+  display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
+  gap: clamp(24px, 4vw, 48px); align-items: center;
+}
+.acta-fila .hueco img { filter: drop-shadow(0 16px 34px rgba(4, 7, 20, .55)); }
+@media (max-width: 760px) { .acta-fila { grid-template-columns: 1fr; } }
+
+/* La foto del equipo del 30 y la de archivo cierran el bloque de campeones. */
+.campeones-pie {
+  display: grid; grid-template-columns: 1.2fr 1fr;
+  gap: clamp(18px, 3vw, 30px); margin-top: clamp(28px, 4vw, 44px);
+  padding-top: clamp(22px, 3vw, 32px);
+  border-top: 1px solid rgba(212, 168, 90, .35);
+}
+@media (max-width: 620px) { .campeones-pie { grid-template-columns: 1fr; } }
+
+/* La mascota, con las formativas */
+.formativas-fila {
+  display: grid; grid-template-columns: minmax(0, 1fr) auto;
+  gap: clamp(20px, 4vw, 44px); align-items: center;
+}
+.mascota { width: clamp(120px, 20vw, 210px); }
+@media (max-width: 620px) {
+  .formativas-fila { grid-template-columns: 1fr; }
+  .mascota { width: 150px; }
+}
+
+/* La lámina del equipo oficial va sobre papel, con esquineros como el resto
+   del material de archivo. */
+.indumentaria { margin: 26px 0 0; padding: 12px; background: var(--papel-sombra); position: relative; }
+.indumentaria img { filter: none; }
+.indumentaria figcaption { padding: 0 2px; }
+
+
+/* ---------- El himno ----------
+   La misma letra que está en la contratapa del libro, pero en una sección
+   propia: en el teléfono la tapa no se abre y la canción quedaba escondida. */
+
+.himno { background: var(--papel-sombra); }
+.himno-marco { text-align: center; }
+.himno-marco .cintilla { justify-content: center; }
+.himno-marco h2 { margin-bottom: clamp(22px, 3.4vw, 32px); }
+.himno-hoja {
+  position: relative;
+  max-width: 640px; margin: 0 auto;
+  padding: clamp(28px, 5vw, 48px) clamp(22px, 4vw, 40px);
+  background-color: var(--papel);
+  background-image:
+    repeating-linear-gradient(45deg, rgba(28, 44, 107, .05) 0 2px, transparent 2px 15px),
+    url('../img/texturas/papel.jpg');
+  background-size: auto, 460px 460px;
+  box-shadow: 0 14px 40px rgba(24, 18, 10, .16);
+}
+.himno-hoja::before, .himno-hoja::after {
+  content: ""; position: absolute; left: clamp(22px, 4vw, 40px); right: clamp(22px, 4vw, 40px);
+  height: 1px; background: linear-gradient(90deg, transparent, var(--oro-80), transparent);
+}
+.himno-hoja::before { top: clamp(14px, 2.4vw, 22px); }
+.himno-hoja::after { bottom: clamp(14px, 2.4vw, 22px); }
+/* Acá la letra se lee, no se insinúa: cuerpo mayor que en la contratapa. */
+.himno-hoja .cancion-letra p {
+  font-size: clamp(16px, 2.6vw, 21px);
+  line-height: 1.72;
+  margin-bottom: clamp(16px, 2.6vw, 22px);
+}
+.himno-hoja .cancion-pie { font-size: clamp(8.5px, 1.5vw, 10px); }
+
+/* El lugar de la grabación, para cuando el club la tenga. */
+.reproductor {
+  display: inline-flex; align-items: center; gap: 12px;
+  margin-top: clamp(20px, 3vw, 28px);
+  padding: 11px 18px 11px 13px;
+  border: 1px dashed var(--sepia-suave);
+  font-family: var(--mono); font-size: 10.5px; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--sepia);
+}
+.reproductor-icono {
+  display: grid; place-items: center;
+  width: 26px; height: 26px; border-radius: 50%;
+  border: 1px solid var(--oro-80); color: var(--oro-80);
+  font-size: 9px; padding-left: 2px;
+}
+
+/* Cierre: la última página del libro */
+.cierre {
+  background: var(--papel-sombra);
+  border-top: 1px solid var(--sepia-suave);
+  padding: clamp(50px, 8vw, 92px) 0;
+  text-align: center;
+}
+.cierre-frase {
+  margin: 0 auto; max-width: 22ch;
+  font-family: var(--prosa); font-size: clamp(22px, 4.2vw, 38px);
+  line-height: 1.22; color: var(--azul);
+}
+.cierre-frase em { color: var(--rojo); font-style: italic; }
+.cierre-escudo {
+  width: clamp(52px, 8vw, 70px); margin: clamp(24px, 4vw, 36px) auto clamp(14px, 2.4vw, 20px);
+  opacity: .9;
+}
+.cierre-firma {
+  margin: 0 auto; max-width: none;
+  font-family: var(--mono); font-size: 10.5px; letter-spacing: .26em;
+  text-transform: uppercase; color: var(--sepia);
+}
+.cierre-firma span { display: block; margin-top: 6px; color: var(--oro-80); }
+
+.cronologia--compacta li { padding: 11px 0; }
+.cronologia--compacta { font-size: 14.5px; }
+
+/* ---------- Estandarte: la lámina que abre "Hacete socio" ----------
+   El escudo bordado en la camiseta, que es lo único que hay para mostrar
+   cuando se le pide a alguien que se haga socio. La foto es oscura y la
+   lámina también: se funden en vez de pegarse una encima de la otra. */
+
+.estandarte { padding-top: 0; padding-bottom: 0; }
+.estandarte-fila {
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+  gap: clamp(28px, 5vw, 60px); align-items: center;
+  padding-top: clamp(34px, 5vw, 58px); padding-bottom: clamp(34px, 5vw, 58px);
+}
+.estandarte-foto {
+  margin: 0; position: relative; isolation: isolate;
+  box-shadow: 0 26px 60px rgba(4, 7, 20, .55);
+}
+.estandarte-foto img { width: 100%; display: block; }
+/* La foto se apoya en la lámina en vez de estar pegada encima: el borde de
+   abajo se funde con el azul y arriba corre un filete de oro. */
+.estandarte-foto::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background:
+    linear-gradient(to top, rgba(15, 26, 64, .82), rgba(15, 26, 64, 0) 17%),
+    linear-gradient(to right, rgba(15, 26, 64, .34), transparent 11%, transparent 89%, rgba(15, 26, 64, .34));
+}
+.estandarte-foto::before {
+  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 2px; z-index: 1;
+  background: linear-gradient(90deg, transparent, var(--oro), transparent);
+}
+.estandarte-texto .cintilla { margin-top: 0; }
+.estandarte-lema {
+  margin: 4px 0 18px;
+  font-family: var(--prosa); font-style: italic; font-weight: 500;
+  font-size: clamp(30px, 5.4vw, 52px);
+  line-height: 1.06; letter-spacing: .01em;
+  color: var(--oro);
+}
+.estandarte-texto .prosa { margin-bottom: 26px; }
+
+@media (max-width: 760px) {
+  .estandarte-fila { grid-template-columns: 1fr; gap: 22px; }
+  .estandarte-foto { max-width: 420px; margin: 0 auto; }
+}
+
+/* ---------- Galería: el álbum del club ----------
+   Cada foto va pegada con esquineros sobre el papel, como en un álbum de
+   verdad, y con un pie escrito a máquina. Se agranda en un visor propio
+   para no sacar a nadie de la página. */
+
+.grupo-galeria + .grupo-galeria { margin-top: 54px; }
+.grupo-galeria .prosa { margin-bottom: 26px; }
+
+/* Columnas en vez de grilla: así cada foto conserva su proporción y las
+   verticales conviven con las apaisadas sin recortarse, como en un álbum
+   pegado a mano. */
+.galeria { columns: 3 250px; column-gap: 26px; }
+
+.postal { margin: 0 0 26px; break-inside: avoid; }
+.postal button {
+  display: block; width: 100%; padding: 11px; border: 0; cursor: zoom-in;
+  background: var(--papel-sombra); box-shadow: 0 2px 0 rgba(138, 126, 104, .3);
+  position: relative; transition: transform .22s ease, box-shadow .22s ease;
+}
+.postal button::before, .postal button::after {
+  content: ""; position: absolute; width: 17px; height: 17px;
+  border: 2px solid var(--oro-80); opacity: .75;
+}
+.postal button::before { left: 3px; top: 3px; border-right: 0; border-bottom: 0; }
+.postal button::after { right: 3px; bottom: 3px; border-left: 0; border-top: 0; }
+.postal button:hover, .postal button:focus-visible {
+  transform: translateY(-3px) rotate(-.35deg);
+  box-shadow: 0 10px 22px rgba(24, 18, 10, .22);
+}
+.postal img { width: 100%; filter: sepia(.06) contrast(1.02); }
+
+.postal figcaption {
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2px 14px; align-items: baseline;
+  margin-top: 9px; font-family: var(--mono); font-size: 11px; letter-spacing: .06em;
+  color: var(--sepia); text-transform: uppercase;
+}
+.postal figcaption i { font-style: normal; opacity: .7; white-space: nowrap; }
+
+/* Visor */
+.visor {
+  border: 0; padding: 0; max-width: min(1000px, 92vw); max-height: 92vh;
+  background: var(--papel); color: var(--tinta);
+  box-shadow: 0 26px 70px rgba(12, 9, 5, .6);
+}
+.visor::backdrop { background: rgba(16, 12, 7, .84); }
+body:has(.visor[open]) .cabecera { backdrop-filter: none; z-index: 1; }
+.visor figure { margin: 0; padding: 16px; }
+.visor img { max-height: 76vh; width: auto; margin: 0 auto; }
+.visor figcaption {
+  margin-top: 12px; font-family: var(--mono); font-size: 12px;
+  letter-spacing: .08em; text-transform: uppercase; color: var(--sepia); text-align: center;
+}
+.visor-cerrar {
+  position: absolute; top: 6px; right: 10px; z-index: 2;
+  border: 0; background: none; cursor: pointer;
+  font-size: 30px; line-height: 1; color: var(--sepia);
+}
+.visor-cerrar:hover { color: var(--rojo); }
+
+@media (max-width: 560px) {
+  .galeria { columns: 2 140px; column-gap: 16px; }
+  .postal { margin-bottom: 16px; }
+  /* En pantalla angosta el pie no entra en una línea: la fecha va debajo. */
+  .postal figcaption { flex-direction: column; gap: 2px; }
+}
+
+/* ---------- Noticias ---------- */
+
+.noticia { display: flex; flex-direction: column; border-top: 2px solid var(--azul); padding-top: 16px; }
+.noticia img { aspect-ratio: 25 / 16; object-fit: cover; width: 100%; filter: sepia(.14); }
+.noticia-cuerpo { display: flex; flex-direction: column; gap: 9px; flex: 1; padding-top: 14px; }
+.noticia .fecha { font-family: var(--mono); font-size: 10.5px; letter-spacing: .16em; text-transform: uppercase; color: var(--rojo); max-width: none; }
+.noticia h3 { font-size: 20px; margin: 0; }
+.noticia p { margin: 0; font-family: var(--prosa); font-size: 17px; color: rgba(12, 16, 36, .82); max-width: none; }
+.noticia .etiqueta { margin-top: auto; align-self: flex-start; }
+
+.etiqueta {
+  display: inline-block;
+  font-family: var(--mono); font-size: 9.5px; letter-spacing: .18em; text-transform: uppercase;
+  background: transparent; color: var(--azul);
+  border: 1px solid var(--sepia-suave);
+  padding: 5px 9px; border-radius: 2px;
+}
+
+/* ---------- Plantel ---------- */
+
+.grupo-plantel + .grupo-plantel { margin-top: 40px; }
+.jugador {
+  display: flex; gap: 14px; align-items: center;
+  padding: 13px 0; border-bottom: 1px dotted var(--sepia-suave);
+}
+.jugador .numero {
+  font-family: var(--display); font-weight: 600; font-size: 30px; line-height: 1;
+  color: var(--azul); min-width: 42px; text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+.jugador .nombre { font-family: var(--display); font-weight: 500; font-size: 18px; text-transform: uppercase; line-height: 1.1; }
+.jugador .detalle { font-family: var(--mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--sepia); }
+.jugador--vacante .numero { color: var(--sepia-suave); }
+
+/* ---------- Camisetas ---------- */
+
+.camiseta { border: 1px solid var(--sepia-suave); background: var(--papel); }
+.camiseta .muestra { height: 148px; position: relative; }
+.camiseta .muestra i { position: absolute; inset: 0; }
+.camiseta .rotulo { padding: 15px 17px; border-top: 1px solid var(--sepia-suave); }
+.camiseta h4 { margin: 0 0 4px; }
+.camiseta .detalle { margin: 0; max-width: none; font-family: var(--mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--sepia); }
+
+/* ---------- Formularios ---------- */
+
+.formulario { display: grid; gap: 17px; max-width: 600px; }
+.campo { display: grid; gap: 6px; }
+.campo label { font-family: var(--mono); font-size: 10.5px; letter-spacing: .16em; text-transform: uppercase; color: var(--sepia); }
+.campo input, .campo select, .campo textarea {
+  font-family: var(--texto); font-size: 15px; color: var(--tinta);
+  padding: 11px 13px; border: 1px solid var(--sepia-suave); border-radius: var(--radio);
+  background: rgba(255, 255, 255, .6); width: 100%;
+}
+.campo textarea { min-height: 126px; resize: vertical; }
+.campo input:focus, .campo select:focus, .campo textarea:focus { border-color: var(--azul); background: #fff; }
+.campo-doble { display: grid; grid-template-columns: 1fr 1fr; gap: 17px; }
+.aviso-formulario {
+  font-family: var(--mono); font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--sepia); line-height: 1.85; max-width: none;
+}
+
+/* ---------- Cuotas ---------- */
+
+.cuota { display: flex; flex-direction: column; gap: 13px; }
+.cuota .precio {
+  font-family: var(--display); font-weight: 600; font-size: 40px; line-height: 1;
+  color: var(--azul); margin: 0; font-variant-numeric: tabular-nums;
+}
+.cuota .precio small {
+  display: block; margin-top: 6px;
+  font-family: var(--mono); font-size: 10px; letter-spacing: .16em; color: var(--sepia);
+}
+.cuota ul { margin: 0; padding-left: 17px; font-family: var(--prosa); font-size: 17.5px; }
+.cuota li { margin-bottom: 5px; }
+.cuota--destacada { border-top-color: var(--rojo); }
+.cuota--destacada .precio { color: var(--rojo); }
+
+/* ---------- Listas de datos ---------- */
+
+.datos { display: grid; margin: 0; }
+.datos div { display: grid; grid-template-columns: 180px 1fr; gap: 16px; padding: 12px 0; border-bottom: 1px dotted var(--sepia-suave); }
+.datos dt { font-family: var(--mono); font-size: 10.5px; letter-spacing: .16em; text-transform: uppercase; color: var(--sepia); }
+.datos dd { margin: 0; font-family: var(--prosa); font-size: 18px; }
+.claro .datos div { border-bottom-color: rgba(244, 239, 230, .2); }
+.claro .datos dt { color: var(--oro); }
+
+.cronologia { list-style: none; margin: 0; padding: 0; }
+.cronologia li { display: grid; grid-template-columns: 92px 1fr; gap: 20px; padding: 15px 0; border-bottom: 1px dotted var(--sepia-suave); }
+.cronologia b { font-family: var(--display); font-weight: 600; font-size: 23px; color: var(--rojo); line-height: 1; }
+.cronologia span { font-family: var(--prosa); font-size: 17.5px; }
+.claro .cronologia li { border-bottom-color: rgba(244, 239, 230, .2); }
+.claro .cronologia b { color: var(--oro); }
+
+/* ---------- Cierre ---------- */
+
+.franja-cierre {
+  background: var(--rojo); color: var(--hueso);
+  padding: clamp(32px, 4.5vw, 56px) 0;
+}
+.franja-cierre .marco { display: flex; align-items: center; justify-content: space-between; gap: 22px; flex-wrap: wrap; }
+.franja-cierre h2 { margin: 0; }
+.franja-cierre p { margin: 6px 0 0; max-width: none; font-family: var(--prosa); font-size: 18px; color: rgba(244, 239, 230, .9); }
+
+/* ---------- Colofón ---------- */
+
+.pie {
+  background: var(--cuero); color: rgba(244, 239, 230, .74);
+  padding: 52px 0 26px; font-size: 14.5px;
+  border-top: 4px double rgba(212, 168, 90, .5);
+}
+.pie-grilla { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 30px; }
+.pie h4 { font-family: var(--mono); font-weight: 500; font-size: 10px; letter-spacing: .22em; color: var(--oro); text-transform: uppercase; margin: 0 0 13px; }
+.pie ul { list-style: none; margin: 0; padding: 0; }
+.pie li { margin-bottom: 7px; }
+.pie a { color: rgba(244, 239, 230, .74); text-decoration: none; }
+.pie a:hover { color: var(--oro); }
+.pie p { max-width: none; }
+.pie-escudo { display: flex; gap: 15px; align-items: flex-start; }
+.pie-escudo img { width: 54px; }
+.pie-escudo strong { font-family: var(--display); font-weight: 600; font-size: 16px; letter-spacing: .06em; text-transform: uppercase; color: var(--hueso); }
+.pie-legal {
+  margin-top: 36px; padding-top: 18px; border-top: 1px solid rgba(244, 239, 230, .14);
+  display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+  font-family: var(--mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase;
+  color: rgba(244, 239, 230, .5);
+}
+
+/* ---------- Estados ---------- */
+
+.cargando { font-family: var(--mono); font-size: 10.5px; letter-spacing: .18em; text-transform: uppercase; color: var(--sepia); padding: 20px 0; }
+.error-datos { border-left: 3px solid var(--rojo); background: rgba(209, 44, 62, .08); padding: 13px 17px; font-family: var(--mono); font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; }
+
+/* ---------- Adaptaciones ---------- */
+
+@media (max-width: 900px) {
+  .pie-grilla { grid-template-columns: 1fr 1fr; }
+  .datos div { grid-template-columns: 1fr; gap: 3px; }
+}
+
+/* Con ocho capítulos la cornisa no entra en una línea hasta bien entrado el
+   escritorio: el menú desplegable arranca antes que el resto de los ajustes
+   de pantalla angosta. */
+@media (max-width: 1240px) {
+  .menu-boton { display: block; }
+  .menu {
+    display: none; width: 100%; flex-direction: column; gap: 0;
+    padding-bottom: 10px; margin-left: 0;
+  }
+  .menu.abierto { display: flex; }
+  .cabecera-fila { flex-wrap: wrap; padding-top: 10px; padding-bottom: 2px; min-height: 0; }
+  .menu a { padding: 11px 0; border-bottom: 1px dotted var(--sepia-suave); width: 100%; }
+}
+
+@media (max-width: 760px) {
+  :root { --encuadernacion: 14px; }
+  .fila-partido { grid-template-columns: 1fr; gap: 7px; }
+  .fila-partido .dato { text-align: left; }
+  .campo-doble { grid-template-columns: 1fr; }
+  .cronologia li { grid-template-columns: 1fr; gap: 5px; }
+  .libro { width: min(340px, 88vw); }
+  /* En una pantalla angosta no entran las dos páginas: manda el índice.
+     .camara.lejos gana por especificidad, así que el cerrado no se toca. */
+  .camara { transform: translate(-10%, -13%) translateZ(215px); }
+  .indice-pie { flex-direction: column; align-items: flex-start; gap: 5px; letter-spacing: .14em; }
+  .hoja-indice .sello { letter-spacing: .16em; }
+}
+
+@media (max-width: 520px) {
+  .pie-grilla { grid-template-columns: 1fr; }
+  .franja-cierre .marco { flex-direction: column; align-items: flex-start; }
+  .cifra { border-left: 0; border-top: 1px solid var(--sepia-suave); }
+  .cifra:first-child { border-top: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .tapa { display: none; }
+  
+
+.hoja-indice { opacity: 1; }
+}
+
+@media print {
+  .cabecera, .menu, .franja-cierre, .escena { display: none; }
+  body { background: #fff; }
+  .hoja { padding-left: 0; }
+  .hoja::before { display: none; }
+}

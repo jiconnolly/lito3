@@ -1,0 +1,201 @@
+{
+  "_nota": "DATOS DE EJEMPLO. Es lo único que queda por cargar: los resultados de data/partidos.json ya son reales.",
+  "ejemplo": true,
+  "torneo": "Primera Divisional C 2026",
+  "fecha_jugada": 11,
+  "actualizado": "2026-05-10",
+  "fuente": "AUF",
+  "equipos": [
+    {
+      "pos": 1,
+      "equipo": "Alto Perú",
+      "pj": 11,
+      "g": 7,
+      "e": 2,
+      "p": 2,
+      "gf": 19,
+      "gc": 10,
+      "dg": 9,
+      "pts": 23,
+      "forma": [
+        "G",
+        "G",
+        "E",
+        "G",
+        "P"
+      ]
+    },
+    {
+      "pos": 2,
+      "equipo": "Lito",
+      "pj": 11,
+      "g": 6,
+      "e": 3,
+      "p": 2,
+      "gf": 16,
+      "gc": 9,
+      "dg": 7,
+      "pts": 21,
+      "forma": [
+        "G",
+        "E",
+        "G",
+        "P",
+        "G"
+      ],
+      "esNosotros": true
+    },
+    {
+      "pos": 3,
+      "equipo": "Albion",
+      "pj": 11,
+      "g": 6,
+      "e": 2,
+      "p": 3,
+      "gf": 15,
+      "gc": 11,
+      "dg": 4,
+      "pts": 20,
+      "forma": [
+        "G",
+        "P",
+        "G",
+        "G",
+        "E"
+      ]
+    },
+    {
+      "pos": 4,
+      "equipo": "Basáñez",
+      "pj": 11,
+      "g": 5,
+      "e": 4,
+      "p": 2,
+      "gf": 14,
+      "gc": 11,
+      "dg": 3,
+      "pts": 19,
+      "forma": [
+        "E",
+        "G",
+        "E",
+        "G",
+        "G"
+      ]
+    },
+    {
+      "pos": 5,
+      "equipo": "Colón",
+      "pj": 11,
+      "g": 5,
+      "e": 3,
+      "p": 3,
+      "gf": 13,
+      "gc": 12,
+      "dg": 1,
+      "pts": 18,
+      "forma": [
+        "E",
+        "G",
+        "P",
+        "G",
+        "E"
+      ]
+    },
+    {
+      "pos": 6,
+      "equipo": "La Luz",
+      "pj": 11,
+      "g": 4,
+      "e": 4,
+      "p": 3,
+      "gf": 12,
+      "gc": 12,
+      "dg": 0,
+      "pts": 16,
+      "forma": [
+        "P",
+        "E",
+        "G",
+        "E",
+        "G"
+      ]
+    },
+    {
+      "pos": 7,
+      "equipo": "Atenas",
+      "pj": 11,
+      "g": 4,
+      "e": 2,
+      "p": 5,
+      "gf": 11,
+      "gc": 14,
+      "dg": -3,
+      "pts": 14,
+      "forma": [
+        "P",
+        "G",
+        "P",
+        "E",
+        "G"
+      ]
+    },
+    {
+      "pos": 8,
+      "equipo": "Canadian",
+      "pj": 11,
+      "g": 3,
+      "e": 4,
+      "p": 4,
+      "gf": 10,
+      "gc": 13,
+      "dg": -3,
+      "pts": 13,
+      "forma": [
+        "E",
+        "P",
+        "G",
+        "E",
+        "P"
+      ]
+    },
+    {
+      "pos": 9,
+      "equipo": "Oriental",
+      "pj": 11,
+      "g": 2,
+      "e": 4,
+      "p": 5,
+      "gf": 9,
+      "gc": 15,
+      "dg": -6,
+      "pts": 10,
+      "forma": [
+        "P",
+        "E",
+        "P",
+        "E",
+        "P"
+      ]
+    },
+    {
+      "pos": 10,
+      "equipo": "Rocha",
+      "pj": 11,
+      "g": 1,
+      "e": 3,
+      "p": 7,
+      "gf": 8,
+      "gc": 20,
+      "dg": -12,
+      "pts": 6,
+      "forma": [
+        "P",
+        "P",
+        "E",
+        "P",
+        "P"
+      ]
+    }
+  ]
+}

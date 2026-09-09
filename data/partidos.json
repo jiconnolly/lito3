@@ -1,0 +1,82 @@
+{
+  "_nota": "Resultados reales cargados a mano. Los próximos partidos siguen pendientes: cuando se conozcan, agregarlos a 'proximos'.",
+  "ejemplo": false,
+  "actualizado": "2026-08-23",
+  "competencia": "Primera Divisional C",
+  "ultimo": {
+    "fecha": "2026-08-23",
+    "competencia": "Divisional C · Zona de grupos",
+    "local": "Mar de Fondo",
+    "visitante": "Lito",
+    "golesLocal": 0,
+    "golesVisitante": 0,
+    "cancha": ""
+  },
+  "proximos": [],
+  "resultados": [
+    {
+      "fecha": "2026-08-23",
+      "competencia": "Divisional C · Zona de grupos",
+      "local": "Mar de Fondo",
+      "visitante": "Lito",
+      "golesLocal": 0,
+      "golesVisitante": 0
+    },
+    {
+      "fecha": "2026-08-17",
+      "competencia": "Divisional C · Zona de grupos",
+      "local": "Lito",
+      "visitante": "Sportivo Bella Italia",
+      "golesLocal": 3,
+      "golesVisitante": 0
+    },
+    {
+      "fecha": "2026-08-02",
+      "competencia": "Torneo Final · Fecha 2",
+      "local": "Deportivo LSM",
+      "visitante": "Lito",
+      "golesLocal": 1,
+      "golesVisitante": 0
+    },
+    {
+      "fecha": "2026-07-25",
+      "competencia": "Segunda Liga Uruguaya",
+      "local": "Lito",
+      "visitante": "CA Terremoto",
+      "golesLocal": 1,
+      "golesVisitante": 1
+    },
+    {
+      "fecha": "2026-07-04",
+      "competencia": "Torneo Inicial · Semifinal",
+      "local": "Deportivo Colonia",
+      "visitante": "Lito",
+      "golesLocal": 2,
+      "golesVisitante": 0
+    },
+    {
+      "fecha": "2026-06-28",
+      "competencia": "Fase regular",
+      "local": "Lito",
+      "visitante": "Deportivo LSM",
+      "golesLocal": 1,
+      "golesVisitante": 1
+    },
+    {
+      "fecha": "2026-06-14",
+      "competencia": "Fase regular",
+      "local": "Lito",
+      "visitante": "Durazno Capital",
+      "golesLocal": 1,
+      "golesVisitante": 0
+    },
+    {
+      "fecha": "2026-05-26",
+      "competencia": "Fase regular",
+      "local": "Lito",
+      "visitante": "Artigas",
+      "golesLocal": 0,
+      "golesVisitante": 0
+    }
+  ]
+}

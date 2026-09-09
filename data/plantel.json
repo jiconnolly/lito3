@@ -1,0 +1,129 @@
+{
+  "_nota": "Cargar nombres reales. Los jugadores sin 'nombre' se muestran como puesto vacante.",
+  "temporada": "2026",
+  "actualizado": "2026-05-10",
+  "cuerpoTecnico": [
+    {
+      "rol": "Director técnico",
+      "nombre": "Horacio «Chino» Peralta"
+    },
+    {
+      "rol": "Ayudante de campo",
+      "nombre": ""
+    },
+    {
+      "rol": "Preparador físico",
+      "nombre": ""
+    },
+    {
+      "rol": "Entrenador de arqueros",
+      "nombre": ""
+    },
+    {
+      "rol": "Médico",
+      "nombre": ""
+    },
+    {
+      "rol": "Utilero",
+      "nombre": ""
+    }
+  ],
+  "jugadores": [
+    {
+      "numero": 1,
+      "nombre": "",
+      "puesto": "Arqueros",
+      "nacimiento": ""
+    },
+    {
+      "numero": 12,
+      "nombre": "",
+      "puesto": "Arqueros",
+      "nacimiento": ""
+    },
+    {
+      "numero": 2,
+      "nombre": "",
+      "puesto": "Defensas",
+      "nacimiento": ""
+    },
+    {
+      "numero": 3,
+      "nombre": "",
+      "puesto": "Defensas",
+      "nacimiento": ""
+    },
+    {
+      "numero": 4,
+      "nombre": "",
+      "puesto": "Defensas",
+      "nacimiento": ""
+    },
+    {
+      "numero": 6,
+      "nombre": "",
+      "puesto": "Defensas",
+      "nacimiento": ""
+    },
+    {
+      "numero": 13,
+      "nombre": "",
+      "puesto": "Defensas",
+      "nacimiento": ""
+    },
+    {
+      "numero": 5,
+      "nombre": "",
+      "puesto": "Mediocampistas",
+      "nacimiento": ""
+    },
+    {
+      "numero": 8,
+      "nombre": "",
+      "puesto": "Mediocampistas",
+      "nacimiento": ""
+    },
+    {
+      "numero": 10,
+      "nombre": "",
+      "puesto": "Mediocampistas",
+      "nacimiento": ""
+    },
+    {
+      "numero": 14,
+      "nombre": "",
+      "puesto": "Mediocampistas",
+      "nacimiento": ""
+    },
+    {
+      "numero": 15,
+      "nombre": "",
+      "puesto": "Mediocampistas",
+      "nacimiento": ""
+    },
+    {
+      "numero": 7,
+      "nombre": "",
+      "puesto": "Delanteros",
+      "nacimiento": ""
+    },
+    {
+      "numero": 9,
+      "nombre": "",
+      "puesto": "Delanteros",
+      "nacimiento": ""
+    },
+    {
+      "numero": 11,
+      "nombre": "",
+      "puesto": "Delanteros",
+      "nacimiento": ""
+    },
+    {
+      "numero": 17,
+      "nombre": "",
+      "puesto": "Delanteros",
+      "nacimiento": ""
+    }
+  ]
+}

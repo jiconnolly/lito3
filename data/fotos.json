@@ -1,0 +1,59 @@
+{
+  "_nota": "Galería. Para sumar una foto: dejar el archivo en assets/img/galeria/ y agregar una entrada acá. No hace falta recortarla: la galería respeta la proporción de cada foto.",
+  "ejemplo": false,
+  "actualizado": "2026-09-04",
+  "grupos": [
+    {
+      "titulo": "Plantel",
+      "bajada": "El primer equipo, los entrenamientos y la previa.",
+      "fotos": [
+        {
+          "archivo": "assets/img/galeria/plantel-1.jpg",
+          "pie": "Formación de noche, bajo la torre de luz",
+          "fecha": ""
+        },
+        {
+          "archivo": "assets/img/galeria/plantel-2.jpg",
+          "pie": "El once antes de arrancar",
+          "fecha": ""
+        },
+        {
+          "archivo": "assets/img/galeria/plantel-3.jpg",
+          "pie": "Formación de visitante",
+          "fecha": ""
+        }
+      ]
+    },
+    {
+      "titulo": "Partidos",
+      "bajada": "Domingo a domingo, dentro y fuera de la cancha.",
+      "fotos": [
+        {
+          "archivo": "assets/img/galeria/partido-5.jpg",
+          "pie": "Saliendo del túnel",
+          "fecha": ""
+        },
+        {
+          "archivo": "assets/img/galeria/partido-1.jpg",
+          "pie": "Duelo en la niebla · vs Artigas",
+          "fecha": "2026-05-26"
+        },
+        {
+          "archivo": "assets/img/galeria/partido-2.jpg",
+          "pie": "El 9 va por la pelota · vs Artigas",
+          "fecha": "2026-05-26"
+        },
+        {
+          "archivo": "assets/img/galeria/partido-3.jpg",
+          "pie": "Aguantar la pelota · vs Canadian",
+          "fecha": ""
+        },
+        {
+          "archivo": "assets/img/galeria/partido-4.jpg",
+          "pie": "El abrazo del gol",
+          "fecha": ""
+        }
+      ]
+    }
+  ]
+}
