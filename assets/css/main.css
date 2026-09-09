@@ -1436,6 +1436,129 @@ table.posiciones .fila-nuestra td:nth-child(2) { color: var(--azul); font-weight
 }
 .himno-hoja .cancion-pie { font-size: clamp(8.5px, 1.5vw, 10px); }
 
+/* La grabación. El reproductor es el del navegador: es el que ya saben usar,
+   funciona con teclado y con lector de pantalla, y no arrastra JavaScript.
+   Va con preload="none" para que los tres megas y medio del archivo no se
+   bajen hasta que alguien lo pida. */
+.reproductor {
+  display: inline-flex; flex-direction: column; align-items: center; gap: 10px;
+  margin-top: clamp(22px, 3.4vw, 30px);
+  padding: 18px 22px;
+  border: 1px solid var(--sepia-suave);
+  background: rgba(244, 239, 230, .5);
+}
+.reproductor-rotulo {
+  margin: 0;
+  font-family: var(--mono); font-size: 10.5px; letter-spacing: .18em;
+  text-transform: uppercase; color: var(--sepia);
+}
+.reproductor audio { width: min(420px, 76vw); }
+
+/* ---------- La historia de un vistazo ----------
+   Siete hitos antes de entrar en el relato largo: quien pasa de corrido se
+   lleva el siglo entero; quien se queda, lee los cuatro momentos. */
+.historia-rapida { padding-bottom: 0; }
+.timeline-visual {
+  list-style: none; padding: 0; margin: 36px 0 0;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
+}
+.timeline-visual li {
+  position: relative;
+  border-top: 2px solid var(--rojo);
+  border-left: 1px solid var(--sepia-suave);
+  padding: 24px 22px 26px;
+}
+/* El último hito es el presente: va en azul, para que se vea dónde estamos. */
+.timeline-visual li:last-child { background: var(--azul); color: var(--hueso); }
+.timeline-visual b {
+  font: 500 clamp(32px, 3.6vw, 50px)/1 var(--display);
+  color: var(--azul); display: block; margin-bottom: 20px;
+}
+.timeline-visual li:last-child b { color: var(--hueso); }
+.timeline-visual h3 { font-size: 21px; margin: 0 0 8px; }
+.timeline-visual p { font-size: 13px; margin: 0; }
+@media (max-width: 1000px) { .timeline-visual { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) {
+  .timeline-visual { grid-template-columns: 1fr; }
+  .timeline-visual li { padding: 20px 0; border-left: 0; }
+}
+
+/* Lo secundario, plegado. La página respira y el que quiere, lee. */
+.lectura-archivo { border-top: 1px solid var(--sepia-suave); margin-top: 20px; }
+.lectura-archivo summary {
+  padding: 16px 0; cursor: pointer;
+  font-family: var(--texto); font-weight: 600; font-size: 13px;
+  color: var(--azul);
+}
+.lectura-archivo[open] summary { color: var(--rojo); }
+.lectura-archivo p { margin-top: 10px; }
+
+/* Panoramas: el barrio y el plantel, a lo ancho de la página. */
+.barrio-panorama, .plantel-portada { margin: 35px 0 25px; }
+.plantel-portada { margin: 0 0 36px; }
+.barrio-panorama img, .plantel-portada img {
+  width: 100%; max-height: 650px; object-fit: cover;
+}
+.barrio-panorama figcaption {
+  font-family: var(--mono); font-size: 11px; line-height: 1.6;
+  letter-spacing: .1em; text-transform: uppercase;
+  color: var(--sepia); padding: 14px 0;
+}
+
+.proyecto-futuro h2 { font-size: clamp(36px, 5vw, 68px); }
+
+/* Socios: tres razones antes que tres precios. */
+.pertenencia { margin: 32px 0; }
+.pertenencia .tarjeta { background: transparent; border-top: 2px solid var(--rojo); }
+.pertenencia .cintilla { margin-bottom: 10px; }
+.consulta-cuotas {
+  background: var(--azul); color: var(--hueso);
+  padding: clamp(24px, 4vw, 48px);
+}
+.consulta-cuotas h3 { color: var(--hueso); margin-top: 0; }
+.consulta-cuotas p { color: rgba(244, 239, 230, .86); margin-bottom: 20px; }
+.consulta-cuotas .boton { background: var(--rojo); color: var(--hueso); border-color: var(--rojo); }
+
+.cierre-accion { margin: clamp(22px, 3.4vw, 30px) auto 0; max-width: none; }
+
+/* Aparición al entrar en pantalla. Sin JavaScript o con el movimiento
+   reducido, el contenido se ve igual: la clase la agrega el script. */
+.revelar { transition: opacity .65s, transform .65s; }
+.revelar:not(.en-vista) { opacity: .35; transform: translateY(16px); }
+
+/* ---------- El himno ----------
+   La misma letra que está en la contratapa del libro, pero en una sección
+   propia: en el teléfono la tapa no se abre y la canción quedaba escondida. */
+
+.himno { background: var(--papel-sombra); }
+.himno-marco { text-align: center; }
+.himno-marco .cintilla { justify-content: center; }
+.himno-marco h2 { margin-bottom: clamp(22px, 3.4vw, 32px); }
+.himno-hoja {
+  position: relative;
+  max-width: 640px; margin: 0 auto;
+  padding: clamp(28px, 5vw, 48px) clamp(22px, 4vw, 40px);
+  background-color: var(--papel);
+  background-image:
+    repeating-linear-gradient(45deg, rgba(28, 44, 107, .05) 0 2px, transparent 2px 15px),
+    url('../img/texturas/papel.jpg');
+  background-size: auto, 460px 460px;
+  box-shadow: 0 14px 40px rgba(24, 18, 10, .16);
+}
+.himno-hoja::before, .himno-hoja::after {
+  content: ""; position: absolute; left: clamp(22px, 4vw, 40px); right: clamp(22px, 4vw, 40px);
+  height: 1px; background: linear-gradient(90deg, transparent, var(--oro-80), transparent);
+}
+.himno-hoja::before { top: clamp(14px, 2.4vw, 22px); }
+.himno-hoja::after { bottom: clamp(14px, 2.4vw, 22px); }
+/* Acá la letra se lee, no se insinúa: cuerpo mayor que en la contratapa. */
+.himno-hoja .cancion-letra p {
+  font-size: clamp(16px, 2.6vw, 21px);
+  line-height: 1.72;
+  margin-bottom: clamp(16px, 2.6vw, 22px);
+}
+.himno-hoja .cancion-pie { font-size: clamp(8.5px, 1.5vw, 10px); }
+
 /* El lugar de la grabación, para cuando el club la tenga. */
 .reproductor {
   display: inline-flex; align-items: center; gap: 12px;

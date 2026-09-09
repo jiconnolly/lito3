@@ -56,6 +56,12 @@ CAPITULOS = [
 ATRIBUTOS_VISIBLES = ("alt", "title", "placeholder", "aria-label", "content")
 # La letra del himno queda en español: es la canción del club, no una leyenda.
 SIN_TRADUCIR = ("cancion-letra", "himno-hoja")
+# Etiquetas que no se cierran. Si se cuentan al llevar la profundidad, cada
+# <br> de la letra del himno deja el contador un escalón más arriba y la zona
+# literal no termina nunca: todo lo que sigue en la página se queda sin
+# traducir, y encima sin aparecer en el informe de frases pendientes.
+VACIAS = {"area", "base", "br", "col", "embed", "hr", "img", "input",
+          "link", "meta", "param", "source", "track", "wbr"}
 # Nombres propios y valores técnicos: iguales en los dos idiomas.
 FIJAS = {
     "Centro Atlético Lito", "Lito", "ENAS", "English", "es_UY", "website",
@@ -116,7 +122,8 @@ class Traductor(HTMLParser):
             self.crudo += 1
         if self.literal is None and any(c in (dict(attrs).get("class") or "") for c in SIN_TRADUCIR):
             self.literal = self.profundidad
-        self.profundidad += 1
+        if tag not in VACIAS:
+            self.profundidad += 1
         self.salida.append(self._tag(tag, attrs))
 
     def handle_startendtag(self, tag, attrs):
@@ -526,9 +533,12 @@ def himno():
       </div>
       <p class="cancion-pie">Centro Atlético Lito · Montevideo · 1917</p>
     </div>
-    <div class="reproductor" data-himno-audio>
-      <span class="reproductor-icono" aria-hidden="true">&#9654;</span>
-      <span>La grabación se sube acá cuando el club la tenga.</span>
+    <div class="reproductor">
+      <p class="reproductor-rotulo">Escuchar el himno</p>
+      <audio controls preload="none" src="assets/audio/himno-lito.mp3">
+        Tu navegador no puede reproducir audio.
+        <a href="assets/audio/himno-lito.mp3">Descargar el himno</a>.
+      </audio>
     </div>
   </div>
 </section>
