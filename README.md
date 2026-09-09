@@ -60,9 +60,8 @@ Los archivos con `"ejemplo": true` muestran un aviso visible en el sitio
 
 ## Los huecos: fotos que todavía no existen
 
-Varios bloques tienen un lugar reservado para una foto que el club todavía no
-mandó: el barrio, los retratos de Castro y Cea, los dos escudos históricos, los
-renders del proyecto. Todos usan la misma función de `build.py`:
+Algunos bloques tienen un lugar reservado para una foto que el club todavía no
+mandó. Todos usan la misma función de `build.py`:
 
 ```python
 hueco("Retrato · Pedro Cea", "4 / 5")                       # marco vacío
@@ -152,7 +151,6 @@ capítulos que cierran el arco: I y VI. Si se pone en todos, deja de significar.
 - [ ] Reemplazar las fotos de `assets/img/fotos/` que siguen siendo placeholders (sede, hinchada, noticias).
 - [ ] Cargar fotos de partidos en el grupo "Partidos" de `data/fotos.json`.
 - [ ] Confirmar el pie de `assets/img/historia/archivo-1.jpg` (la jugada).
-- [ ] Cargar cuatro fotos reales de Arroyo Seco (nada de banco de imágenes).
 - [ ] Cargar dirección de la sede, cancha, teléfono y horarios en `build.py`
       (páginas `club.html` y `contacto.html`). El manual de marca indica
       Av. Carlos María Ramírez s/n — confirmar cuál corresponde.

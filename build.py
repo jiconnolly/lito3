@@ -606,10 +606,6 @@ def cap_club():
       <figcaption>La cancha, las calles, el barrio. Arroyo Seco, Montevideo.</figcaption>
     </figure>
     <p class="prosa">El café de Agraciada y Santa Fe fue el punto de encuentro. La cancha sigue siendo una forma de encontrarnos.</p>
-    <div class="barrio-grilla">
-""" + hueco("Calle de Arroyo Seco", "3 / 4") + hueco("Esquina del barrio", "3 / 4") + hueco("Fachadas y arquitectura", "3 / 4") + hueco("Un lugar de la historia del club", "3 / 4") + """
-    </div>
-    <p class="epigrafe">Cuatro lugares reservados para fotos reales del barrio. Se cargan pasándole el archivo al mismo bloque; no hay que tocar el diseño.</p>
   </div>
 </section>
 """ + momento("1921", "Hicimos historia", "Ocho temporadas en la Primera del fútbol uruguayo y tres campeones del mundo formados acá.", "historia") + """
