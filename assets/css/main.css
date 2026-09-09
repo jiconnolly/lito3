@@ -1396,7 +1396,7 @@ table.posiciones .fila-nuestra td:nth-child(2) { color: var(--azul); font-weight
 .consulta-cuotas p { color: rgba(244, 239, 230, .86); margin-bottom: 20px; }
 .consulta-cuotas .boton { background: var(--rojo); color: var(--hueso); border-color: var(--rojo); }
 
-.cierre-accion { margin: clamp(22px, 3.4vw, 30px) 0 0; }
+.cierre-accion { margin: clamp(22px, 3.4vw, 30px) auto 0; max-width: none; }
 
 /* Aparición al entrar en pantalla. Sin JavaScript o con el movimiento
    reducido, el contenido se ve igual: la clase la agrega el script. */
