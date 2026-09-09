@@ -316,9 +316,8 @@ def colofon():
       <div>
         <h4>Seguinos</h4>
         <ul>
-          <li><a href="https://instagram.com/calito.uy" rel="noopener">Instagram</a></li>
-          <li><a href="https://x.com/calito_uy" rel="noopener">X</a></li>
-          <li><a href="https://facebook.com/calito.uy" rel="noopener">Facebook</a></li>
+          <li><a href="https://instagram.com/centroatleticolito" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.facebook.com/groups/707943076074966" rel="noopener">Facebook</a></li>
           <li><a href="mailto:marca@{DOMINIO}">marca@{DOMINIO}</a></li>
         </ul>
       </div>
@@ -1148,7 +1147,8 @@ def cap_contacto():
           <div><dt>Sede</dt><dd>Arroyo Seco, Montevideo, Uruguay<br><span class="mono">Dirección exacta a confirmar</span></dd></div>
           <div><dt>Correo</dt><dd><a href="mailto:marca@calito.uy">marca@calito.uy</a></dd></div>
           <div><dt>Teléfono</dt><dd>A confirmar</dd></div>
-          <div><dt>Instagram</dt><dd><a href="https://instagram.com/calito.uy" rel="noopener">@calito.uy</a></dd></div>
+          <div><dt>Instagram</dt><dd><a href="https://instagram.com/centroatleticolito" rel="noopener">@centroatleticolito</a></dd></div>
+          <div><dt>Facebook</dt><dd><a href="https://www.facebook.com/groups/707943076074966" rel="noopener">Grupo del club</a></dd></div>
           <div><dt>Horario de sede</dt><dd>A confirmar</dd></div>
         </dl>
 
