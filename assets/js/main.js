@@ -25,6 +25,7 @@ const TEXTOS = {
     sinPartidos: 'Sin partidos programados.',
     aConfirmar: 'A confirmar', fichaPendiente: 'Ficha pendiente', horaAConfirmar: 'a confirmar',
     club: 'Club', sinFotos: 'Todavía no hay fotos cargadas en el álbum.',
+    sinNoticias: 'Todavía no hay noticias publicadas.',
     gano: 'Ganó', empato: 'Empató', perdio: 'Perdió',
     puestos: { Arqueros: 'Arqueros', Defensas: 'Defensas', Mediocampistas: 'Mediocampistas', Delanteros: 'Delanteros' },
     tablaCorta: ['#', 'Equipo', 'PJ', 'DG', 'Pts'],
@@ -43,6 +44,7 @@ const TEXTOS = {
     sinPartidos: 'No matches scheduled.',
     aConfirmar: 'To be confirmed', fichaPendiente: 'Details pending', horaAConfirmar: 'time to be confirmed',
     club: 'Club', sinFotos: 'No photographs in the album yet.',
+    sinNoticias: 'No news published yet.',
     gano: 'Won', empato: 'Drew', perdio: 'Lost',
     puestos: { Arqueros: 'Goalkeepers', Defensas: 'Defenders', Mediocampistas: 'Midfielders', Delanteros: 'Forwards' },
     tablaCorta: ['#', 'Team', 'P', 'GD', 'Pts'],
@@ -398,7 +400,15 @@ async function noticias() {
 
 function pintarNoticias(destino, d) {
   const limite = Number(destino.dataset.noticias) || 0;
-  const notas = limite ? d.notas.slice(0, limite) : d.notas;
+  const todas = d.notas || [];
+
+  /* Sin notas cargadas se dice; si no, el bloque queda vacío y parece un error. */
+  if (!todas.length) {
+    destino.innerHTML = `<p class="nota">${T.sinNoticias}</p>`;
+    return;
+  }
+
+  const notas = limite ? todas.slice(0, limite) : todas;
   destino.innerHTML = notas.map(n => `
     <article class="noticia">
       <img src="${esc(n.imagen)}" alt="" loading="lazy" width="1000" height="640">

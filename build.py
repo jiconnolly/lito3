@@ -31,7 +31,7 @@ BASE = os.path.dirname(os.path.abspath(__file__))
 
 # Mientras el contenido no esté aprobado por el club, las páginas van con
 # noindex. Poner en False y regenerar antes de publicar.
-NOINDEX = False
+NOINDEX = True
 
 # Los capítulos del libro, en orden de lectura.
 CAPITULOS = [
