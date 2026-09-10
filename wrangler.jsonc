@@ -2,7 +2,7 @@
   // Configuración de despliegue del sitio del Centro Atlético Lito en Cloudflare.
   // Sitio estático: no hay build ni código de servidor. Las páginas las genera
   // build.py y se suben ya construidas al repositorio.
-  "name": "lito",
+  "name": "lito3",
   "compatibility_date": "2026-09-10",
   // Sin URLs de vista previa: cada despliegue generaría una dirección pública
   // extra del sitio, y alcanza con el dominio del club.
