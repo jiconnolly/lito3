@@ -406,11 +406,8 @@ def pagina_portada():
   </div>
 </section>
 
-<section id="libro" class="entrada-indice">
-  <p class="cintilla">Ocho capítulos. Una misma camiseta.</p>
-  <h2>Entrá en nuestra historia.</h2>
-  <p>Elegí un capítulo del libro.</p>
-</section>
+<div id="libro" class="libro-entrada">
+<p class="entrada-indice">Ocho capítulos. Una misma camiseta. <span>Elegí uno.</span></p>
 
 <div class="escena" data-escena>
   <button class="abrir-libro" type="button" data-abrir>Abrir el libro del club</button>

@@ -56,6 +56,11 @@ const TEXTOS = {
 
 const T = TEXTOS[IDIOMA];
 
+/* En la insignia va el símbolo; la letra queda en el title, que es lo que lee
+   un lector de pantalla. El color sigue diciendo lo mismo. */
+const SIMBOLOS = { G: '✓', E: '–', P: '✕' };
+const NOMBRE_RESULTADO = r => r === 'G' ? T.gano : r === 'E' ? T.empato : T.perdio;
+
 /* Las etapas de un torneo son vocabulario, no nombres propios: se traducen.
    Lo que no está en la tabla pasa tal cual, que es lo correcto para el nombre
    de la competencia. */
@@ -268,7 +273,7 @@ async function partidos() {
         return `<article class="fila-partido">
           <p class="fecha">${esc(fechaCorta(p.fecha))}<br>${esc(termino(p.competencia))}</p>
           <p class="cruce">${esc(p.local)} <span class="partido-vs">${p.golesLocal}–${p.golesVisitante}</span> ${esc(p.visitante)}</p>
-          <p class="dato"><span class="forma"><i class="${signo}">${signo}</i></span></p>
+          <p class="dato"><span class="forma"><i class="${signo}" title="${NOMBRE_RESULTADO(signo)}">${SIMBOLOS[signo]}</i></span></p>
         </article>`;
       }).join('') || '<p class="cargando">Sin resultados cargados.</p>';
     }
@@ -279,7 +284,7 @@ async function partidos() {
 
 function filaTabla(e, resumida) {
   const forma = (e.forma || []).map(r =>
-    `<i class="${r}" title="${r === 'G' ? T.gano : r === 'E' ? T.empato : T.perdio}">${r}</i>`).join('');
+    `<i class="${r}" title="${NOMBRE_RESULTADO(r)}">${SIMBOLOS[r] || r}</i>`).join('');
   const largas = resumida ? '' :
     `<td>${e.g}</td><td>${e.e}</td><td>${e.p}</td><td>${e.gf}</td><td>${e.gc}</td>`;
 

@@ -232,16 +232,23 @@ p { margin: 0 0 1.05em; max-width: 66ch; }
 }
 .atajos a:hover { background: var(--azul); color: var(--hueso); }
 
-/* La bisagra: acá empieza el libro. */
-.entrada-indice {
-  padding: 45px 24px 12px; text-align: center;
-  color: var(--hueso); background: #17110c;
-  scroll-margin-top: 0;
+/* La bisagra: acá empieza el libro.
+   El ancla del botón "Abrir el libro" es este bloque entero, no el rótulo:
+   así el salto deja el tomo centrado en la pantalla y no medio cortado abajo
+   de una franja. El rótulo es una línea, no una portada: la portada ya pasó. */
+.libro-entrada {
+  min-height: 100svh;
+  display: flex; flex-direction: column;
+  background: #17110c;
 }
-.entrada-indice .cintilla { color: var(--hueso); justify-content: center; }
-.entrada-indice h2 { font-size: clamp(32px, 4vw, 54px); color: var(--hueso); }
-.entrada-indice p { margin-left: auto; margin-right: auto; color: rgba(244, 239, 230, .78); }
-.entrada-indice + .escena { min-height: max(800px, 100svh); }
+.entrada-indice {
+  flex: none; margin: 0; max-width: none;
+  padding: 16px 24px 12px; text-align: center;
+  font-family: var(--mono); font-size: 10px; letter-spacing: .2em;
+  text-transform: uppercase; color: rgba(244, 239, 230, .5);
+}
+.entrada-indice span { color: var(--oro-80); }
+.libro-entrada .escena { flex: 1; min-height: 0; }
 
 @media (min-width: 1600px) {
   .portada-viva { padding-left: calc((100vw - 1400px) / 2); padding-right: calc((100vw - 1400px) / 2); }
@@ -1007,9 +1014,10 @@ table.posiciones .fila-nuestra td:nth-child(2) { color: var(--azul); font-weight
 .forma { display: inline-flex; gap: 3px; }
 .forma i {
   width: 17px; height: 17px; border-radius: 50%; font-style: normal;
-  font-family: var(--mono); font-size: 9px; font-weight: 500; color: var(--hueso);
+  font-size: 11px; font-weight: 600; line-height: 1; color: var(--hueso);
   display: inline-flex; align-items: center; justify-content: center;
 }
+.forma i.E { font-size: 14px; }
 .forma i.G { background: var(--ganado); }
 .forma i.E { background: var(--empatado); }
 .forma i.P { background: var(--perdido); }
