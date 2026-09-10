@@ -1,0 +1,6 @@
+# Herramientas del repositorio que no deben publicarse en el sitio
+build.py
+README.md
+wrangler.jsonc
+.assetsignore
+CNAME
