@@ -492,7 +492,7 @@ function formularios() {
       /* Sin backend, el formulario arma el correo con lo que se escribió y
          abre el cliente de mail: el mensaje sale igual, y el visitante ve lo
          que manda antes de mandarlo. */
-      const correo = f.dataset.sinBackend || 'marca@calito.uy';
+      const correo = f.dataset.sinBackend || 'marca@centroatleticolito.com';
       const cuerpo = Array.from(new FormData(f), ([campo, valor]) => `${campo}: ${valor}`).join('\n');
       const asunto = f.querySelector('#categoria') ? T.asuntoSocio : T.asuntoConsulta;
       const enlace = `mailto:${correo}?subject=${encodeURIComponent(asunto)}&body=${encodeURIComponent(cuerpo)}`;

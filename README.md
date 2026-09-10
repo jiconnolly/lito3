@@ -168,6 +168,20 @@ capítulo I y en el cierre del libro; no conviene repetirla más que eso.
 El cierre (`cierre()`) es la última página del libro y va sólo en los dos
 capítulos que cierran el arco: I y VI. Si se pone en todos, deja de significar.
 
+## El dominio
+
+El sitio se sirve desde GitHub Pages en `centroatleticolito.com`. Tres archivos
+sostienen eso y **no hay que borrarlos**:
+
+- `CNAME` — el dominio. Pages lo lee de acá; si desaparece, el dominio deja de
+  funcionar.
+- `robots.txt` y `sitemap.xml` — el segundo lo regenera `build.py` en cada
+  corrida, con las dieciocho direcciones y sus `hreflang`.
+
+`SITIO_URL`, arriba de `build.py`, tiene que coincidir con el dominio: de ahí
+salen las canónicas, los `hreflang` y la URL absoluta de la imagen para
+compartir.
+
 ## Antes de publicar
 
 - [ ] Reemplazar las fotos de `assets/img/fotos/` que siguen siendo placeholders (sede, hinchada, noticias).

@@ -8,30 +8,30 @@ capítulo de ese libro. Cabecera, colofón y metadatos se comparten desde acá:
 para cambiar cualquier texto institucional hay que editar este archivo y volver
 a correrlo, no los HTML sueltos, porque el script los sobreescribe.
 """
+import datetime
 import json
 import os
 import re
 from html.parser import HTMLParser
 
 SITIO = "Centro Atlético Lito"
-DOMINIO = "calito.uy"
+DOMINIO = "centroatleticolito.com"
 
-# Dónde vive el sitio publicado. Las redes (WhatsApp, Instagram, X, LinkedIn)
+# Dónde vive el sitio publicado. Las redes (WhatsApp, Instagram, LinkedIn)
 # exigen URL absoluta en og:image: con ruta relativa muchas no muestran nada o
-# se quedan con lo último que cachearon. Cambiar por "https://calito.uy" el día
-# que el dominio propio apunte acá.
-SITIO_URL = "https://jiconnolly.github.io/lito3"
+# se quedan con lo último que cachearon.
+SITIO_URL = "https://centroatleticolito.com"
 
 # Versión de los assets de marca. Los scrapers de redes y el favicon del
 # navegador cachean por URL y no se enteran de que el archivo cambió: subir
 # este número cada vez que se reemplaza el escudo, el favicon o la imagen de
 # compartir fuerza a todos a buscar la nueva.
-V = "3"
+V = "4"
 BASE = os.path.dirname(os.path.abspath(__file__))
 
 # Mientras el contenido no esté aprobado por el club, las páginas van con
 # noindex. Poner en False y regenerar antes de publicar.
-NOINDEX = True
+NOINDEX = False
 
 # Los capítulos del libro, en orden de lectura.
 CAPITULOS = [
@@ -850,7 +850,7 @@ def cap_club():
           <div style="background:var(--hueso-80);color:var(--tinta);padding:14px"><span class="mono">Hueso</span><br><span class="mono">#F4EFE6</span></div>
           <div style="border:1px solid var(--oro);color:var(--tinta);padding:14px"><span class="mono" style="color:var(--oro-80)">Oro Lito</span><br><span class="mono">#D4A85A</span></div>
         </div>
-        <p class="aviso-formulario" style="margin-top:14px">Uso de marca y archivos vectoriales: <a href="mailto:marca@calito.uy">marca@calito.uy</a></p>
+        <p class="aviso-formulario" style="margin-top:14px">Uso de marca y archivos vectoriales: <a href="mailto:marca@""" + DOMINIO + """">marca@""" + DOMINIO + """</a></p>
       </div>
     </div>
   </div>
@@ -1034,7 +1034,7 @@ def cap_noticias():
   <div class="marco">
     <div>
       <h2>¿Sos prensa?</h2>
-      <p>Acreditaciones, fotos y uso de marca: marca@calito.uy</p>
+      <p>Acreditaciones, fotos y uso de marca: marca@""" + DOMINIO + """</p>
     </div>
     <a class="boton boton--oro" href="contacto.html#prensa">Escribir al club</a>
   </div>
@@ -1148,7 +1148,7 @@ def cap_contacto():
         <h2>Dónde encontrarnos</h2>
         <dl class="datos">
           <div><dt>Sede</dt><dd>Arroyo Seco, Montevideo, Uruguay<br><span class="mono">Dirección exacta a confirmar</span></dd></div>
-          <div><dt>Correo</dt><dd><a href="mailto:marca@calito.uy">marca@calito.uy</a></dd></div>
+          <div><dt>Correo</dt><dd><a href="mailto:marca@""" + DOMINIO + """">marca@""" + DOMINIO + """</a></dd></div>
           <div><dt>Teléfono</dt><dd>A confirmar</dd></div>
           <div><dt>Instagram</dt><dd><a href="https://instagram.com/centroatleticolito" rel="noopener">@centroatleticolito</a></dd></div>
           <div><dt>Facebook</dt><dd><a href="https://www.facebook.com/groups/707943076074966" rel="noopener">Grupo del club</a></dd></div>
@@ -1158,14 +1158,14 @@ def cap_contacto():
         <div id="prensa" style="margin-top:36px">
           <p class="cintilla">Prensa y marca</p>
           <h3>Acreditaciones y archivos</h3>
-          <p class="prosa">Para acreditaciones de prensa, fotos institucionales, archivos vectoriales del escudo o autorizaciones de uso de marca: <a href="mailto:marca@calito.uy">marca@calito.uy</a>.</p>
+          <p class="prosa">Para acreditaciones de prensa, fotos institucionales, archivos vectoriales del escudo o autorizaciones de uso de marca: <a href="mailto:marca@""" + DOMINIO + """">marca@""" + DOMINIO + """</a>.</p>
           <p class="aviso-formulario">El escudo no se estira, no se rota y no cambia de color fuera de paleta. Manual de marca, edición 2026.</p>
         </div>
       </div>
       <div>
         <p class="cintilla">Formulario</p>
         <h2>Escribinos</h2>
-        <form class="formulario" data-sin-backend="marca@calito.uy">
+        <form class="formulario" data-sin-backend="marca@""" + DOMINIO + """">
           <div class="campo"><label for="c-nombre">Nombre</label><input id="c-nombre" name="nombre" type="text" autocomplete="name" required></div>
           <div class="campo"><label for="c-correo">Correo</label><input id="c-correo" name="correo" type="email" autocomplete="email" required></div>
           <div class="campo">
@@ -1207,6 +1207,33 @@ DESCRIPCIONES = {
 }
 
 
+def escribir_sitemap():
+    """Un sitemap con las dieciocho URLs y sus hreflang.
+
+    Se genera acá y no a mano para que agregar un capítulo no deje afuera dos
+    direcciones sin que nadie se entere."""
+    hoy = datetime.date.today().isoformat()
+    lineas = ['<?xml version="1.0" encoding="UTF-8"?>',
+              '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"'
+              ' xmlns:xhtml="http://www.w3.org/1999/xhtml">']
+    for archivo in [""] + [a for a, *_ in CAPITULOS]:
+        es = f"{SITIO_URL}/{archivo}"
+        en = f"{SITIO_URL}/en/{archivo}"
+        for propia in (es, en):
+            lineas += [
+                "  <url>",
+                f"    <loc>{propia}</loc>",
+                f'    <xhtml:link rel="alternate" hreflang="es" href="{es}"/>',
+                f'    <xhtml:link rel="alternate" hreflang="en" href="{en}"/>',
+                f"    <lastmod>{hoy}</lastmod>",
+                "  </url>",
+            ]
+    lineas.append("</urlset>")
+    with open(os.path.join(BASE, "sitemap.xml"), "w", encoding="utf-8") as f:
+        f.write("\n".join(lineas) + "\n")
+    print("escrito sitemap.xml")
+
+
 def main():
     mapa = json.load(open(os.path.join(BASE, "data", "i18n-en.json"), encoding="utf-8"))
     mapa.pop("_nota", None)
@@ -1244,14 +1271,18 @@ def main():
         ingles = ingles.replace('aria-label="Read this page in English"', 'aria-label="Leer esta página en español"')
         # La canónica y la og:url de la versión inglesa apuntan a /en/; los
         # alternate hreflang, en cambio, siguen nombrando a las dos.
-        propia = f"{SITIO_URL}/{archivo}"
-        propia_en = f"{SITIO_URL}/en/{archivo}"
+        # La portada se sirve en la raíz: su canónica no lleva el index.html.
+        ruta = "" if archivo == "index.html" else archivo
+        propia = f"{SITIO_URL}/{ruta}"
+        propia_en = f"{SITIO_URL}/en/{ruta}"
         ingles = ingles.replace(f'<link rel="canonical" href="{propia}">', f'<link rel="canonical" href="{propia_en}">')
         ingles = ingles.replace(f'<meta property="og:url" content="{propia}">', f'<meta property="og:url" content="{propia_en}">')
         with open(os.path.join(carpeta_en, archivo), "w", encoding="utf-8") as f:
             f.write(ingles)
         faltantes += faltan
         print("escrito", archivo, "+ en/" + archivo)
+
+    escribir_sitemap()
 
     # Aviso, no error: el sitio se genera igual, pero conviene saber qué quedó
     # en español dentro de la versión en inglés.
