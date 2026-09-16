@@ -1,29 +1,37 @@
 {
   "_nota": "Resultados reales cargados a mano desde la planilla del campeonato. El próximo partido sale de 'proximos'; al jugarse, pasa a 'resultados' y el más reciente de ahí se copia en 'ultimo'.",
   "ejemplo": false,
-  "actualizado": "2026-09-09",
+  "actualizado": "2026-09-16",
   "competencia": "Primera Divisional C",
   "ultimo": {
-    "fecha": "2026-09-06",
+    "fecha": "2026-09-13",
     "competencia": "Primera Divisional C",
     "local": "Lito",
-    "visitante": "Deportivo Colonia",
-    "golesLocal": 0,
-    "golesVisitante": 1,
+    "visitante": "Salus FC",
+    "golesLocal": 1,
+    "golesVisitante": 0,
     "cancha": ""
   },
   "proximos": [
+    {
+      "fecha": "2026-09-19",
+      "competencia": "Primera Divisional C · Fecha 9",
+      "local": "Rampla Juniors",
+      "visitante": "Lito",
+      "condicion": "visitante",
+      "hora": "10:00",
+      "cancha": ""
+    }
+  ],
+  "resultados": [
     {
       "fecha": "2026-09-13",
       "competencia": "Primera Divisional C",
       "local": "Lito",
       "visitante": "Salus FC",
-      "condicion": "local",
-      "hora": "",
-      "cancha": ""
-    }
-  ],
-  "resultados": [
+      "golesLocal": 1,
+      "golesVisitante": 0
+    },
     {
       "fecha": "2026-09-06",
       "competencia": "Primera Divisional C",
