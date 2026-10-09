@@ -1,29 +1,61 @@
 {
   "_nota": "Resultados reales cargados a mano desde la planilla del campeonato. El próximo partido sale de 'proximos'; al jugarse, pasa a 'resultados' y el más reciente de ahí se copia en 'ultimo'.",
   "ejemplo": false,
-  "actualizado": "2026-09-16",
+  "actualizado": "2026-10-09",
   "competencia": "Primera Divisional C",
   "ultimo": {
-    "fecha": "2026-09-13",
+    "fecha": "2026-10-03",
     "competencia": "Primera Divisional C",
-    "local": "Lito",
-    "visitante": "Salus FC",
-    "golesLocal": 1,
-    "golesVisitante": 0,
+    "local": "Deportivo Italiano",
+    "visitante": "Lito",
+    "golesLocal": 0,
+    "golesVisitante": 1,
     "cancha": ""
   },
   "proximos": [
     {
-      "fecha": "2026-09-19",
-      "competencia": "Primera Divisional C · Fecha 9",
-      "local": "Rampla Juniors",
-      "visitante": "Lito",
-      "condicion": "visitante",
+      "fecha": "2026-10-11",
+      "competencia": "Primera Divisional C · Fecha 12",
+      "local": "Lito",
+      "visitante": "Deutscher Fussball",
+      "condicion": "local",
       "hora": "10:00",
-      "cancha": ""
+      "cancha": "Parque ANCAP"
     }
   ],
   "resultados": [
+    {
+      "fecha": "2026-10-03",
+      "competencia": "Primera Divisional C",
+      "local": "Deportivo Italiano",
+      "visitante": "Lito",
+      "golesLocal": 0,
+      "golesVisitante": 1
+    },
+    {
+      "fecha": "2026-09-30",
+      "competencia": "Copa AUF Uruguay",
+      "local": "Lito",
+      "visitante": "Durazno FC",
+      "golesLocal": 2,
+      "golesVisitante": 0
+    },
+    {
+      "fecha": "2026-09-25",
+      "competencia": "Primera Divisional C",
+      "local": "Lito",
+      "visitante": "Club Social y Deportivo Los Halcones",
+      "golesLocal": 4,
+      "golesVisitante": 1
+    },
+    {
+      "fecha": "2026-09-19",
+      "competencia": "Primera Divisional C",
+      "local": "Rampla Juniors",
+      "visitante": "Lito",
+      "golesLocal": 0,
+      "golesVisitante": 1
+    },
     {
       "fecha": "2026-09-13",
       "competencia": "Primera Divisional C",
