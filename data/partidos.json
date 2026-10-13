@@ -1,29 +1,27 @@
 {
   "_nota": "Resultados reales cargados a mano desde la planilla del campeonato. El próximo partido sale de 'proximos'; al jugarse, pasa a 'resultados' y el más reciente de ahí se copia en 'ultimo'.",
   "ejemplo": false,
-  "actualizado": "2026-10-09",
+  "actualizado": "2026-10-13",
   "competencia": "Primera Divisional C",
   "ultimo": {
-    "fecha": "2026-10-03",
+    "fecha": "2026-10-11",
     "competencia": "Primera Divisional C",
-    "local": "Deportivo Italiano",
-    "visitante": "Lito",
-    "golesLocal": 0,
-    "golesVisitante": 1,
-    "cancha": ""
+    "local": "Lito",
+    "visitante": "Deutscher Fussball",
+    "golesLocal": 1,
+    "golesVisitante": 0,
+    "cancha": "Parque ANCAP"
   },
-  "proximos": [
+  "proximos": [],
+  "resultados": [
     {
       "fecha": "2026-10-11",
-      "competencia": "Primera Divisional C · Fecha 12",
+      "competencia": "Primera Divisional C",
       "local": "Lito",
       "visitante": "Deutscher Fussball",
-      "condicion": "local",
-      "hora": "10:00",
-      "cancha": "Parque ANCAP"
-    }
-  ],
-  "resultados": [
+      "golesLocal": 1,
+      "golesVisitante": 0
+    },
     {
       "fecha": "2026-10-03",
       "competencia": "Primera Divisional C",

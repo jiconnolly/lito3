@@ -1,9 +1,9 @@
 {
-  "_nota": "Tabla del Torneo Final copiada de footystats tras la fecha 11. La fuente no publica ganados, empatados ni perdidos: se deducen de los puntos y del porcentaje de victorias (G = % · PJ, E = Pts − 3·G). Artigas y Rampla Juniors tienen un partido menos. El orden aplica puntos, después diferencia de gol y después goles a favor.",
+  "_nota": "Tabla del Torneo Final copiada de footystats tras la fecha 11. La fuente no publica ganados, empatados ni perdidos: se deducen de los puntos y del porcentaje de victorias (G = % · PJ, E = Pts − 3·G). Artigas y Rampla Juniors tienen un partido menos. El orden aplica puntos, después diferencia de gol y después goles a favor. Al 13/10 se sumó solo el Lito 1-0 Deutscher Fussball de la fecha 12; el resto de la fecha 12 queda pendiente de cargar.",
   "ejemplo": false,
   "torneo": "Primera Divisional C · Torneo Final 2026",
   "fecha_jugada": 11,
-  "actualizado": "2026-10-09",
+  "actualizado": "2026-10-13",
   "fuente": "footystats",
   "equipos": [
     {
@@ -92,6 +92,26 @@
     },
     {
       "pos": 7,
+      "equipo": "Centro Atlético Lito",
+      "pj": 12,
+      "g": 5,
+      "e": 3,
+      "p": 4,
+      "gf": 9,
+      "gc": 8,
+      "dg": 1,
+      "pts": 18,
+      "forma": [
+        "G",
+        "G",
+        "G",
+        "G",
+        "G"
+      ],
+      "esNosotros": true
+    },
+    {
+      "pos": 8,
       "equipo": "Club Atlético Artigas",
       "pj": 10,
       "g": 4,
@@ -105,7 +125,7 @@
       "esNosotros": false
     },
     {
-      "pos": 8,
+      "pos": 9,
       "equipo": "Durazno FC",
       "pj": 11,
       "g": 4,
@@ -117,26 +137,6 @@
       "pts": 15,
       "forma": [],
       "esNosotros": false
-    },
-    {
-      "pos": 9,
-      "equipo": "Centro Atlético Lito",
-      "pj": 11,
-      "g": 4,
-      "e": 3,
-      "p": 4,
-      "gf": 8,
-      "gc": 8,
-      "dg": 0,
-      "pts": 15,
-      "forma": [
-        "P",
-        "G",
-        "G",
-        "G",
-        "G"
-      ],
-      "esNosotros": true
     },
     {
       "pos": 10,
@@ -225,13 +225,13 @@
     {
       "pos": 16,
       "equipo": "Deutscher Fussball",
-      "pj": 11,
+      "pj": 12,
       "g": 3,
       "e": 1,
-      "p": 7,
+      "p": 8,
       "gf": 10,
-      "gc": 14,
-      "dg": -4,
+      "gc": 15,
+      "dg": -5,
       "pts": 10,
       "forma": [],
       "esNosotros": false
