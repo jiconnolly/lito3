@@ -1,5 +1,5 @@
 {
-  "_nota": "Resultados reales cargados a mano desde la planilla del campeonato. El próximo partido sale de 'proximos'; al jugarse, pasa a 'resultados' y el más reciente de ahí se copia en 'ultimo'.",
+  "_nota": "Resultados reales cargados a mano desde la planilla del campeonato. El próximo partido sale de 'proximos'; al jugarse, pasa a 'resultados' y el más reciente de ahí se copia en 'ultimo'. Falta el partido de la fecha 13: la tabla de la AUF confirma que Lito lo ganó por dos goles, pero no publica el marcador.",
   "ejemplo": false,
   "actualizado": "2026-10-13",
   "competencia": "Primera Divisional C",

@@ -22,14 +22,14 @@ const TEXTOS = {
     falla: que => `No se pudieron cargar ${que}. Recargá la página.`,
     partidos: 'los partidos', posiciones: 'las posiciones', plantel: 'el plantel',
     noticias: 'las noticias', fotos: 'las fotos',
-    sinPartidos: 'Sin partidos programados.',
+    sinPartidos: 'Todavía no cargamos el próximo partido.',
     aConfirmar: 'A confirmar', fichaPendiente: 'Ficha pendiente', horaAConfirmar: 'a confirmar',
     club: 'Club', sinFotos: 'Todavía no hay fotos cargadas en el álbum.',
     sinNoticias: 'Todavía no hay noticias publicadas.',
     gano: 'Ganó', empato: 'Empató', perdio: 'Perdió',
     puestos: { Arqueros: 'Arqueros', Defensas: 'Defensas', Mediocampistas: 'Mediocampistas', Delanteros: 'Delanteros' },
     tablaCorta: ['#', 'Equipo', 'PJ', 'DG', 'Pts'],
-    tablaLarga: ['#', 'Equipo', 'PJ', 'G', 'E', 'P', 'GF', 'GC', 'DG', 'Pts', 'Últimos 5'],
+    tablaLarga: ['#', 'Equipo', 'PJ', 'G', 'E', 'P', 'DG', 'Pts', 'Últimos 5'],
     fecha: 'fecha', actualizado: 'actualizado', fuente: 'fuente',
     asuntoSocio: 'Quiero ser socio de Lito',
     asuntoConsulta: 'Consulta al Centro Atlético Lito',
@@ -41,14 +41,14 @@ const TEXTOS = {
     falla: que => `Could not load ${que}. Please reload the page.`,
     partidos: 'the matches', posiciones: 'the standings', plantel: 'the squad',
     noticias: 'the news', fotos: 'the photographs',
-    sinPartidos: 'No matches scheduled.',
+    sinPartidos: "We haven't loaded the next match yet.",
     aConfirmar: 'To be confirmed', fichaPendiente: 'Details pending', horaAConfirmar: 'time to be confirmed',
     club: 'Club', sinFotos: 'No photographs in the album yet.',
     sinNoticias: 'No news published yet.',
     gano: 'Won', empato: 'Drew', perdio: 'Lost',
     puestos: { Arqueros: 'Goalkeepers', Defensas: 'Defenders', Mediocampistas: 'Midfielders', Delanteros: 'Forwards' },
     tablaCorta: ['#', 'Team', 'P', 'GD', 'Pts'],
-    tablaLarga: ['#', 'Team', 'P', 'W', 'D', 'L', 'GF', 'GA', 'GD', 'Pts', 'Last 5'],
+    tablaLarga: ['#', 'Team', 'P', 'W', 'D', 'L', 'GD', 'Pts', 'Last 5'],
     fecha: 'round', actualizado: 'updated', fuente: 'source',
     asuntoSocio: 'I want to join Lito',
     asuntoConsulta: 'Enquiry to Centro Atlético Lito',
@@ -288,7 +288,7 @@ function filaTabla(e, resumida) {
   const forma = (e.forma || []).map(r =>
     `<i class="${r}" title="${NOMBRE_RESULTADO(r)}">${SIMBOLOS[r] || r}</i>`).join('');
   const largas = resumida ? '' :
-    `<td>${e.g}</td><td>${e.e}</td><td>${e.p}</td><td>${e.gf}</td><td>${e.gc}</td>`;
+    `<td>${e.g}</td><td>${e.e}</td><td>${e.p}</td>`;
 
   return `<tr class="${e.esNosotros ? 'fila-nuestra' : ''}">
       <td>${e.pos}</td>
