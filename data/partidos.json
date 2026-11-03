@@ -12,7 +12,16 @@
     "golesVisitante": 1,
     "cancha": ""
   },
-  "proximos": [],
+  "proximos": [
+    {
+      "fecha": "2026-11-04",
+      "competencia": "Copa AUF Uruguay · Octavos de final",
+      "local": "Lito",
+      "visitante": "Montevideo Wanderers",
+      "hora": "",
+      "cancha": "Parque Abraham Paladino"
+    }
+  ],
   "resultados": [
     {
       "fecha": "2026-10-31",
