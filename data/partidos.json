@@ -1,19 +1,43 @@
 {
-  "_nota": "Resultados reales cargados a mano desde la planilla del campeonato. El próximo partido sale de 'proximos'; al jugarse, pasa a 'resultados' y el más reciente de ahí se copia en 'ultimo'. Faltan las fechas 13, 14 y 15, que no están cargadas porque no se tienen las fechas del calendario: la tabla de la AUF dice que la 13 fue victoria por dos goles, la 14 empate sin cambio en la diferencia, y la 15 el 1-1 con Bella Vista de visitante.",
+  "_nota": "Resultados reales cargados a mano desde la planilla del campeonato. El próximo partido sale de 'proximos'; al jugarse, pasa a 'resultados' y el más reciente de ahí se copia en 'ultimo'.",
   "ejemplo": false,
-  "actualizado": "2026-10-13",
+  "actualizado": "2026-11-03",
   "competencia": "Primera Divisional C",
   "ultimo": {
-    "fecha": "2026-10-11",
+    "fecha": "2026-10-31",
     "competencia": "Primera Divisional C",
-    "local": "Lito",
-    "visitante": "Deutscher Fussball",
+    "local": "Club Atlético Bella Vista",
+    "visitante": "Lito",
     "golesLocal": 1,
-    "golesVisitante": 0,
-    "cancha": "Parque ANCAP"
+    "golesVisitante": 1,
+    "cancha": ""
   },
   "proximos": [],
   "resultados": [
+    {
+      "fecha": "2026-10-31",
+      "competencia": "Primera Divisional C",
+      "local": "Club Atlético Bella Vista",
+      "visitante": "Lito",
+      "golesLocal": 1,
+      "golesVisitante": 1
+    },
+    {
+      "fecha": "2026-10-24",
+      "competencia": "Primera Divisional C",
+      "local": "Lito",
+      "visitante": "Durazno FC",
+      "golesLocal": 0,
+      "golesVisitante": 0
+    },
+    {
+      "fecha": "2026-10-17",
+      "competencia": "Primera Divisional C",
+      "local": "CA Platense",
+      "visitante": "Lito",
+      "golesLocal": 0,
+      "golesVisitante": 2
+    },
     {
       "fecha": "2026-10-11",
       "competencia": "Primera Divisional C",
@@ -194,7 +218,7 @@
       "fecha": "2026-05-03",
       "competencia": "Primera Divisional C",
       "local": "Lito",
-      "visitante": "CA Platense Reserve",
+      "visitante": "CA Platense",
       "golesLocal": 3,
       "golesVisitante": 1
     }
