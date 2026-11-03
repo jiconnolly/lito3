@@ -1,143 +1,234 @@
 {
-  "_nota": "Cargar nombres reales. Los jugadores sin 'nombre' se muestran como puesto vacante, y los que no tienen 'foto' muestran el número sobre un recuadro punteado. La foto es una ruta relativa a la raíz del sitio, por ejemplo assets/img/plantel/nombre-apellido.jpg, y conviene que sea vertical: se recorta a 4 de ancho por 5 de alto.",
+  "_nota": "Nombres y números tomados de las carpetas de la sesión de fotos del club. Falta el puesto de cada jugador: los que lo tengan vacío se agrupan al final bajo 'Puesto a confirmar'. Dos jugadores figuran con el 27, y el 14 y el 21 no los usa nadie. Tres integrantes del cuerpo técnico vienen marcados 'EQ' en el Drive y todavía no se sabe qué rol es. La foto es una ruta relativa a la raíz del sitio y conviene que sea vertical: se recorta a 4 de ancho por 5 de alto.",
   "temporada": "2026",
-  "actualizado": "2026-05-10",
+  "actualizado": "2026-11-03",
   "cuerpoTecnico": [
     {
       "rol": "Director técnico",
-      "nombre": "Horacio «Chino» Peralta"
-    },
-    {
-      "rol": "Ayudante de campo",
-      "nombre": ""
-    },
-    {
-      "rol": "Preparador físico",
-      "nombre": ""
+      "nombre": "Horacio Peralta"
     },
     {
       "rol": "Entrenador de arqueros",
-      "nombre": ""
+      "nombre": "Adrián"
     },
     {
-      "rol": "Médico",
-      "nombre": ""
+      "rol": "EQ · a confirmar",
+      "nombre": "Jorge"
     },
     {
-      "rol": "Utilero",
-      "nombre": ""
+      "rol": "EQ · a confirmar",
+      "nombre": "Ruben Capdevilla"
+    },
+    {
+      "rol": "EQ · a confirmar",
+      "nombre": "Agustin Gelmi"
+    },
+    {
+      "rol": "Preparador físico",
+      "nombre": "Alexis Abelenda"
     }
   ],
   "jugadores": [
     {
       "numero": 1,
-      "nombre": "",
-      "puesto": "Arqueros",
-      "nacimiento": "",
-      "foto": ""
-    },
-    {
-      "numero": 12,
-      "nombre": "",
-      "puesto": "Arqueros",
+      "nombre": "Mathias Cubero",
+      "puesto": "",
       "nacimiento": "",
       "foto": ""
     },
     {
       "numero": 2,
-      "nombre": "",
-      "puesto": "Defensas",
+      "nombre": "Matías Ferreira",
+      "puesto": "",
       "nacimiento": "",
       "foto": ""
     },
     {
       "numero": 3,
-      "nombre": "",
-      "puesto": "Defensas",
+      "nombre": "Guillermo Niski",
+      "puesto": "",
       "nacimiento": "",
       "foto": ""
     },
     {
       "numero": 4,
-      "nombre": "",
-      "puesto": "Defensas",
-      "nacimiento": "",
-      "foto": ""
-    },
-    {
-      "numero": 6,
-      "nombre": "",
-      "puesto": "Defensas",
-      "nacimiento": "",
-      "foto": ""
-    },
-    {
-      "numero": 13,
-      "nombre": "",
-      "puesto": "Defensas",
+      "nombre": "Damián Ruiz",
+      "puesto": "",
       "nacimiento": "",
       "foto": ""
     },
     {
       "numero": 5,
-      "nombre": "",
-      "puesto": "Mediocampistas",
+      "nombre": "Gastón Medina",
+      "puesto": "",
       "nacimiento": "",
       "foto": ""
     },
     {
-      "numero": 8,
-      "nombre": "",
-      "puesto": "Mediocampistas",
-      "nacimiento": "",
-      "foto": ""
-    },
-    {
-      "numero": 10,
-      "nombre": "",
-      "puesto": "Mediocampistas",
-      "nacimiento": "",
-      "foto": ""
-    },
-    {
-      "numero": 14,
-      "nombre": "",
-      "puesto": "Mediocampistas",
-      "nacimiento": "",
-      "foto": ""
-    },
-    {
-      "numero": 15,
-      "nombre": "",
-      "puesto": "Mediocampistas",
+      "numero": 6,
+      "nombre": "Nicolás Bevegni",
+      "puesto": "",
       "nacimiento": "",
       "foto": ""
     },
     {
       "numero": 7,
-      "nombre": "",
-      "puesto": "Delanteros",
+      "nombre": "Gonzalo Sena",
+      "puesto": "",
+      "nacimiento": "",
+      "foto": ""
+    },
+    {
+      "numero": 8,
+      "nombre": "Agustín Rodríguez",
+      "puesto": "",
       "nacimiento": "",
       "foto": ""
     },
     {
       "numero": 9,
-      "nombre": "",
-      "puesto": "Delanteros",
+      "nombre": "Gustavo Alles",
+      "puesto": "",
+      "nacimiento": "",
+      "foto": ""
+    },
+    {
+      "numero": 10,
+      "nombre": "Martín «Cachimba» Correa",
+      "puesto": "",
       "nacimiento": "",
       "foto": ""
     },
     {
       "numero": 11,
-      "nombre": "",
-      "puesto": "Delanteros",
+      "nombre": "Anthony Aires",
+      "puesto": "",
+      "nacimiento": "",
+      "foto": ""
+    },
+    {
+      "numero": 12,
+      "nombre": "Lucas Techera",
+      "puesto": "",
+      "nacimiento": "",
+      "foto": ""
+    },
+    {
+      "numero": 13,
+      "nombre": "Camilo Sanchez",
+      "puesto": "",
+      "nacimiento": "",
+      "foto": ""
+    },
+    {
+      "numero": 15,
+      "nombre": "Emiliano Romero",
+      "puesto": "",
+      "nacimiento": "",
+      "foto": ""
+    },
+    {
+      "numero": 16,
+      "nombre": "Thomas Kerzul",
+      "puesto": "",
       "nacimiento": "",
       "foto": ""
     },
     {
       "numero": 17,
-      "nombre": "",
-      "puesto": "Delanteros",
+      "nombre": "Andres García",
+      "puesto": "",
+      "nacimiento": "",
+      "foto": ""
+    },
+    {
+      "numero": 18,
+      "nombre": "Maximiliano Viquez",
+      "puesto": "",
+      "nacimiento": "",
+      "foto": ""
+    },
+    {
+      "numero": 19,
+      "nombre": "Diego Castrillo",
+      "puesto": "",
+      "nacimiento": "",
+      "foto": ""
+    },
+    {
+      "numero": 20,
+      "nombre": "Francisco Brener",
+      "puesto": "",
+      "nacimiento": "",
+      "foto": ""
+    },
+    {
+      "numero": 22,
+      "nombre": "Alvaro Ascheri",
+      "puesto": "",
+      "nacimiento": "",
+      "foto": ""
+    },
+    {
+      "numero": 23,
+      "nombre": "Benjamín Piñeiro",
+      "puesto": "",
+      "nacimiento": "",
+      "foto": ""
+    },
+    {
+      "numero": 24,
+      "nombre": "Gonzalo Magliano",
+      "puesto": "",
+      "nacimiento": "",
+      "foto": ""
+    },
+    {
+      "numero": 25,
+      "nombre": "Ignacio Castillo",
+      "puesto": "",
+      "nacimiento": "",
+      "foto": ""
+    },
+    {
+      "numero": 26,
+      "nombre": "Jonathan González",
+      "puesto": "",
+      "nacimiento": "",
+      "foto": ""
+    },
+    {
+      "numero": 27,
+      "nombre": "Felipe Vallejos",
+      "puesto": "",
+      "nacimiento": "",
+      "foto": ""
+    },
+    {
+      "numero": 27,
+      "nombre": "Luciano Galusso",
+      "puesto": "",
+      "nacimiento": "",
+      "foto": ""
+    },
+    {
+      "numero": 28,
+      "nombre": "Tomás Martínez",
+      "puesto": "",
+      "nacimiento": "",
+      "foto": ""
+    },
+    {
+      "numero": 29,
+      "nombre": "Diego Cor",
+      "puesto": "",
+      "nacimiento": "",
+      "foto": ""
+    },
+    {
+      "numero": 30,
+      "nombre": "Amaro García",
+      "puesto": "",
       "nacimiento": "",
       "foto": ""
     }

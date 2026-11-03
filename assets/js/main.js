@@ -28,6 +28,7 @@ const TEXTOS = {
     sinNoticias: 'Todavía no hay noticias publicadas.',
     gano: 'Ganó', empato: 'Empató', perdio: 'Perdió',
     puestos: { Arqueros: 'Arqueros', Defensas: 'Defensas', Mediocampistas: 'Mediocampistas', Delanteros: 'Delanteros' },
+    puestoPendiente: 'Puesto a confirmar',
     tablaCorta: ['#', 'Equipo', 'PJ', 'DG', 'Pts'],
     tablaLarga: ['#', 'Equipo', 'PJ', 'G', 'E', 'P', 'DG', 'Pts', 'Últimos 5'],
     fecha: 'fecha', actualizado: 'actualizado', fuente: 'fuente',
@@ -47,6 +48,7 @@ const TEXTOS = {
     sinNoticias: 'No news published yet.',
     gano: 'Won', empato: 'Drew', perdio: 'Lost',
     puestos: { Arqueros: 'Goalkeepers', Defensas: 'Defenders', Mediocampistas: 'Midfielders', Delanteros: 'Forwards' },
+    puestoPendiente: 'Position to be confirmed',
     tablaCorta: ['#', 'Team', 'P', 'GD', 'Pts'],
     tablaLarga: ['#', 'Team', 'P', 'W', 'D', 'L', 'GD', 'Pts', 'Last 5'],
     fecha: 'round', actualizado: 'updated', fuente: 'source',
@@ -354,11 +356,15 @@ async function plantel() {
   }
 
   const puestos = ['Arqueros', 'Defensas', 'Mediocampistas', 'Delanteros'];
-  destino.innerHTML = puestos.map(puesto => {
-    const grupo = d.jugadores.filter(j => j.puesto === puesto);
+  // Los jugadores sin puesto asignado no se pierden: caen en un grupo al final.
+  const grupos = puestos.map(p => [T.puestos[p] || p, d.jugadores.filter(j => j.puesto === p)]);
+  const sueltos = d.jugadores.filter(j => !puestos.includes(j.puesto));
+  if (sueltos.length) grupos.push([T.puestoPendiente, sueltos]);
+
+  destino.innerHTML = grupos.map(([rotulo, grupo]) => {
     if (!grupo.length) return '';
     return `<section class="grupo-plantel">
-        <p class="cintilla">${esc(T.puestos[puesto] || puesto)}</p>
+        <p class="cintilla">${esc(rotulo)}</p>
         <div class="rejilla rejilla--plantel">
           ${grupo.map(j => `
             <article class="jugador ${j.nombre ? '' : 'jugador--vacante'}">

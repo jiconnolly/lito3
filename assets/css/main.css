@@ -1741,7 +1741,10 @@ body:has(.visor[open]) .cabecera { backdrop-filter: none; z-index: 1; }
 /* ---------- Plantel ---------- */
 
 .grupo-plantel + .grupo-plantel { margin-top: 40px; }
-.jugador { display: block; }
+/* La ficha se va al fondo para que la línea de puntos quede pareja en
+   toda la fila, aunque un nombre ocupe dos renglones y otro uno. */
+.jugador { display: flex; flex-direction: column; height: 100%; }
+.jugador-ficha { margin-top: auto; }
 .jugador-foto {
   display: block; width: 100%; aspect-ratio: 4 / 5;
   object-fit: cover; object-position: 50% 18%;
