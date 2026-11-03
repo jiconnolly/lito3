@@ -191,14 +191,50 @@ LETRA_HIMNO = """<p><span class="inicial">L</span>ito querido,<br>
               tu gloria y honor.</p>"""
 
 
-def encabezado_html(titulo, descripcion, archivo=""):
+FICHA_BUSCADORES = """<script type="application/ld+json">
+{{
+  "@context": "https://schema.org",
+  "@type": "SportsTeam",
+  "name": "Centro Atlético Lito",
+  "alternateName": "Lito",
+  "sport": "Fútbol",
+  "foundingDate": "1917-07-24",
+  "url": "{SITIO_URL}/",
+  "logo": "{SITIO_URL}/assets/img/escudo.png",
+  "image": "{SITIO_URL}/assets/img/og.png",
+  "description": "Club de fútbol de Arroyo Seco, Montevideo, fundado el 24 de julio de 1917. Juega la Primera Divisional C de la AUF.",
+  "memberOf": {{
+    "@type": "SportsOrganization",
+    "name": "Asociación Uruguaya de Fútbol"
+  }},
+  "location": {{
+    "@type": "Place",
+    "address": {{
+      "@type": "PostalAddress",
+      "addressLocality": "Arroyo Seco",
+      "addressRegion": "Montevideo",
+      "addressCountry": "UY"
+    }}
+  }},
+  "sameAs": [
+    "https://instagram.com/centroatleticolito",
+    "https://www.facebook.com/groups/707943076074966"
+  ]
+}}
+</script>
+"""
+
+
+def encabezado_html(titulo, descripcion, archivo="", titulo_entero=None):
     robots = '<meta name="robots" content="noindex, nofollow">\n' if NOINDEX else ""
+    # La ficha va solo en la portada: repetirla en cada página no agrega nada.
+    ficha = FICHA_BUSCADORES.format(SITIO_URL=SITIO_URL) if archivo == "" else ""
     return f"""<!DOCTYPE html>
 <html lang="es-UY">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{titulo} · {SITIO}</title>
+<title>{titulo_entero or f'{titulo} · {SITIO}'}</title>
 <meta name="description" content="{descripcion}">
 {robots}<link rel="canonical" href="{SITIO_URL}/{archivo}">
 <link rel="alternate" hreflang="es" href="{SITIO_URL}/{archivo}">
@@ -217,6 +253,7 @@ def encabezado_html(titulo, descripcion, archivo=""):
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="{SITIO_URL}/assets/img/og.png?v={V}">
 <meta name="theme-color" content="#0F1A40">
+{ficha}
 <link rel="icon" href="assets/img/favicon.png?v={V}">
 <link rel="apple-touch-icon" href="assets/img/escudo-180.png?v={V}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1235,7 +1272,8 @@ def main():
 
     # Portada: la tapa. Sin cornisa ni colofón, para no romper la ilusión.
     paginas["index.html"] = (
-        encabezado_html("El libro del club", "Sitio oficial del Centro Atlético Lito: historia, plantel, fixture, noticias y socios. Montevideo, desde 1917.", "")
+        encabezado_html("El libro del club", "Sitio oficial del Centro Atlético Lito: historia, plantel, fixture, noticias y socios. Montevideo, desde 1917.", "",
+                        titulo_entero="Centro Atlético Lito · Club de fútbol de Arroyo Seco, Montevideo")
         + pagina_portada()
         + '\n</main>\n<script src="assets/js/main.js"></script>\n</body>\n</html>\n'
     )
