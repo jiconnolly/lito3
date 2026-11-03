@@ -1028,6 +1028,7 @@ table.posiciones .fila-nuestra td:nth-child(2) { color: var(--azul); font-weight
 .rejilla--2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
 .rejilla--3 { grid-template-columns: repeat(auto-fit, minmax(255px, 1fr)); }
 .rejilla--4 { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+.rejilla--plantel { grid-template-columns: repeat(auto-fill, minmax(168px, 1fr)); }
 
 .tarjeta { border-top: 2px solid var(--sepia-suave); padding: 20px 0 0; }
 .tarjeta h3 { margin-bottom: .4em; }
@@ -1740,16 +1741,33 @@ body:has(.visor[open]) .cabecera { backdrop-filter: none; z-index: 1; }
 /* ---------- Plantel ---------- */
 
 .grupo-plantel + .grupo-plantel { margin-top: 40px; }
-.jugador {
-  display: flex; gap: 14px; align-items: center;
-  padding: 13px 0; border-bottom: 1px dotted var(--sepia-suave);
+.jugador { display: block; }
+.jugador-foto {
+  display: block; width: 100%; aspect-ratio: 4 / 5;
+  object-fit: cover; object-position: 50% 18%;
+  border: 1px solid var(--sepia-suave); background: var(--papel-sombra);
+  filter: sepia(.06) contrast(1.02);
+}
+.jugador-foto--vacia {
+  display: grid; place-items: center; border-style: dashed; filter: none;
+  background:
+    repeating-linear-gradient(45deg, rgba(138, 126, 104, .05) 0 2px, transparent 2px 11px),
+    var(--papel-sombra);
+}
+.jugador-foto--vacia i {
+  font-family: var(--display); font-weight: 600; font-size: 44px; font-style: normal;
+  line-height: 1; color: var(--sepia-suave); font-variant-numeric: tabular-nums;
+}
+.jugador-ficha {
+  display: flex; gap: 11px; align-items: baseline;
+  padding: 11px 0 13px; border-bottom: 1px dotted var(--sepia-suave);
 }
 .jugador .numero {
-  font-family: var(--display); font-weight: 600; font-size: 30px; line-height: 1;
-  color: var(--azul); min-width: 42px; text-align: center;
+  font-family: var(--display); font-weight: 600; font-size: 23px; line-height: 1;
+  color: var(--azul); min-width: 28px; text-align: right;
   font-variant-numeric: tabular-nums;
 }
-.jugador .nombre { font-family: var(--display); font-weight: 500; font-size: 18px; text-transform: uppercase; line-height: 1.1; }
+.jugador .nombre { font-family: var(--display); font-weight: 500; font-size: 16px; text-transform: uppercase; line-height: 1.15; }
 .jugador .detalle { font-family: var(--mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--sepia); }
 .jugador--vacante .numero { color: var(--sepia-suave); }
 

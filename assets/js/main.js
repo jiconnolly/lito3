@@ -359,13 +359,18 @@ async function plantel() {
     if (!grupo.length) return '';
     return `<section class="grupo-plantel">
         <p class="cintilla">${esc(T.puestos[puesto] || puesto)}</p>
-        <div class="rejilla rejilla--3">
+        <div class="rejilla rejilla--plantel">
           ${grupo.map(j => `
             <article class="jugador ${j.nombre ? '' : 'jugador--vacante'}">
-              <span class="numero">${j.numero != null ? j.numero : '—'}</span>
-              <span>
-                <span class="nombre">${esc(j.nombre || T.aConfirmar)}</span><br>
-                <span class="detalle">${esc(j.nacimiento || T.fichaPendiente)}</span>
+              ${j.foto
+                ? `<img class="jugador-foto" src="${RAIZ}${esc(j.foto)}" alt="${esc(j.nombre || T.aConfirmar)}" width="600" height="750" loading="lazy">`
+                : `<span class="jugador-foto jugador-foto--vacia"><i>${j.numero != null ? j.numero : '—'}</i></span>`}
+              <span class="jugador-ficha">
+                <span class="numero">${j.numero != null ? j.numero : '—'}</span>
+                <span>
+                  <span class="nombre">${esc(j.nombre || T.aConfirmar)}</span><br>
+                  <span class="detalle">${esc(j.nacimiento || T.fichaPendiente)}</span>
+                </span>
               </span>
             </article>`).join('')}
         </div>

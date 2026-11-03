@@ -1,5 +1,5 @@
 {
-  "_nota": "Cargar nombres reales. Los jugadores sin 'nombre' se muestran como puesto vacante.",
+  "_nota": "Cargar nombres reales. Los jugadores sin 'nombre' se muestran como puesto vacante, y los que no tienen 'foto' muestran el número sobre un recuadro punteado. La foto es una ruta relativa a la raíz del sitio, por ejemplo assets/img/plantel/nombre-apellido.jpg, y conviene que sea vertical: se recorta a 4 de ancho por 5 de alto.",
   "temporada": "2026",
   "actualizado": "2026-05-10",
   "cuerpoTecnico": [
@@ -33,97 +33,113 @@
       "numero": 1,
       "nombre": "",
       "puesto": "Arqueros",
-      "nacimiento": ""
+      "nacimiento": "",
+      "foto": ""
     },
     {
       "numero": 12,
       "nombre": "",
       "puesto": "Arqueros",
-      "nacimiento": ""
+      "nacimiento": "",
+      "foto": ""
     },
     {
       "numero": 2,
       "nombre": "",
       "puesto": "Defensas",
-      "nacimiento": ""
+      "nacimiento": "",
+      "foto": ""
     },
     {
       "numero": 3,
       "nombre": "",
       "puesto": "Defensas",
-      "nacimiento": ""
+      "nacimiento": "",
+      "foto": ""
     },
     {
       "numero": 4,
       "nombre": "",
       "puesto": "Defensas",
-      "nacimiento": ""
+      "nacimiento": "",
+      "foto": ""
     },
     {
       "numero": 6,
       "nombre": "",
       "puesto": "Defensas",
-      "nacimiento": ""
+      "nacimiento": "",
+      "foto": ""
     },
     {
       "numero": 13,
       "nombre": "",
       "puesto": "Defensas",
-      "nacimiento": ""
+      "nacimiento": "",
+      "foto": ""
     },
     {
       "numero": 5,
       "nombre": "",
       "puesto": "Mediocampistas",
-      "nacimiento": ""
+      "nacimiento": "",
+      "foto": ""
     },
     {
       "numero": 8,
       "nombre": "",
       "puesto": "Mediocampistas",
-      "nacimiento": ""
+      "nacimiento": "",
+      "foto": ""
     },
     {
       "numero": 10,
       "nombre": "",
       "puesto": "Mediocampistas",
-      "nacimiento": ""
+      "nacimiento": "",
+      "foto": ""
     },
     {
       "numero": 14,
       "nombre": "",
       "puesto": "Mediocampistas",
-      "nacimiento": ""
+      "nacimiento": "",
+      "foto": ""
     },
     {
       "numero": 15,
       "nombre": "",
       "puesto": "Mediocampistas",
-      "nacimiento": ""
+      "nacimiento": "",
+      "foto": ""
     },
     {
       "numero": 7,
       "nombre": "",
       "puesto": "Delanteros",
-      "nacimiento": ""
+      "nacimiento": "",
+      "foto": ""
     },
     {
       "numero": 9,
       "nombre": "",
       "puesto": "Delanteros",
-      "nacimiento": ""
+      "nacimiento": "",
+      "foto": ""
     },
     {
       "numero": 11,
       "nombre": "",
       "puesto": "Delanteros",
-      "nacimiento": ""
+      "nacimiento": "",
+      "foto": ""
     },
     {
       "numero": 17,
       "nombre": "",
       "puesto": "Delanteros",
-      "nacimiento": ""
+      "nacimiento": "",
+      "foto": ""
     }
   ]
 }
