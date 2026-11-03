@@ -28,7 +28,7 @@ const TEXTOS = {
     sinNoticias: 'Todavía no hay noticias publicadas.',
     gano: 'Ganó', empato: 'Empató', perdio: 'Perdió',
     puestos: { Arqueros: 'Arqueros', Defensas: 'Defensas', Mediocampistas: 'Mediocampistas', Delanteros: 'Delanteros' },
-    puestoPendiente: 'Puesto a confirmar',
+    puestoPendiente: 'Puesto a confirmar', cuerpoTecnico: 'Cuerpo técnico',
     tablaCorta: ['#', 'Equipo', 'PJ', 'DG', 'Pts'],
     tablaLarga: ['#', 'Equipo', 'PJ', 'G', 'E', 'P', 'DG', 'Pts', 'Últimos 5'],
     fecha: 'fecha', actualizado: 'actualizado', fuente: 'fuente',
@@ -48,7 +48,7 @@ const TEXTOS = {
     sinNoticias: 'No news published yet.',
     gano: 'Won', empato: 'Drew', perdio: 'Lost',
     puestos: { Arqueros: 'Goalkeepers', Defensas: 'Defenders', Mediocampistas: 'Midfielders', Delanteros: 'Forwards' },
-    puestoPendiente: 'Position to be confirmed',
+    puestoPendiente: 'Position to be confirmed', cuerpoTecnico: 'Coaching staff',
     tablaCorta: ['#', 'Team', 'P', 'GD', 'Pts'],
     tablaLarga: ['#', 'Team', 'P', 'W', 'D', 'L', 'GD', 'Pts', 'Last 5'],
     fecha: 'round', actualizado: 'updated', fuente: 'source',
@@ -356,15 +356,19 @@ async function plantel() {
   }
 
   const puestos = ['Arqueros', 'Defensas', 'Mediocampistas', 'Delanteros'];
-  // Los jugadores sin puesto asignado no se pierden: caen en un grupo al final.
-  const grupos = puestos.map(p => [T.puestos[p] || p, d.jugadores.filter(j => j.puesto === p)]);
+  // Mientras ningún jugador tenga puesto, el plantel va de corrido y sin
+  // rótulos. En cuanto se asigne aunque sea uno, vuelven los cuatro grupos
+  // y los que falten quedan juntos al final.
   const sueltos = d.jugadores.filter(j => !puestos.includes(j.puesto));
-  if (sueltos.length) grupos.push([T.puestoPendiente, sueltos]);
+  const grupos = sueltos.length === d.jugadores.length
+    ? [['', d.jugadores]]
+    : puestos.map(p => [T.puestos[p] || p, d.jugadores.filter(j => j.puesto === p)])
+             .concat(sueltos.length ? [[T.puestoPendiente, sueltos]] : []);
 
   destino.innerHTML = grupos.map(([rotulo, grupo]) => {
     if (!grupo.length) return '';
     return `<section class="grupo-plantel">
-        <p class="cintilla">${esc(rotulo)}</p>
+        ${rotulo ? `<p class="cintilla">${esc(rotulo)}</p>` : ''}
         <div class="rejilla rejilla--plantel">
           ${grupo.map(j => `
             <article class="jugador ${j.nombre ? '' : 'jugador--vacante'}">
@@ -374,8 +378,8 @@ async function plantel() {
               <span class="jugador-ficha">
                 <span class="numero">${j.numero != null ? j.numero : '—'}</span>
                 <span>
-                  <span class="nombre">${esc(j.nombre || T.aConfirmar)}</span><br>
-                  <span class="detalle">${esc(j.nacimiento || T.fichaPendiente)}</span>
+                  <span class="nombre">${esc(j.nombre || T.aConfirmar)}</span>
+                  ${j.nacimiento ? `<br><span class="detalle">${esc(j.nacimiento)}</span>` : ''}
                 </span>
               </span>
             </article>`).join('')}
@@ -386,7 +390,17 @@ async function plantel() {
   const ct = document.querySelector('[data-cuerpo-tecnico]');
   if (ct) {
     ct.innerHTML = d.cuerpoTecnico.map(m => `
-      <div><dt>${esc(m.rol)}</dt><dd>${esc(m.nombre || T.aConfirmar)}</dd></div>`).join('');
+      <article class="jugador">
+        ${m.foto
+          ? `<img class="jugador-foto" src="${RAIZ}${esc(m.foto)}" alt="${esc(m.nombre)}" width="600" height="750" loading="lazy">`
+          : '<span class="jugador-foto jugador-foto--vacia"></span>'}
+        <span class="jugador-ficha jugador-ficha--tecnico">
+          <span>
+            <span class="nombre">${esc(m.nombre || T.aConfirmar)}</span>
+            ${m.rol ? `<br><span class="detalle">${esc(m.rol)}</span>` : ''}
+          </span>
+        </span>
+      </article>`).join('');
   }
 }
 

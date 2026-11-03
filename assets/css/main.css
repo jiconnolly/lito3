@@ -1765,6 +1765,11 @@ body:has(.visor[open]) .cabecera { backdrop-filter: none; z-index: 1; }
   display: flex; gap: 11px; align-items: baseline;
   padding: 11px 0 13px; border-bottom: 1px dotted var(--sepia-suave);
 }
+/* Las fichas del cuerpo técnico no llevan número, así que el nombre
+   arranca donde arranca la foto. */
+.jugador-ficha--tecnico { gap: 0; }
+.claro .jugador-ficha { border-bottom-color: rgba(244, 239, 230, .2); }
+.claro .jugador-foto { border-color: rgba(212, 168, 90, .34); }
 .jugador .numero {
   font-family: var(--display); font-weight: 600; font-size: 23px; line-height: 1;
   color: var(--azul); min-width: 28px; text-align: right;
