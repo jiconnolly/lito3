@@ -69,7 +69,7 @@ FIJAS = {
     # El propio botón de idioma: lo reescribe main() al pasar la página a inglés.
     "EN", "English", "Read this page in English",
     # La dirección de la sede se escribe igual en los dos idiomas.
-    "Millán 2345",
+    "Millán 2345", "Millán 2345, Arroyo Seco",
 }
 
 
@@ -696,7 +696,7 @@ def cap_club():
       </article>
     </div>
     <div class="campeones-pie">
-""" + hueco("Uruguay campeón, 1930", "3 / 2", "assets/img/historia/uruguay-1930.jpg", "El equipo de Uruguay campeón del mundo en 1930", "Uruguay, campeón del mundo en 1930.") + hueco("Archivo", "4 / 3", "assets/img/historia/archivo-1.jpg", "Fotografía de archivo del fútbol uruguayo de la época", "Archivo · pie de foto a confirmar") + """
+""" + hueco("Uruguay campeón, 1930", "3 / 2", "assets/img/historia/uruguay-1930.jpg", "El equipo de Uruguay campeón del mundo en 1930", "Uruguay, campeón del mundo en 1930.") + hueco("Archivo", "4 / 3", "assets/img/historia/archivo-1.jpg", "Fotografía de archivo del fútbol uruguayo de la época", "Archivo") + """
     </div>
   </div>
 </section>
@@ -831,8 +831,7 @@ def cap_club():
       </dl>
       <dl class="datos">
         <div><dt>Afiliación</dt><dd>Asociación Uruguaya de Fútbol (AUF)</dd></div>
-        <div><dt>Dirección</dt><dd>A confirmar</dd></div>
-        <div><dt>Cancha</dt><dd>A confirmar</dd></div>
+        <div><dt>Dirección</dt><dd>Millán 2345, Arroyo Seco</dd></div>
         <div><dt>Presidencia</dt><dd>Rodolfo Neme</dd></div>
       </dl>
     </div>
@@ -874,10 +873,6 @@ def cap_club():
         <p class="prosa">La vida institucional también se construye entre socios.</p>
         <dl class="datos">
           <div><dt>Presidencia</dt><dd>Rodolfo Neme</dd></div>
-          <div><dt>Vicepresidencia</dt><dd>A confirmar</dd></div>
-          <div><dt>Secretaría</dt><dd>A confirmar</dd></div>
-          <div><dt>Tesorería</dt><dd>A confirmar</dd></div>
-          <div><dt>Vocales</dt><dd>A confirmar</dd></div>
         </dl>
       </div>
       <div>
@@ -1182,10 +1177,8 @@ def cap_contacto():
         <dl class="datos">
           <div><dt>Sede</dt><dd>Millán 2345<br><span class="mono">Arroyo Seco, Montevideo, Uruguay</span></dd></div>
           <div><dt>Correo</dt><dd><a href="mailto:marca@""" + DOMINIO + """">marca@""" + DOMINIO + """</a></dd></div>
-          <div><dt>Teléfono</dt><dd>A confirmar</dd></div>
           <div><dt>Instagram</dt><dd><a href="https://instagram.com/centroatleticolito" rel="noopener">@centroatleticolito</a></dd></div>
           <div><dt>Facebook</dt><dd><a href="https://www.facebook.com/groups/707943076074966" rel="noopener">Grupo del club</a></dd></div>
-          <div><dt>Horario de sede</dt><dd>A confirmar</dd></div>
         </dl>
 
         <div id="prensa" style="margin-top:36px">

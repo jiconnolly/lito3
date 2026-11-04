@@ -182,20 +182,44 @@ sostienen eso y **no hay que borrarlos**:
 salen las canónicas, los `hreflang` y la URL absoluta de la imagen para
 compartir.
 
+## Pendiente de averiguar
+
+Ninguno de estos datos se muestra en el sitio. La regla es que un dato que
+no se sabe no se anuncia: la fila se saca y queda anotada acá. Cuando el
+dato aparezca, se vuelve a poner la fila.
+
+- [ ] **Teléfono del club.** Se quitó la fila de `contacto.html`.
+- [ ] **Horario de atención de la sede**, si hay. Se quitó la fila de
+      `contacto.html`.
+- [ ] **La cancha donde juega de local.** Se quitó la fila de `club.html`.
+      El manual de marca menciona Av. Carlos María Ramírez s/n; falta
+      confirmar si sigue siendo esa.
+- [ ] **Comisión directiva** más allá de la presidencia: vicepresidencia,
+      secretaría, tesorería y vocales. Se quitaron las cuatro filas de
+      `club.html`.
+- [ ] **Las casillas `socios@`, `prensa@` y `marca@centroatleticolito.com`.**
+      Están publicadas pero no existen: un correo a cualquiera de las tres
+      rebota. O se crean en el panel del dominio, o se reemplazan por una
+      dirección real.
+- [ ] **El puesto de cada jugador** en `data/plantel.json`. Mientras ninguno
+      lo tenga, el plantel se muestra de corrido y sin rótulos; en cuanto se
+      asigne uno vuelven los cuatro grupos.
+- [ ] **El cargo de Jorge Sanabria, Ruben Capdevilla y Agustín Gelmi.** En el
+      Drive del club figuran como "EQ", que es equipier, pero el club pidió
+      no publicarlo por ahora.
+- [ ] **El pie de `assets/img/historia/archivo-1.jpg`** (la atajada). Hoy el
+      pie dice solo "Archivo".
+- [ ] **Los importes de las cuotas**, con tesorería. La página de socios dice
+      "consultar al club".
+- [ ] **Las notas de `data/noticias.json`**, que está vacío.
+
 ## Antes de publicar
 
-- [ ] Reemplazar las fotos de `assets/img/fotos/` que siguen siendo placeholders (sede, hinchada, noticias).
-- [ ] Cargar fotos de partidos en el grupo "Partidos" de `data/fotos.json`.
-- [ ] Confirmar el pie de `assets/img/historia/archivo-1.jpg` (la jugada).
-- [ ] Cargar dirección de la sede, cancha, teléfono y horarios en `build.py`
-      (páginas `club.html` y `contacto.html`). El manual de marca indica
-      Av. Carlos María Ramírez s/n — confirmar cuál corresponde.
-- [ ] Cargar la comisión directiva y los hitos de la historia.
-- [ ] Confirmar los importes de las cuotas con tesorería.
-- [ ] Cargar plantel, fixture y tabla reales; sacar `"ejemplo": true`.
-- [ ] Confirmar los usuarios de Instagram, X y Facebook del pie.
 - [ ] Poner `NOINDEX = False` en `build.py` y regenerar: hasta entonces todas
-      las páginas van con `noindex, nofollow`.
+      las páginas van con `noindex, nofollow` y ningún buscador las muestra.
+- [ ] Dar de alta el sitio en Google Search Console y mandar el sitemap.
+- [ ] Crear la ficha de Google Business Profile del club, que es la que pone
+      el mapa y el teléfono al costado del resultado de búsqueda.
 
 ## Formularios
 
