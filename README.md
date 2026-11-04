@@ -204,9 +204,10 @@ dato aparezca, se vuelve a poner la fila.
 - [ ] **El puesto de cada jugador** en `data/plantel.json`. Mientras ninguno
       lo tenga, el plantel se muestra de corrido y sin rótulos; en cuanto se
       asigne uno vuelven los cuatro grupos.
-- [ ] **El cargo de Jorge Sanabria, Ruben Capdevilla y Agustín Gelmi.** En el
-      Drive del club figuran como "EQ", que es equipier, pero el club pidió
-      no publicarlo por ahora.
+- [ ] **Confirmar cómo se dice "equipier" en inglés.** La versión inglesa lo
+      traduce como *kit manager*, que es el término habitual en el fútbol
+      inglés, pero conviene que el club lo confirme. La tabla está en
+      `TEXTOS.en.roles`, en `assets/js/main.js`.
 - [ ] **El pie de `assets/img/historia/archivo-1.jpg`** (la atajada). Hoy el
       pie dice solo "Archivo".
 - [ ] **Los importes de las cuotas**, con tesorería. La página de socios dice

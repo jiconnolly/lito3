@@ -28,6 +28,7 @@ const TEXTOS = {
     sinNoticias: 'Todavía no hay noticias publicadas.',
     gano: 'Ganó', empato: 'Empató', perdio: 'Perdió',
     puestos: { Arqueros: 'Arqueros', Defensas: 'Defensas', Mediocampistas: 'Mediocampistas', Delanteros: 'Delanteros' },
+    roles: {},
     puestoPendiente: 'Puesto a confirmar', cuerpoTecnico: 'Cuerpo técnico',
     tablaCorta: ['#', 'Equipo', 'PJ', 'DG', 'Pts'],
     tablaLarga: ['#', 'Equipo', 'PJ', 'G', 'E', 'P', 'DG', 'Pts', 'Últimos 5'],
@@ -48,6 +49,12 @@ const TEXTOS = {
     sinNoticias: 'No news published yet.',
     gano: 'Won', empato: 'Drew', perdio: 'Lost',
     puestos: { Arqueros: 'Goalkeepers', Defensas: 'Defenders', Mediocampistas: 'Midfielders', Delanteros: 'Forwards' },
+    roles: {
+      'Director técnico': 'Head coach',
+      'Entrenador de arqueros': 'Goalkeeping coach',
+      'Preparador físico': 'Fitness coach',
+      Equipier: 'Kit manager'
+    },
     puestoPendiente: 'Position to be confirmed', cuerpoTecnico: 'Coaching staff',
     tablaCorta: ['#', 'Team', 'P', 'GD', 'Pts'],
     tablaLarga: ['#', 'Team', 'P', 'W', 'D', 'L', 'GD', 'Pts', 'Last 5'],
@@ -397,7 +404,7 @@ async function plantel() {
         <span class="jugador-ficha jugador-ficha--tecnico">
           <span>
             <span class="nombre">${esc(m.nombre || T.aConfirmar)}</span>
-            ${m.rol ? `<br><span class="detalle">${esc(m.rol)}</span>` : ''}
+            ${m.rol ? `<br><span class="detalle">${esc(T.roles[m.rol] || m.rol)}</span>` : ''}
           </span>
         </span>
       </article>`).join('');
