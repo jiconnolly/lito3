@@ -68,6 +68,8 @@ FIJAS = {
     "noindex, nofollow", "summary_large_image", "width=device-width, initial-scale=1",
     # El propio botón de idioma: lo reescribe main() al pasar la página a inglés.
     "EN", "English", "Read this page in English",
+    # La dirección de la sede se escribe igual en los dos idiomas.
+    "Millán 2345",
 }
 
 
@@ -211,6 +213,7 @@ FICHA_BUSCADORES = """<script type="application/ld+json">
     "@type": "Place",
     "address": {{
       "@type": "PostalAddress",
+      "streetAddress": "Millán 2345",
       "addressLocality": "Arroyo Seco",
       "addressRegion": "Montevideo",
       "addressCountry": "UY"
@@ -1177,7 +1180,7 @@ def cap_contacto():
         <p class="cintilla">Datos</p>
         <h2>Dónde encontrarnos</h2>
         <dl class="datos">
-          <div><dt>Sede</dt><dd>Arroyo Seco, Montevideo, Uruguay<br><span class="mono">Dirección exacta a confirmar</span></dd></div>
+          <div><dt>Sede</dt><dd>Millán 2345<br><span class="mono">Arroyo Seco, Montevideo, Uruguay</span></dd></div>
           <div><dt>Correo</dt><dd><a href="mailto:marca@""" + DOMINIO + """">marca@""" + DOMINIO + """</a></dd></div>
           <div><dt>Teléfono</dt><dd>A confirmar</dd></div>
           <div><dt>Instagram</dt><dd><a href="https://instagram.com/centroatleticolito" rel="noopener">@centroatleticolito</a></dd></div>

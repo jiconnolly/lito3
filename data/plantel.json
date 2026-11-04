@@ -1,5 +1,5 @@
 {
-  "_nota": "Nombres, números y retratos salen de las carpetas de la sesión de fotos del club, del 25 de setiembre. De cada carpeta se tomó una toma y se recortó a 4 de ancho por 5 de alto, centrada en la cabeza y el torso. Falta el puesto de cada jugador: mientras ninguno lo tenga, el plantel se muestra de corrido y sin rótulos. Vallejos y Galusso llevan los dos el 27, es así. Tres integrantes del cuerpo técnico van sin cargo porque todavía no se sabe cuál es.",
+  "_nota": "Nombres, números y retratos salen de las carpetas de la sesión de fotos del club, del 25 de setiembre. De cada carpeta se tomó una toma y se recortó a 4 de ancho por 5 de alto, centrada en la cabeza y el torso. Falta el puesto de cada jugador: mientras ninguno lo tenga, el plantel se muestra de corrido y sin rótulos. Vallejos y Galusso llevan los dos el 27, es así. Tres integrantes del cuerpo técnico van sin cargo: en el Drive figuran como 'EQ', que es equipier, pero el club pidió no publicarlo.",
   "temporada": "2026",
   "actualizado": "2026-11-03",
   "cuerpoTecnico": [
@@ -10,13 +10,13 @@
     },
     {
       "rol": "Entrenador de arqueros",
-      "nombre": "Adrián",
-      "foto": "assets/img/plantel/adrian.jpg"
+      "nombre": "Adrián Silveira",
+      "foto": "assets/img/plantel/adrian-silveira.jpg"
     },
     {
       "rol": "",
-      "nombre": "Jorge",
-      "foto": "assets/img/plantel/jorge.jpg"
+      "nombre": "Jorge Sanabria",
+      "foto": "assets/img/plantel/jorge-sanabria.jpg"
     },
     {
       "rol": "",
