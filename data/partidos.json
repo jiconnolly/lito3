@@ -1,28 +1,27 @@
 {
   "_nota": "Resultados reales cargados a mano desde la planilla del campeonato. El próximo partido sale de 'proximos'; al jugarse, pasa a 'resultados' y el más reciente de ahí se copia en 'ultimo'.",
   "ejemplo": false,
-  "actualizado": "2026-11-03",
+  "actualizado": "2026-11-06",
   "competencia": "Primera Divisional C",
   "ultimo": {
-    "fecha": "2026-10-31",
-    "competencia": "Primera Divisional C",
-    "local": "Club Atlético Bella Vista",
-    "visitante": "Lito",
-    "golesLocal": 1,
-    "golesVisitante": 1,
-    "cancha": ""
+    "fecha": "2026-11-04",
+    "competencia": "Copa AUF Uruguay · Octavos de final",
+    "local": "Lito",
+    "visitante": "Montevideo Wanderers",
+    "golesLocal": 4,
+    "golesVisitante": 0,
+    "cancha": "Parque Abraham Paladino"
   },
-  "proximos": [
+  "proximos": [],
+  "resultados": [
     {
       "fecha": "2026-11-04",
       "competencia": "Copa AUF Uruguay · Octavos de final",
       "local": "Lito",
       "visitante": "Montevideo Wanderers",
-      "hora": "",
-      "cancha": "Parque Abraham Paladino"
-    }
-  ],
-  "resultados": [
+      "golesLocal": 4,
+      "golesVisitante": 0
+    },
     {
       "fecha": "2026-10-31",
       "competencia": "Primera Divisional C",
