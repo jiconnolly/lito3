@@ -454,13 +454,19 @@ function pintarNoticias(destino, d) {
   }
 
   const notas = limite ? todas.slice(0, limite) : todas;
+  // La nota se escribe en castellano; si trae la versión en inglés, esa es la
+  // que se muestra en /en. Y la ruta de la imagen sale de la raíz del sitio,
+  // que desde /en está un nivel más arriba.
+  const enIdioma = (n, campo) =>
+    (IDIOMA === 'en' && n[campo + 'En']) ? n[campo + 'En'] : n[campo];
+
   destino.innerHTML = notas.map(n => `
     <article class="noticia">
-      <img src="${esc(n.imagen)}" alt="" loading="lazy" width="1000" height="640">
+      <img src="${RAIZ}${esc(n.imagen)}" alt="" loading="lazy" width="1000" height="640">
       <div class="noticia-cuerpo">
         <p class="fecha">${esc(fechaCorta(n.fecha))}</p>
-        <h3>${n.enlace ? `<a href="${esc(n.enlace)}">${esc(n.titulo)}</a>` : esc(n.titulo)}</h3>
-        <p>${esc(n.bajada)}</p>
+        <h3>${n.enlace ? `<a href="${esc(n.enlace)}">${esc(enIdioma(n, 'titulo'))}</a>` : esc(enIdioma(n, 'titulo'))}</h3>
+        <p>${esc(enIdioma(n, 'bajada'))}</p>
         <p class="etiqueta">${esc(n.etiqueta || T.club)}</p>
       </div>
     </article>`).join('');
@@ -499,8 +505,8 @@ async function galeria() {
       <div class="galeria">
         ${g.fotos.map(f => `
           <figure class="postal">
-            <button type="button" data-foto="${esc(f.archivo)}" data-pie="${esc(f.pie || '')}">
-              <img src="${esc(f.archivo)}" alt="${esc(f.pie || g.titulo)}" loading="lazy">
+            <button type="button" data-foto="${RAIZ}${esc(f.archivo)}" data-pie="${esc(f.pie || '')}">
+              <img src="${RAIZ}${esc(f.archivo)}" alt="${esc(f.pie || g.titulo)}" loading="lazy">
             </button>
             <figcaption>
               <span>${esc(f.pie || '')}</span>

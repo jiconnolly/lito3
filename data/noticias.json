@@ -1,6 +1,27 @@
 {
-  "_nota": "Cargar acá las notas reales del club. Mientras la lista esté vacía, la sección muestra que todavía no hay noticias publicadas.",
+  "_nota": "Notas del club. Cada una lleva título y bajada en castellano; 'tituloEn' y 'bajadaEn' son opcionales y, cuando están, es lo que se muestra en la versión en inglés. La imagen se recorta a 25 de ancho por 16 de alto.",
   "ejemplo": false,
-  "actualizado": "2026-09-10",
-  "notas": []
+  "actualizado": "2026-11-12",
+  "notas": [
+    {
+      "fecha": "2026-11-09",
+      "titulo": "Hasta los penales con Danubio",
+      "bajada": "Lito llegó a los cuartos de final de la Copa AUF Uruguay y se fue invicto. Empató 1-1 con Danubio en los noventa minutos y quedó eliminado en la definición desde el punto del penal. Es la mejor campaña del club en el torneo.",
+      "tituloEn": "All the way to penalties against Danubio",
+      "bajadaEn": "Lito reached the Copa AUF Uruguay quarter-finals and went out unbeaten. The match finished 1-1 after ninety minutes and Danubio went through on penalties. It is the club's best run in the competition.",
+      "imagen": "assets/img/noticias/copa-danubio.jpg",
+      "etiqueta": "Copa AUF",
+      "enlace": ""
+    },
+    {
+      "fecha": "2026-11-05",
+      "titulo": "Cuatro a cero a Montevideo Wanderers",
+      "bajada": "En los octavos de final de la Copa AUF Uruguay, en el Parque Abraham Paladino, Lito le ganó 4-0 a un equipo de Primera División y se metió entre los ocho mejores del país.",
+      "tituloEn": "Four-nil against Montevideo Wanderers",
+      "bajadaEn": "In the Copa AUF Uruguay round of 16, at Parque Abraham Paladino, Lito beat a Primera División side 4-0 and reached the last eight.",
+      "imagen": "assets/img/noticias/copa-wanderers.jpg",
+      "etiqueta": "Copa AUF",
+      "enlace": ""
+    }
+  ]
 }

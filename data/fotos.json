@@ -1,8 +1,43 @@
 {
-  "_nota": "Galería. Para sumar una foto: dejar el archivo en assets/img/galeria/ y agregar una entrada acá. No hace falta recortarla: la galería respeta la proporción de cada foto.",
+  "_nota": "Galería. Para sumar una foto: dejar el archivo en assets/img/galeria/ y agregar una entrada acá. No hace falta recortarla: la galería respeta la proporción de cada foto. Las fotos de la Copa son de la sesión de FlopyM, del banco de imágenes del club; cada una se asignó a su partido por la fecha del archivo y no por la carpeta, porque en el Drive las de los dos partidos están mezcladas.",
   "ejemplo": false,
-  "actualizado": "2026-09-04",
+  "actualizado": "2026-11-12",
   "grupos": [
+    {
+      "titulo": "Copa AUF",
+      "fotos": [
+        {
+          "archivo": "assets/img/galeria/copa-wanderers-festejo.jpg",
+          "pie": "El festejo después del 4-0 · vs Montevideo Wanderers",
+          "fecha": "2026-11-05"
+        },
+        {
+          "archivo": "assets/img/galeria/copa-wanderers-duelo.jpg",
+          "pie": "Mano a mano en los octavos · vs Montevideo Wanderers",
+          "fecha": "2026-11-05"
+        },
+        {
+          "archivo": "assets/img/galeria/copa-wanderers-pelota.jpg",
+          "pie": "Salida desde el fondo · vs Montevideo Wanderers",
+          "fecha": "2026-11-05"
+        },
+        {
+          "archivo": "assets/img/galeria/copa-wanderers-hinchada.jpg",
+          "pie": "La tribuna, de pie · vs Montevideo Wanderers",
+          "fecha": "2026-11-05"
+        },
+        {
+          "archivo": "assets/img/galeria/copa-danubio-penales.jpg",
+          "pie": "Del brazo en el círculo central, durante los penales · vs Danubio",
+          "fecha": "2026-11-09"
+        },
+        {
+          "archivo": "assets/img/galeria/copa-danubio-capitan.jpg",
+          "pie": "La cinta de capitán y la pelota bajo el brazo · vs Danubio",
+          "fecha": "2026-11-09"
+        }
+      ]
+    },
     {
       "titulo": "Plantel",
       "bajada": "El primer equipo, los entrenamientos y la previa.",
