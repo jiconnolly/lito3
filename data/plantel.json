@@ -1,5 +1,5 @@
 {
-  "_nota": "Nombres, números y retratos salen de las carpetas de la sesión de fotos del club, del 25 de setiembre. De cada carpeta se tomó una toma y se recortó a 4 de ancho por 5 de alto, centrada en la cabeza y el torso. Falta el puesto de cada jugador: mientras ninguno lo tenga, el plantel se muestra de corrido y sin rótulos. Vallejos y Galusso llevan los dos el 27, es así. Los tres que en el Drive figuran como 'EQ' son equipiers.",
+  "_nota": "Dorsales y nombres salen de la lista oficial del club; los retratos, de la sesión de fotos del 25 de setiembre, recortados a 4 de ancho por 5 de alto. Falta el puesto de cada jugador: mientras ninguno lo tenga, el plantel se muestra de corrido y sin rótulos. Galusso y Vallejos llevan los dos el 27, es así, y por eso las fichas se aparean por apellido y no por dorsal.",
   "temporada": "2026",
   "actualizado": "2026-11-12",
   "cuerpoTecnico": [
@@ -100,10 +100,10 @@
     },
     {
       "numero": 10,
-      "nombre": "Martín «Cachimba» Correa",
+      "nombre": "Martín Correa",
       "puesto": "",
       "nacimiento": "",
-      "foto": "assets/img/plantel/martin-cachimba-correa.jpg"
+      "foto": "assets/img/plantel/martin-correa.jpg"
     },
     {
       "numero": 11,
