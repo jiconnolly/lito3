@@ -1,7 +1,7 @@
 {
   "_nota": "Nombres, números y retratos salen de las carpetas de la sesión de fotos del club, del 25 de setiembre. De cada carpeta se tomó una toma y se recortó a 4 de ancho por 5 de alto, centrada en la cabeza y el torso. Falta el puesto de cada jugador: mientras ninguno lo tenga, el plantel se muestra de corrido y sin rótulos. Vallejos y Galusso llevan los dos el 27, es así. Los tres que en el Drive figuran como 'EQ' son equipiers.",
   "temporada": "2026",
-  "actualizado": "2026-11-03",
+  "actualizado": "2026-11-12",
   "cuerpoTecnico": [
     {
       "rol": "Director técnico",
@@ -37,7 +37,7 @@
   "jugadores": [
     {
       "numero": 1,
-      "nombre": "Mathias Cubero",
+      "nombre": "Mathías Cubero",
       "puesto": "",
       "nacimiento": "",
       "foto": "assets/img/plantel/mathias-cubero.jpg"
@@ -58,10 +58,10 @@
     },
     {
       "numero": 4,
-      "nombre": "Damián Ruiz",
+      "nombre": "Damián Ruis",
       "puesto": "",
       "nacimiento": "",
-      "foto": "assets/img/plantel/damian-ruiz.jpg"
+      "foto": "assets/img/plantel/damian-ruis.jpg"
     },
     {
       "numero": 5,
@@ -121,7 +121,7 @@
     },
     {
       "numero": 13,
-      "nombre": "Camilo Sanchez",
+      "nombre": "Camilo Sánchez",
       "puesto": "",
       "nacimiento": "",
       "foto": "assets/img/plantel/camilo-sanchez.jpg"
@@ -142,7 +142,7 @@
     },
     {
       "numero": 17,
-      "nombre": "Andres García",
+      "nombre": "Andrés García",
       "puesto": "",
       "nacimiento": "",
       "foto": "assets/img/plantel/andres-garcia.jpg"
@@ -170,10 +170,10 @@
     },
     {
       "numero": 22,
-      "nombre": "Alvaro Ascheri",
+      "nombre": "Álvaro Aschieri",
       "puesto": "",
       "nacimiento": "",
-      "foto": "assets/img/plantel/alvaro-ascheri.jpg"
+      "foto": "assets/img/plantel/alvaro-aschieri.jpg"
     },
     {
       "numero": 23,
@@ -212,10 +212,10 @@
     },
     {
       "numero": 27,
-      "nombre": "Luciano Galusso",
+      "nombre": "Lucas Galusso",
       "puesto": "",
       "nacimiento": "",
-      "foto": "assets/img/plantel/luciano-galusso.jpg"
+      "foto": "assets/img/plantel/lucas-galusso.jpg"
     },
     {
       "numero": 28,
