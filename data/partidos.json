@@ -1,21 +1,31 @@
 {
-  "_nota": "Resultados reales cargados a mano desde la planilla del campeonato. El próximo partido sale de 'proximos'; al jugarse, pasa a 'resultados' y el más reciente de ahí se copia en 'ultimo'.",
+  "_nota": "Resultados reales cargados a mano desde la planilla del campeonato. El próximo partido sale de 'proximos'; al jugarse, pasa a 'resultados' y el más reciente de ahí se copia en 'ultimo'. Un partido con 'penales' terminó empatado y se definió desde el punto: el valor es el nombre del que pasó.",
   "ejemplo": false,
-  "actualizado": "2026-11-06",
+  "actualizado": "2026-11-12",
   "competencia": "Primera Divisional C",
   "ultimo": {
-    "fecha": "2026-11-04",
-    "competencia": "Copa AUF Uruguay · Octavos de final",
+    "fecha": "2026-11-09",
+    "competencia": "Copa AUF Uruguay · Cuartos de final",
     "local": "Lito",
-    "visitante": "Montevideo Wanderers",
-    "golesLocal": 4,
-    "golesVisitante": 0,
-    "cancha": "Parque Abraham Paladino"
+    "visitante": "Danubio",
+    "golesLocal": 1,
+    "golesVisitante": 1,
+    "penales": "Danubio",
+    "cancha": ""
   },
   "proximos": [],
   "resultados": [
     {
-      "fecha": "2026-11-04",
+      "fecha": "2026-11-09",
+      "competencia": "Copa AUF Uruguay · Cuartos de final",
+      "local": "Lito",
+      "visitante": "Danubio",
+      "golesLocal": 1,
+      "golesVisitante": 1,
+      "penales": "Danubio"
+    },
+    {
+      "fecha": "2026-11-05",
       "competencia": "Copa AUF Uruguay · Octavos de final",
       "local": "Lito",
       "visitante": "Montevideo Wanderers",
@@ -101,6 +111,14 @@
       "visitante": "Deportivo Colonia",
       "golesLocal": 0,
       "golesVisitante": 1
+    },
+    {
+      "fecha": "2026-09-03",
+      "competencia": "Copa AUF Uruguay",
+      "local": "Rampla Juniors",
+      "visitante": "Lito",
+      "golesLocal": 1,
+      "golesVisitante": 2
     },
     {
       "fecha": "2026-08-29",

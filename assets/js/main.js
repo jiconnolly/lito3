@@ -30,6 +30,7 @@ const TEXTOS = {
     puestos: { Arqueros: 'Arqueros', Defensas: 'Defensas', Mediocampistas: 'Mediocampistas', Delanteros: 'Delanteros' },
     roles: {},
     puestoPendiente: 'Puesto a confirmar', cuerpoTecnico: 'Cuerpo técnico',
+    porPenales: 'pasó en los penales',
     tablaCorta: ['#', 'Equipo', 'PJ', 'DG', 'Pts'],
     tablaLarga: ['#', 'Equipo', 'PJ', 'G', 'E', 'P', 'DG', 'Pts', 'Últimos 5'],
     fecha: 'fecha', actualizado: 'actualizado', fuente: 'fuente',
@@ -56,6 +57,7 @@ const TEXTOS = {
       Equipier: 'Kit manager'
     },
     puestoPendiente: 'Position to be confirmed', cuerpoTecnico: 'Coaching staff',
+    porPenales: 'won on penalties',
     tablaCorta: ['#', 'Team', 'P', 'GD', 'Pts'],
     tablaLarga: ['#', 'Team', 'P', 'W', 'D', 'L', 'GD', 'Pts', 'Last 5'],
     fecha: 'round', actualizado: 'updated', fuente: 'source',
@@ -215,6 +217,17 @@ function avisoEjemplo(d) {
 
 /* ---------- Próximo partido y resultados ---------- */
 
+/* Ganado, Empatado o Perdido desde el punto de vista de Lito. Un empate
+   definido por penales cuenta como lo que fue: pasó uno solo. */
+function resultado(p) {
+  const nuestro = p.local === CLUB ? p.golesLocal - p.golesVisitante
+                                   : p.golesVisitante - p.golesLocal;
+  if (nuestro > 0) return 'G';
+  if (nuestro < 0) return 'P';
+  if (p.penales) return p.penales === CLUB ? 'G' : 'P';
+  return 'E';
+}
+
 function tarjetaPartido(p, claseExtra) {
   const marcador = p.golesLocal != null
     ? `<span class="partido-marcador">${p.golesLocal}–${p.golesVisitante}</span>`
@@ -222,6 +235,7 @@ function tarjetaPartido(p, claseExtra) {
   const pie = [
     p.hora ? `${fechaLarga(p.fecha)} · ${p.hora}` : fechaLarga(p.fecha),
     p.cancha || '',
+    p.penales ? `${p.penales} ${T.porPenales}` : '',
     p.detalle || ''
   ].filter(Boolean).join(' · ');
 
@@ -279,8 +293,7 @@ async function partidos() {
 
     if (modo === 'resultados') {
       destino.innerHTML = (d.resultados || []).map(p => {
-        const nuestro = p.local === CLUB ? p.golesLocal - p.golesVisitante : p.golesVisitante - p.golesLocal;
-        const signo = nuestro > 0 ? 'G' : nuestro === 0 ? 'E' : 'P';
+        const signo = resultado(p);
         return `<article class="fila-partido">
           <p class="fecha">${esc(fechaCorta(p.fecha))}<br>${esc(termino(p.competencia))}</p>
           <p class="cruce">${esc(p.local)} <span class="partido-vs">${p.golesLocal}–${p.golesVisitante}</span> ${esc(p.visitante)}</p>
