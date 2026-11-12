@@ -30,7 +30,7 @@ const TEXTOS = {
     puestos: { Arqueros: 'Arqueros', Defensas: 'Defensas', Mediocampistas: 'Mediocampistas', Delanteros: 'Delanteros' },
     roles: {},
     puestoPendiente: 'Puesto a confirmar', cuerpoTecnico: 'Cuerpo técnico',
-    porPenales: 'pasó en los penales',
+    penales: 'Penales',
     tablaCorta: ['#', 'Equipo', 'PJ', 'DG', 'Pts'],
     tablaLarga: ['#', 'Equipo', 'PJ', 'G', 'E', 'P', 'DG', 'Pts', 'Últimos 5'],
     fecha: 'fecha', actualizado: 'actualizado', fuente: 'fuente',
@@ -57,7 +57,7 @@ const TEXTOS = {
       Equipier: 'Kit manager'
     },
     puestoPendiente: 'Position to be confirmed', cuerpoTecnico: 'Coaching staff',
-    porPenales: 'won on penalties',
+    penales: 'Penalties',
     tablaCorta: ['#', 'Team', 'P', 'GD', 'Pts'],
     tablaLarga: ['#', 'Team', 'P', 'W', 'D', 'L', 'GD', 'Pts', 'Last 5'],
     fecha: 'round', actualizado: 'updated', fuente: 'source',
@@ -220,11 +220,11 @@ function avisoEjemplo(d) {
 /* Ganado, Empatado o Perdido desde el punto de vista de Lito. Un empate
    definido por penales cuenta como lo que fue: pasó uno solo. */
 function resultado(p) {
-  const nuestro = p.local === CLUB ? p.golesLocal - p.golesVisitante
-                                   : p.golesVisitante - p.golesLocal;
+  const diferencia = (local, visitante) => p.local === CLUB ? local - visitante : visitante - local;
+  const nuestro = diferencia(p.golesLocal, p.golesVisitante);
   if (nuestro > 0) return 'G';
   if (nuestro < 0) return 'P';
-  if (p.penales) return p.penales === CLUB ? 'G' : 'P';
+  if (p.penales) return diferencia(p.penales.local, p.penales.visitante) > 0 ? 'G' : 'P';
   return 'E';
 }
 
@@ -235,7 +235,7 @@ function tarjetaPartido(p, claseExtra) {
   const pie = [
     p.hora ? `${fechaLarga(p.fecha)} · ${p.hora}` : fechaLarga(p.fecha),
     p.cancha || '',
-    p.penales ? `${p.penales} ${T.porPenales}` : '',
+    p.penales ? `${T.penales} ${p.penales.local}-${p.penales.visitante}` : '',
     p.detalle || ''
   ].filter(Boolean).join(' · ');
 

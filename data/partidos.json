@@ -1,5 +1,5 @@
 {
-  "_nota": "Resultados reales cargados a mano desde la planilla del campeonato. El próximo partido sale de 'proximos'; al jugarse, pasa a 'resultados' y el más reciente de ahí se copia en 'ultimo'. Un partido con 'penales' terminó empatado y se definió desde el punto: el valor es el nombre del que pasó.",
+  "_nota": "Resultados reales cargados a mano desde la planilla del campeonato. El próximo partido sale de 'proximos'; al jugarse, pasa a 'resultados' y el más reciente de ahí se copia en 'ultimo'. Un partido con 'penales' terminó empatado y se definió desde el punto: los goles van en el mismo orden que los del partido, local y después visitante.",
   "ejemplo": false,
   "actualizado": "2026-11-12",
   "competencia": "Primera Divisional C",
@@ -10,8 +10,11 @@
     "visitante": "Danubio",
     "golesLocal": 1,
     "golesVisitante": 1,
-    "penales": "Danubio",
-    "cancha": ""
+    "penales": {
+      "local": 4,
+      "visitante": 5
+    },
+    "cancha": "Parque Abraham Paladino"
   },
   "proximos": [],
   "resultados": [
@@ -22,7 +25,11 @@
       "visitante": "Danubio",
       "golesLocal": 1,
       "golesVisitante": 1,
-      "penales": "Danubio"
+      "penales": {
+        "local": 4,
+        "visitante": 5
+      },
+      "cancha": "Parque Abraham Paladino"
     },
     {
       "fecha": "2026-11-05",
